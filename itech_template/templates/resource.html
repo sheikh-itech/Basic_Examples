@@ -1,0 +1,54 @@
+<div ng-controller="itechCtrl" style="margin-top:10px;">
+		<div style="height: 350px;width:100%;">
+    <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in language" active="slide.active">
+        <a href="#/{{slide.link}}"><img ng-src="{{slide.image}}" style="width:100%;height:350px;"/></a>        
+      </uib-slide>
+    </uib-carousel>
+  </div>
+<div class="container-fluid">
+ <!-- Start of row  --> 
+  <div class="row">
+
+  <div class="col-xs-3" style="margin-top:40px;padding:0px;font-family:serif;">
+				<div class="panel panel-default">
+					<span class="glyphicon glyphicon-eye-open" style="float:right;color:blue;">-Tech</span>
+    					<div class="panel-body">    					
+    						<h3><span style="color:blue;">
+							Product Services</span></h3>
+    							<ul style="padding:0px;">						
+									<li class="list-group-item-success"><a href="#/resource">Case Studies</a></li><br><br>
+									<li class="list-group-item-info"><a href="#/news">Newsletters</a></li>								
+								</ul>							
+    					</div>
+    				</div>
+  </div>
+
+  <div class="col-xs-9"  style="margin-top:20px;padding-left:10px;padding-right:0px;">
+  <h3 style="color:#666699;">Lets Look Java </h3>
+	<div id="font">
+	Java is a general purpose, high-level programming language developed by Sun Microsystems. A small team of engineers, known as the Green Team, initiated the language in 1991. Java was originally called OAK, and was designed for handheld devices and set-top boxes. Oak was unsuccessful, so in 1995 Sun changed the name to Java and modified the language to take advantage of the burgeoning World Wide Web.
+	</div>
+	<h3 style="color:#666699;">Java Today</h3>
+	<div id="font">
+	Today Java is a commonly used foundation for developing and delivering content on the Web. According to Oracle, there are more than 9 million Java developers worldwide and more than 3 billion mobile phones run Java.....<a href="#/java">more</a>
+	</div>
+	<h3 style="color:#666699;">Lets C</h3>
+	<div id="font">
+	C is a high-level and general purpose programming language that is ideal for developing firmware or portable applications. Originally intended for writing system software, C was developed at Bell Labs by Dennis Ritchie for the Unix Operating System (OS) in the early 1970s
+	</div><br>
+	<div id="font">
+	C belongs to the structured, procedural paradigms of languages. It is proven, flexible and powerful and may be used for a variety of different applications. Although high-level, C and assembly language share many of the same attributes.....<a href="#/c">more</a>
+	<div>
+	<h3 style="color:#666699;">Lets Take C++</h3>
+	<div id="font">
+	C++ is an object oriented programming (OOP) language, developed by Bjarne Stroustrup, and is an extension of C language. It is therefore possible to code C++ in a "C style" or "object-oriented style." In certain scenarios, it can be coded in either way and is thus an effective example of a hybrid language.
+C++ is a general purpose object oriented programming language. It is considered to be an intermediate level language, as it encapsulates both high and low level language features. Initially, the language was called 'C with classes as it had all properties of C language with an additional concept of 'classes'.<br>However, it was renamed to C++ in 1983.....<a href="#/c_plus">more</a>
+	</div>
+  </div>
+
+  </div><br><br>
+  <!-- End of row  -->
+  
+</div>
+<div><br><br>

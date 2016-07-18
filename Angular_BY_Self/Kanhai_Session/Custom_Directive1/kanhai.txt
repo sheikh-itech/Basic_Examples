@@ -1,0 +1,4 @@
+service is singleton and invoked byangular itself
+but factory called by developer
+----------------------------
+wan can define objects in factory

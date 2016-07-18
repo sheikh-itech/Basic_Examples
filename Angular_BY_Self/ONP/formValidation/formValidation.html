@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Angular Form Validation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <script src='app.js'></script>
+ </head>
+
+ <body ng-app='myApp'>
+
+ <form name='myForm'>
+ <input type="text" name='user1' ng-model='user1' class='form-control' required><br>
+ <input type="email" name='user2' ng-model='user2' class='form-control' required><br>
+ <input type="text" name='user3' ng-model='user3' class='form-control' ng-pattern=''><br>
+ 
+ <!--<input type="text" ng-model='user2' class='form-control' name="" required/><br>
+ <input type="text" ng-model='user3' class='form-control' name="" required/><br>-->
+ <button ng-click='submit();' ng-disabled='myForm.$invalid && myForm.$invalid'>Submit1</button>
+
+
+ </form>
+  
+ </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Free Responsive Admin Theme - ZONTAL</title>
+    <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <link href="assets/css/style1.css" rel="stylesheet" />
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME ICONS  -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE  -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <strong>Email: </strong>info@yourdomain.com
+                    &nbsp;&nbsp;
+                    <strong>Support: </strong>+90-897-678-44
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-- HEADER END-->
+    <div class="navbar navbar-inverse set-radius-zero">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+
+                    <img src="assets/img/logo.png" />
+                </a>
+
+            </div>
+
+            <div class="left-div">
+                <div class="user-settings-wrapper">
+                    <ul class="nav">
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-settings">
+                                <div class="media">
+                                    <a class="media-left" href="#">
+                                        <img src="assets/img/64-64.jpg" alt="" class="img-rounded" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Jhon Deo Alex </h4>
+                                        <h5>Developer & Designer</h5>
+
+                                    </div>
+                                </div>
+                                <hr />
+                                <h5><strong>Personal Bio : </strong></h5>
+                                Anim pariatur cliche reprehen derit.
+                                <hr />
+                                <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
+
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LOGO HEADER END-->
+    <section class="menu-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+                            <li><a href="index.html">Dashboard</a></li>
+                            <li><a href="ui.html">UI Elements</a></li>
+                            <li><a href="table.html">Data Tables</a></li>
+                            <li><a class="menu-top-active"  href="forms.html">Forms</a></li>
+                             <li><a href="login.html">Login Page</a></li>
+                            <li><a href="blank.html">Blank Page</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- MENU SECTION END-->
+
+<div class="content-wrapper"><!-- form start -->
+  <div class="container">
+    		<div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Forms </h1>
+                    </div>
+            </div>
+  	<div class="row"><!-- form row starts -->
+     	<div class="panel panel-default">
+  				<div class="panel-heading">
+                  BASIC  FORM ELEMENTS
+            	 </div>
+
+          <!-- form -->  	 
+      		<div class="panel-body">
+      		<form>
+      			<div class="col-md-6">
+      				<div class="form-group">
+      					<label for="txtFullName">Enter your name</label>
+ 						<input type="text" id="txtFullName"  runat="server" class="form-control" placeholder="Enter full name">
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="txtEmail1">Email address</label>
+            			<input type="email" id="txtEmail1" runat="server" class="form-control" placeholder="Enter email address" />
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="txtEmail2">Re-enter email address</label>
+            			<input type="email" id="txtEmail2" runat="server" class="form-control" placeholder="Re-nter email address" />
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="txtAddress1">Primary address</label>
+            			<input type="text" id="txtAddress1" runat="server" class="form-control" placeholder="Enter primary address" />
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="ddType">User type</label>
+      				    <select id="ddType" runat="server" class="form-control">
+   	  						<option selected="true">Admin</option>
+   	  						<option>Employee</option>    						
+   	  					</select>            			
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="numberSalary">Monthly salary</label>
+            			<input type="number" id="numberSalary" runat="server" class="form-control" placeholder="Enter monthly salary" />
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="dateStartDate">Start date</label>
+            			<input type="date" id="dateStartDate" runat="server" class="form-control" placeholder="Enter starting date" />
+            	    </div>
+     			</div>                	
+                
+            	<div class="col-md-6">
+                
+                   <h5><b>Enter your image</h5>
+                  <div class="form-group input-group">
+                      <span class="input-group-btn">
+                          <span class="btn btn-primary btn-file">
+                              Browse&hellip; <input type="file" multiple>
+                          </span>
+                      </span>
+                          <input type="text" id="fileImage" runat="server" class="form-control" placeholder="Select image" readonly>
+                  </div>                         
+                 
+            	     <div class="form-group" style="padding-top:15px;">
+                        <label for="dateHireDate">Date of hire</label>
+            			<input type="date" id="dateHireDate" runat="server" class="form-control" placeholder="Enter date of hiring" />
+            	     </div>
+            	     <div class="form-group">
+                        <label for="numberPhone">Phone number</label>
+            			<input type="number" id="numberPhone" runat="server" class="form-control" placeholder="Enter your phone number" />
+            	     </div>
+            	     <div class="form-group">
+                        <label for="txtAddress2">Secondary address</label>
+            			<input type="text" id="txtAddress2" runat="server" class="form-control" placeholder="Enter secondary address" />
+            	     </div>
+            	     <div class="form-group">
+                        <label for="numberCtc">CTC</label>
+            			<input type="number" id="numberCtc" runat="server" class="form-control" placeholder="Enter ctc" />
+            	     </div>
+            	     <div class="form-group">
+                        <label for="numberBonous">Annual bonous</label>
+            			<input type="number" id="numberBonous" runat="server" class="form-control" placeholder="Enter annual bonous" />
+            	     </div>
+            	     <div class="form-group">
+      				    <label for="dateEndDate">End date</label>
+            			<input type="date" id="dateEndDate" runat="server" class="form-control" placeholder="Enter end date" />
+            	    </div>            	    
+           	 	</div>
+           	 		<div class="form-group col-md-8 col-md-offset-2">
+      				    <label for="txtComment">Comment</label>
+      				    <textarea id="txtComment" runat="server" rows="3"class="form-control" placeholder="Enter comment" style="resize:none;"></textarea>    
+            	    </div>
+            	    <div class="form-group col-md-8 col-md-offset-2">
+            	    	<button type="submit" class="btn btn-warning">Save & Continue</button>
+            	    </div>
+           	</form>   
+      		</div> 
+       <!-- End of form  -->
+        
+   		</div>                	             	
+   	</div><!-- form row end -->
+ </div>
+</div><!-- End of form start -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

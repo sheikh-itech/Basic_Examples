@@ -1,0 +1,22 @@
+<div ng-controller='mainCtrl'>
+<table>
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Priority</th>
+        <th>Status</th>
+		<th>Assigned-By</th>
+		<th>Action</th>
+      </tr>
+    </thead>
+  <tbody>
+  <tr ng-repeat="arr in master">
+    <td>{{ arr.task }}</td>
+	<td>{{ arr.priority }}</td>
+	<td>{{ arr.status }}</td>
+	<td>{{ arr.assignedBy }}</td>
+	
+  </tr>
+  </tbody>
+</table> 
+</div>

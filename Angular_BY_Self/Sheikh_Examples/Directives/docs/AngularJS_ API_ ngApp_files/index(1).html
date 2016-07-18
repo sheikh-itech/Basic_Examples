@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://docs.angularjs.org/examples/example-example48/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta charset="UTF-8">
+  <title>Example - example-example48</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  
+
+  <script src="angular.min(1).js"></script>
+  <script src="script(1).js"></script>
+  
+
+  
+</head>
+<body>
+  <div ng-app="ngAppStrictDemo" ng-strict-di="" class="ng-scope">
+    <div ng-controller="GoodController1" class="ng-scope ng-binding">
+        I can add: 1 + 2 =  3
+
+        <p>This renders because the controller does not fail to
+           instantiate, by using explicit annotation style (see
+           script.js for details)
+        </p>
+    </div>
+
+    <div ng-controller="GoodController2" class="ng-scope ng-binding">
+        Name: <input ng-model="name" class="ng-pristine ng-untouched ng-valid"><br>
+        Hello, World!
+
+        <p>This renders because the controller does not fail to
+           instantiate, by using explicit annotation style
+           (see script.js for details)
+        </p>
+    </div>
+
+    <div ng-controller="BadController" class="ng-scope ng-binding">
+        I can add: {{a}} + {{b}} =  {{ a+b }}
+
+        <p>The controller could not be instantiated, due to relying
+           on automatic function annotations (which are disabled in
+           strict mode). As such, the content of this section is not
+           interpolated, and there should be an error in your web console.
+        </p>
+    </div>
+</div>
+
+</body></html>

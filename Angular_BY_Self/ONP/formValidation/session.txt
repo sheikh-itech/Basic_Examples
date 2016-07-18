@@ -1,0 +1,7 @@
+kanhar--20/8/2015
+------------------
+
+1. $dirty
+2. $pristine  -- pure thing
+3. $invalid
+4. $valid

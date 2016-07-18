@@ -1,0 +1,55 @@
+AngularJS is a JavaScript framework
+
+To add angularJS in html pages
+--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+=>AngularJS extends HTML with ng-directives.
+----------------------------------------------
+ng-app => directive defines an AngularJS application.
+
+ng-model =>directive binds the value of HTML controls (input,
+           select, textarea) to application data.
+
+ng-bind =>directive binds application data to the HTML view.
+----------------------------------
+
+ng-app directive tells AngularJS that <..>element is the "owner" 
+of an AngularJS application.
+
+AngularJS directives are HTML attributes with an ng prefix.
+
+ng-init => directive initialize AngularJS application variables
+
+AngularJS expressions are written inside double braces:
+  {{ expression }}.
+
+AngularJS will "output" data exactly where the expression is 
+written
+
+AngularJS expressions bind AngularJS data to HTML the same way as 
+the ng-bind directive
+
+AngularJS Applications
+----------------------
+1. AngularJS modules define AngularJS applications. &
+
+2. AngularJS controllers control AngularJS applications.
+
+Whereas In HTML
+------------------
+The ng-app directive defines the application, and
+The ng-controller directive defines the controller.
+
+AngularJS Expressions
+---------------------
+AngularJS expressions binds data to HTML the same way as the 
+ng-bind directive.
+
+ng-repeat => used in traversing like array
+
+The ng-init directive defines initial values for an AngularJS 
+application.
+
+angular.module("mainApp", [])
+-----------------------------
+parameter array generally contains dependent modules.

@@ -1,0 +1,56 @@
+<div ng-controller="itechCtrl" style="margin-top:10px;">
+		<div class="col-md-12" style="padding:0px;margin:0px;">
+		
+			<img src="images/service.jpg" id="about_us" style="height:300px;"/> 
+		
+		</div>
+<div class="container-fluid">
+ <!-- Start of row  --> 
+  <div class="row">
+
+  <div class="col-xs-3" style="margin-top:90px;padding:0px;font-family:serif;">
+				<div class="panel panel-default">
+					<span class="glyphicon glyphicon-eye-open" style="float:right;color:blue;">-Tech</span>
+    					<div class="panel-body">    					
+    						<h3><span style="color:blue;">
+							Our Services</span></h3>
+    							<ul style="padding:0px;">						
+									<li class="list-group-item-success"><a href="#/service">Techology Offering</a></li><br>
+									<li class="list-group-item-info"><a href="#/service_erp">ERP Solutions</a></li><br>
+									<li class="list-group-item-info"><a href="#/consulting">Consulting Services</a></li><br>
+									<li class="list-group-item-info"><a href="#/quality">Quality Assurance</a></li><br>
+									<li class="list-group-item-success"><a href="#/analysis">Business Analysis</a></li>
+								</ul>							
+    					</div>
+    				</div>
+  </div>
+
+  <div class="col-xs-6">
+	
+  <div class="page-header">
+	<span style="font-size:20px;">Enterprise Solutions</span>
+  </div>
+  <div style="font-family: verdana,arial,helvetica,sans-serif;">
+  <p>Integrated enterprise resource planning and customer relationship management functionality empowers manufacturers to increase productivity and customer responsiveness, while eliminating costs and inefficiencies. Advanced decision support tools provide visibility into key business data for more informed decision-making. E-business web applications enable access to information, business processes, customers and partners anytime, anywhere.
+  </p>      
+  <p>
+   As the IT industry is heading towards off-the-shelf applications and quick implementation, ITech s' flexible enterprise solutions implementation helps small to midsize manufacturers improve operational efficiency and profitability by integrating business processes on an enterprise-wide level.
+   </p>
+  </div>
+  </div>
+
+  <div class="col-xs-3" style="margin-top:90px;padding:0px;">
+		<div style="height: 150px;width:100%;">
+		<uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+			<uib-slide ng-repeat="service in erp">
+			<img ng-src="{{service.image}}" style="width:100%;height:150px;">
+				
+			</uib-slide>
+		</uib-carousel>
+	</div>
+  </div>
+
+  </div>
+  <!-- End of row  -->
+</div>
+<div><br>

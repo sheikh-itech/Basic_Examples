@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="personCtrl" ng-init="myVar=true;uVar=true;Var=true;">
+
+<button ng-click="toggle1()">Hide user 1</button>
+<button ng-click="toggle2()">Hide user 2</button>
+<button ng-click="toggle3()">Show users</button>
+
+<p ng-hide="myVar">
+First Name: <input type=text ng-model="firstName"><br>
+Last Name: <input type=text ng-model="lastName"><br><br>
+Full Name: {{firstName + " " + lastName+" myvar"}}
+</p><br>
+<p ng-hide="uVar">
+First Name: <input type=text ng-model="firstName"><br>
+Last Name: <input type=text ng-model="lastName"><br><br>
+Full Name: {{firstName + " " + lastName+" uvar"}}
+</p>
+<p ng-hide="Var">
+First Name: <input type=text ng-model="firstName"><br>
+Last Name: <input type=text ng-model="lastName"><br><br>
+Full Name: {{firstName + " " + lastName+" var"}}
+</p>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('personCtrl', function($scope) {
+    
+    
+    $scope.toggle1 = function() {
+	    $scope.uVar = false;
+        $scope.myVar = true;
+		$scope.Var = true;
+		$scope.firstName = "John1",
+        $scope.lastName = "Doe1"
+    }
+	$scope.toggle2 = function() {
+	    $scope.myVar = false;
+        $scope.uVar = true;
+		$scope.Var = true;
+		$scope.firstName = "John2",
+        $scope.lastName = "Doe2"
+    }
+	$scope.toggle3 = function() {
+	    $scope.Var = false;
+		$scope.myVar = true;
+        $scope.uVar = true;	
+		$scope.firstName = "John3",
+        $scope.lastName = "Doe3"
+    }
+});
+</script> 
+
+</body>
+</html>

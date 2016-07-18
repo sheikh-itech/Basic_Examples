@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://docs.angularjs.org/examples/example-input-directive/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta charset="UTF-8">
+  <title>Example - example-input-directive</title>
+  
+
+  <script src="angular.min(1).js"></script>
+  
+
+  
+</head>
+<body ng-app="inputExample" class="ng-scope">
+  <script>
+   angular.module('inputExample', [])
+     .controller('ExampleController', ['$scope', function($scope) {
+       $scope.user = {name: 'guest', last: 'visitor'};
+     }]);
+</script>
+<div ng-controller="ExampleController" class="ng-scope">
+  <form name="myForm" class="ng-pristine ng-valid ng-valid-required ng-valid-minlength ng-valid-maxlength">
+    <label>
+       User name:
+       <input type="text" name="userName" ng-model="user.name" required="" class="ng-pristine ng-untouched ng-valid ng-valid-required">
+    </label>
+    <div role="alert">
+      <span class="error ng-hide" ng-show="myForm.userName.$error.required">
+       Required!</span>
+    </div>
+    <label>
+       Last name:
+       <input type="text" name="lastName" ng-model="user.last" ng-minlength="3" ng-maxlength="10" class="ng-pristine ng-untouched ng-valid ng-valid-minlength ng-valid-maxlength">
+    </label>
+    <div role="alert">
+      <span class="error ng-hide" ng-show="myForm.lastName.$error.minlength">
+        Too short!</span>
+      <span class="error ng-hide" ng-show="myForm.lastName.$error.maxlength">
+        Too long!</span>
+    </div>
+  </form>
+  <hr>
+  <tt class="ng-binding">user = {"name":"guest","last":"visitor"}</tt><br>
+  <tt class="ng-binding">myForm.userName.$valid = true</tt><br>
+  <tt class="ng-binding">myForm.userName.$error = {}</tt><br>
+  <tt class="ng-binding">myForm.lastName.$valid = true</tt><br>
+  <tt class="ng-binding">myForm.lastName.$error = {}</tt><br>
+  <tt class="ng-binding">myForm.$valid = true</tt><br>
+  <tt class="ng-binding">myForm.$error.required = false</tt><br>
+  <tt class="ng-binding">myForm.$error.minlength = false</tt><br>
+  <tt class="ng-binding">myForm.$error.maxlength = false</tt><br>
+</div>
+
+</body></html>

@@ -1,0 +1,104 @@
+<div ng-controller="examController" style="margin-top:50px;">
+<!-- Start of Before test settings div  -->
+<div ng-show="before_test">
+<div style="color:red;">
+<h2>Test Instructions</h2>
+1: Test will be of 10 mins.<br>
+2: Number of questions is 10.<br>
+3: There is no negative marking.<br>
+4: All question will have one point.<br>
+5: Submit after completion of test.
+<hr>
+</div>
+<div>
+<h4>Select the available tests from below options </h4><a href="#/login" class="btn btn-sm btn-info" style="float:right;margin-top:-30px;">Log-In</a><br>
+<a href="" ng-click="getTest();" style="margin-left:10px;">Show Test List</a>
+<br><br>{{testListCond}}
+<div ng-show="var_test_list">
+<ol>
+	<li ng-repeat="test in testList">{{test.testname}}</li>
+</ol>
+<br><br>
+<div class="row" ng-show='start_exam'>
+			<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="alert alert-danger fade in">
+						<a href="" class="close" data-dismiss="alert">&times;</a>
+						Please ensure proper entries.
+					</div>
+				</div>
+			<div class="col-md-3"></div>
+</div>
+<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<form name="testform" ng-submit="startExam();">
+	
+				<div class="form-group">
+      				    <label for="ddType">Enter Test Name</label>
+      				    <select id="ddType" class="form-control" ng-model="starttest.testname" required>
+   	  						<option ng-repeat="test in testList">{{test.testname}}</option>
+   	  						
+   	  					</select>            			
+            	 </div>
+	<div class="form-group">
+   		 <label for="testName">Enter Username</label>
+ 		<input id="testName" type="text" class="form-control" ng-model="starttest.username" placeholder="Enter test name" required />
+	</div>
+	<input type="submit" value="Start Test" class="btn btn-sm btn-info" ng-disabled="testform.$dirty && testform.$invalid"> 
+</form>
+				</div>
+<div class="col-md-3"></div>
+</div>
+</div>
+</div>
+<!-- End Before test settings div  -->
+
+<!-- Start of Test div -->
+<div ng-show="start_test">
+
+<div class="container" style="margin-top:100px;">
+	<div class="row">
+	    <div class="col-sm-0"></div>
+		<div class="col-sm-6">
+		   <div class="panel panel-default" ng-repeat="record in records">
+		   		<div class="panel-heading">
+		   			Question.{{record.Questions[step].Id}} <b>::</b>&nbsp; {{record.Questions[step].Que}}
+		   		</div>
+		   		<div class="panel-body">
+		   			<ul  ng-repeat="pos in position" style="list-style-type:none">
+		   				<li><input type="radio" ng-model='record.Questions[step].Options[pos].Ans' name='ans' ng-change='change({{record.Questions[step].Options[pos].Ans}})'>
+		   				{{record.Questions[step].Options[pos].Opt}}</li>
+		   			</ul><hr>
+					<div ng-show='btn_1'>
+		   			<input type="submit" value="Prev" ng-click='prev()' class="btn btn-danger">
+		   			<input type="submit" value="Next" ng-click='next()' style="margin-left:15%;"class="btn btn-info">
+					</div>
+
+					<div ng-show='btn_2'>		   			
+		   			<input type="submit" value="Submit" ng-click='result()' style="margin-left:30%;"class="btn btn-info">
+					</div>
+	
+
+		   		</div>
+		   </div>
+		</div>
+		<div class="col-sm-6"></div>
+	</div>
+</div>
+
+</div>
+<div class="row" ng-show='final_result'><hr>
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<div class="alert alert-warning fade in">
+				<a href="" class="close" data-dismiss="alert">&times;</a>
+                
+				Write answer's :{{write}}<br>
+				Wrong answer's :{{wrong}}<br>
+				Not answered :{{10-(write+wrong)}}
+				<!--Not answered :{{no_ans}}-->
+			</div>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</div>

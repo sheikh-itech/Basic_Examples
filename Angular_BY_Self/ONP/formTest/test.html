@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Angular Application</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <script src='myApp.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.js'></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>
+    td {
+	  text-align: center;
+	  text-shadow: 2px;
+	  font-size: 20px;
+	  width:150px;
+	}
+	#td1 {
+	  color: #3385FF;
+	  font-size: 20px;
+	  width:150px;
+	}
+	.td1 {
+	  text-align: left;
+	}
+	#div1 {
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:100px;
+		position: relative;
+	}
+  
+  </style>
+</head>
+<body ng-app='myApp'>
+
+<div ng-controller='myCtrl' id='div1'>
+<table>
+<tr><td colspan='3' style='color:red;'>Registration Form</td></tr>
+<tr><td colspan='3'>&nbsp;</td></tr>
+  <form name='myForm'>
+<tr>  
+ <td id='td1'>First Name</td><td style="width:2px;">:</td><td class='td1'><input type="text" name='user1'place-holder='First Name' ng-model='user.fname' required></td>
+</tr>
+<tr><td colspan='3'>&nbsp;</td></tr>
+<tr>
+ <td id='td1'>Last Name</td><td style="width:2px;">:</td><td class='td1'><input type="text" name='user2' place-holder='Last Name' ng-model='user.lname' required></td>
+ </tr>
+ <tr><td colspan='3'>&nbsp;</td></tr>
+ <tr>
+ <td id='td1'>Password</td><td style="width:2px;">:</td><td class='td1'><input type="password" name='pass' place-holder='Password' ng-model='user.pass' required></td>
+ </tr>
+ <tr><td colspan='3'>&nbsp;</td></tr>
+ <tr>
+ <td id='td1'>Contact Number</td><td style="width:2px;">:</td><td class='td1'><input type="text" name='cont' place-holder='Contact Num' ng-model='user.cont' required></td>
+ </tr>
+ <tr><td colspan='3'>&nbsp;</td></tr>
+ <tr>
+ <td colspan='3'><button ng-click='submit();' ng-disabled='myForm.$invalid || myForm.$dirty' class='btn btn-info'>Save-Info</button></td>
+ </tr>
+</table>
+ </form>
+
+</div>  
+</body>
+</html>

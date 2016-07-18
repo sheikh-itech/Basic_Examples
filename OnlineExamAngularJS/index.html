@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angulr application to attend exam</title>
+		
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Latest compiled JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.js"></script>   
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- jQuery library -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
+<script src='js/app.js'></script>	
+</head>
+<body>
+
+<div ng-controller="validateCtrl">
+
+<nav class="navbar navbar-inverse navbar-fixed-top text-center">
+	<p style="color:white;margin-top:15px;font-size:20px;">Online Test Application</p>
+</nav>
+  	<div class="row" style="margin-top:100px;"><!-- form row starts -->
+  	<div class="col-md-3"></div>
+  	<div class="col-md-6">
+     	<div class="panel panel-default">
+  				<div class="panel-heading">
+                  Login Panel Detail
+            	 </div>
+
+          <!-- form -->  	 
+      		<div class="panel-body">
+      		<form name="myForm">      		   
+      			
+      				<div class="form-group">
+      					<label for="txtFullName">Username</label>
+ 						<input type="text" id="txtFullName" class="form-control" ng-model="name" placeholder="Enter name" autofocus required />
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="txtPassword">Password</label>
+            			<input type="password" id="txtPassword" class="form-control" ng-model="pass" placeholder="Enter password" required/>
+            	    </div>
+            	 <input type="submit" value="Login" 
+  ng-disabled="myForm.$dirty || myForm.$invalid" class="btn btn-info" style="margin-left:25%;">
+  <a href="#/register" class="btn btn-warning" style="margin-left:15%;">Register</a> 
+           	</form>   
+      		</div> 
+       <!-- End of form  -->
+        
+   		</div>   </div>     
+   		<div class="col-md-3"></div>  	             	
+   	</div><!-- form row end -->
+
+</div>
+
+</body>
+</html>

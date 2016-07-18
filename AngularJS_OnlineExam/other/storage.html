@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Storage</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="js/angular-local-storage.min.js"></script>
+
+
+<script>
+	var myApp = angular.module('myApp', ['LocalStorageModule']);
+</script>
+</head>
+<body  ng-controller="myCtrl">
+<input type="text" ng-model="name"><br>
+{{name}}<br>
+<input type="submit" ng-click="save(name)">
+
+
+</body>
+</html>

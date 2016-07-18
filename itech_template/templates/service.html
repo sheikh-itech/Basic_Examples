@@ -1,0 +1,56 @@
+<div ng-controller="itechCtrl" style="margin-top:10px;">
+		<div class="col-md-12" style="padding:0px;margin:0px;">
+		
+			<img src="images/service.jpg" id="about_us" style="height:300px;"/> 
+		
+		</div>
+<div class="container-fluid">
+ <!-- Start of row  --> 
+  <div class="row">
+
+  <div class="col-xs-3" style="margin-top:90px;padding:0px;font-family:serif;">
+				<div class="panel panel-default">
+					<span class="glyphicon glyphicon-eye-open" style="float:right;color:blue;">-Tech</span>
+    					<div class="panel-body">    					
+    						<h3><span style="color:blue;">
+							Our Services</span></h3>
+    							<ul style="padding:0px;">						
+									<li class="list-group-item-success"><a href="#/service">Techology Offering</a></li><br>
+									<li class="list-group-item-info"><a href="#/service_erp">ERP Solutions</a></li><br>
+									<li class="list-group-item-info"><a href="#/consulting">Consulting Services</a></li><br>
+									<li class="list-group-item-info"><a href="#/quality">Quality Assurance</a></li><br>
+									<li class="list-group-item-success"><a href="#/analysis">Business Analysis</a></li>
+								</ul>							
+    					</div>
+    				</div>
+  </div>
+
+  <div class="col-xs-6">
+	
+  <div class="page-header">
+	<span style="font-size:20px;">Technology Offerings</span>
+  </div>
+  <div style="font-family: verdana,arial,helvetica,sans-serif;">
+  <p>We deliver excellent services meeting the challenges of the clients and achieving complete satisfaction. The offerings are based on rigorous and proven methodologies and scientifically driven frameworks. In today's hi-tech arena we provide both - robust and cost-effective solutions and services. We analyze the existing environment and identify opportunities for optimization and productivity improvement.
+  </p>      
+  <p>
+   Working closely with our Industry Practices, we offer state-of-the-art expertise in Application Development & Maintenance, Outsourced Testing Services and a wide range of technologies including e-business, Data Warehousing, CRM , ERP, SCM , Wireless, Quality Assurance and more. We back up our technology disciplines with core competencies in Architecture and Strategy, Program Management and User-Centered Design. 
+   </p>
+  </div>
+  </div>
+
+  <div class="col-xs-3" style="margin-top:90px;padding:0px;">
+		<div style="height: 150px;width:100%;">
+		<uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+			<uib-slide ng-repeat="service in services">
+			<img ng-src="{{service.image}}" style="width:100%;height:150px;">
+				
+			</uib-slide>
+		</uib-carousel>
+	</div>
+  </div>
+
+  </div>
+  <!-- End of row  -->
+</div>
+<div><br>

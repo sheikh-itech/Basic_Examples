@@ -1,0 +1,28 @@
+Angular Directive from Kanhai/partTimer
+----------------------------------------
+
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function(){
+});
+app.directive('myDirective, function(){
+  return{
+    require: 'testdirective',
+    restrict: 'EA',
+    template: '<div> Hello world </div>',
+    replace: true,
+    scope:{
+		url: '=',
+	   userName: '@',
+	   callback: '&'
+	},
+    link: function(scope, element, attr, testcontroller){}
+});
+
+<div my-directive></div>  == A
+<my-directive></my-directive> == E
+<div class='my-directive'></div>  == C
+<!-- my-directive -->   == comment level directive
+
+
+

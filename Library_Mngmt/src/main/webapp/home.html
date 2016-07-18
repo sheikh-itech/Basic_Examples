@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web app using angularJS java web services</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body ng-app="libraryApp">
+<div  ng-controller="examCtrl">
+
+<!-- Navbar -->
+ <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+   <div class="container" id="header"><!-- container -->
+      
+     <p><big>Welcome to Online Exam Portal </big><small style="font-size: 8px;">created by sheikh</small></p>
+             
+   </div>  <!-- End of container -->
+</nav><br>
+<!-- End of navbar -->
+
+<!-- Container -->
+<div class="container">
+    <section>        
+        <div class="row">
+            <div class="col-md-2">                   
+            </div>
+            <div class="col-md-8">
+                
+                <ng-view></ng-view>
+                
+            </div>
+            <div class="col-md-2">                  
+            </div>
+        </div><!-- End of row-->
+    </section>  
+ </div><!-- End of Container -->  
+ </div><br><br><br>
+ <!-- footer -->
+ <div ng-include="'templates/footer.html'"></div>   
+ <!-- End footer -->   
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/exam.js"></script> 
+    <script src="js/jquery-1.11.3.min.js"></script>    
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

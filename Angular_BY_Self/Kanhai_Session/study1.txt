@@ -1,0 +1,16 @@
+transclute: true
+factoryis not singleton
+service is singleton
+
+ng-transclute   ---- learn
+
+
+provider, factory, service  
+
+rest-api
+
+assingment
+-----------
+custom directive
+provider, factory, service ---- difference
+promise

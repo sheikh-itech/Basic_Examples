@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Implemented by sheikh</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <style>
+    #header {    
+    height: 100px;
+    background-color: #eeefff;
+    margin: 0px;
+    padding: 0px;
+   }
+    #header1 {
+    color: indianred;                
+    font-size: 30px;
+    float:right;
+    padding:20px;
+    margin-left: auto;
+	margin-right: auto;
+    overflow: hidden;
+    }
+
+          form {
+               
+               width: 250px;
+               height: auto;
+               margin-left: auto;
+               margin-right: auto; 
+			   padding-left: 25px;
+               background-color: #fffcca;
+               color: blue;
+               position: relative;
+               border-radius: 15px;
+               top: 50px;
+              }
+            p {
+               width: auto;
+               height: auto;
+               text-align: center;
+               margin-left: auto;
+               margin-right: auto; 
+               background-color: #fffcca;
+               color: blue;
+               padding: 10px;
+               position: relative;
+               border-radius: 15px;
+               top: 50px;
+            }
+  select {
+   background: transparent;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   color: red;
+   -webkit-appearance: none;
+   }
+   a {
+      color: red;  
+      text-decoration: underline;
+	  border-radius: 10px;
+   }    
+   a:link, a:visited {
+    display: inline;
+    font-weight: italic;
+    color: #ffffff;
+    background-color: #98bf21;
+    width: 120px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    background-color: #7A991A;
+}
+
+</style>
+
+		<script>
+		      var arr = []; 
+		      function add() {
+					
+					var a1 = document.getElementById("1").value;
+					var a2 = document.getElementById("2").value;
+					var a3 = document.getElementById("3").value;
+					var a4 = document.getElementById("4").value;
+					alert(a1+"=="+a2+"=="+a3+"=="+a4);
+
+					var record = {
+						task:a1,
+						priority:a2,
+						status:a3,
+						asignby:a4
+					};
+					arr.push(record);
+
+					
+			  }
+               function show() {
+			   //document.getElementById("show").innerHTML;
+			     for(var i=0;i<=arr.length;i++) {
+					alert(arr[i].record.task+"<br/>"+arr[i].record.priority+"<br/>"+arr[i].record.status+"<br/>"+arr[i].record.asignby);
+                 }
+			   }
+		</script>
+    </head>
+    <body>
+        <div id="header">
+            <div style="float:left;">
+              <img src="logo.jpg" alt="Signal strength" 
+                   style="width:100px;height:100px;border-radius:50px; " />    
+            </div>
+            <div id="header1">
+			<a href="home.htm">Home</a>
+			<a href="add_task.htm">Add Task</a>
+			<a href="show_task.htm">Show Todays Task</a>
+			<a href="">Update Task</a>
+
+			</div>
+        </div>
+
+<form>
+
+<u style="padding-left:15%;font-size:20px;">Add New Task</u><br><br>
+	Task :<br>
+	<textarea id="1" style="resize:none;"></textarea>
+	<!--<input type="" name="price" min="0" max="1000" maxlength="4" placeholder="Integer Type" required/>-->
+	<br><br>
+
+	Priority :&nbsp;&nbsp;&nbsp;&nbsp;
+	<select id="2">
+   	  <option value="high">High </option>
+   	  <option value="low">Low </option>
+    </select><br><br>
+	Status :&nbsp;&nbsp;&nbsp;&nbsp;
+	<select id="3">
+   		<option value="completed">Completed</option>
+   		<option value="pending">Pending</option>
+   	</select><br><br>
+	Assigned By:<br><input id="4" type="text"/><br><br><br>
+	<input type="button" onclick="add();" value="Add-Task" class="btn btn-info" style=" margin-left: 25%"/>
+	<input type="button" value="show" onclick="show();"></button><br>
+	&nbsp;
+</form>
+
+<div id="show">
+<div>
+    </body>
+</html>

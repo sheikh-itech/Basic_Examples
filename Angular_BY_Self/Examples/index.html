@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Angular Application</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>  <script src="angular.min.js
+  <script src="test.js"></script>
+  <style>"></script>
+    .parent {
+     color: red;
+	}
+  </style>
+ </head>
+
+<body ng-app="testApp">
+<!-- <div ng-include="header.html"></div> -->
+
+ <div ng-controller="testCtrl as main">
+ <div ng-init="main.initialize()">
+ Normal Binding<br>
+ --------------<br>
+	{{ main.name }}
+</div><br><br>
+Repeating thhrough names<br>
+------------------------
+	<ul>
+<!-- $last and $first also same as $index-->
+		<li ng-repeat="nam in main.names">
+		{{ nam.name}}
+		<ol>
+		<li ng-repeat="sub in nam.subjects" ng-class="{'parent': $index%2 != 0}">
+		{{ sub }}</li>
+		</ol>
+		</li>
+	</ul><br><br>
+ <button ng-click="main.click()">Click Me</button>
+<br><br><br>
+Getting Id of Students<br>
+----------------------<br>
+   <ul>
+	<li ng-repeat="student in main.students" ng-click="main.id(student)">{{ student.name}}---click to get id here</li>
+   </ul>
+
+Ng-Class Directive<br>
+----------------------<br>
+   <div class='parent'>
+	<div ng-class="{'parent':test == 5}">
+		Active class content ---- dynamic applied class
+	</div>
+   </div><br>
+Ng-Hide/Ng-Show Directive<br>
+-----------------------------<br>
+<button ng-click="main.toggle()">Click</button>
+<div ng-show="main.hide">
+	This text based on ng-hide/show
+</div>
+<br>
+Ng-If Directive<br>
+-----------------------------<br>
+<button ng-click="main.toggle1()">Click</button>
+<div ng-if="main.fi">
+	This text based on ng-if
+</div>
+ </div> 
+ </body>
+</html>

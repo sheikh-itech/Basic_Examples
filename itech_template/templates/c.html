@@ -1,0 +1,93 @@
+<div ng-controller="itechCtrl" style="margin-top:10px;">
+		<div style="height: 350px;width:100%;">
+    <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in language" active="slide.active">
+        <a href="#/{{slide.link}}"><img ng-src="{{slide.image}}" style="width:100%;height:350px;"/></a>        
+      </uib-slide>
+    </uib-carousel>
+  </div>
+<div class="container-fluid">
+ <!-- Start of row  --> 
+  <div class="row">
+
+  <div class="col-xs-3" style="margin-top:40px;padding:0px;font-family:serif;padding-right:10px;">
+				<div class="panel panel-default">
+					<span class="glyphicon glyphicon-eye-open" style="float:right;color:blue;">-Tech</span>
+    					<div class="panel-body">    					
+    						<h3><span style="color:blue;">
+							Product Services</span></h3>
+    							<ul style="padding:0px;">						
+									<li class="list-group-item-success"><a href="#/resource">Case Studies</a></li><br><br>
+									<li class="list-group-item-info"><a href="#/news">Newsletters</a></li>								
+								</ul>							
+    					</div>
+    				</div>
+  </div>
+
+  <div class="col-xs-9"  style="margin-top:40px;padding-left:10px;padding-right:0px;background-color:#E5E5FF;">
+  <h3 style="color:red;">Detailed Study of C</h3>
+	<div id="font">
+	C belongs to the structured, procedural paradigms of languages. It is proven, flexible and powerful and may be used for a variety of different applications. Although high-level, C and assembly language share many of the same attributes.
+   </div><br>
+   <div id="font">
+   <span style="color:red;font-size:20px;">Following are C programming language features:</span>
+   <ul style="list-style-image: url('images/arrow_right.gif');color:#000099;"><br>
+   <li>Fixed number of keywords, including a set of control primitives, such as if, for, while, switch and do while.</li>
+   <li>Multiple logical and mathematical operators, including bit manipulators.</li>
+   <li>Multiple assignments may be applied in a single statement.</li>
+   <li>Function return values are not always required and may be ignored if unneeded.</li>
+   <li>Typing is static. All data has type but may be implicitly converted.</li>
+   <li>Basic form of modularity, as files may be separately compiled and linked.</li>
+   <li>Control of function and object visibility to other files via extern and static attributes.</li>
+   </ul>
+   </div>
+
+  </div><br><br>
+  <!-- End of row  -->
+  <!-- features section -->
+    <div class="container-fluid">
+    	<section>
+    		<div class="page-header">
+    			<h3>&nbsp;</h3>
+    		</div>
+
+    		<div class="row">
+    			<div class="col-sm-8">
+    				<h4><a href="">A programming language is a tool</a></h4>
+    				<p>A programming language is a tool, and no tool can perform every task unaided. If you're building a house, and I'm teaching you how to use a hammer, and you ask how to assemble rafters and trusses into gables, that's a legitimate question, but the answer has fallen out of the realm of ''How do I use a hammer?'' and into ''How do I build a house?''. In the same way, we'll see that C does not have built-in features to perform every function that we might ever need to do while programming.
+					</p>
+    			</div>
+    			<div class="col-sm-4">
+    				<img src="images/c1.jpg" class="img-responsive"  id="img_feature" alt="">
+    			</div>
+    		</div><!-- end of row -->
+    		<br><br>
+    		<div class="row">
+    			<div class="col-sm-8">
+    				<h4><a href="">Another aspect of C</a></h4>
+    				<p>
+					Another aspect of C that's worth mentioning here is that it is, to put it bluntly, a bit dangerous. C does not, in general, try hard to protect a programmer from mistakes. If you write a piece of code which will (through some oversight of yours) do something wildly different from what you intended it to do, up to and including deleting your data or trashing your disk, and if it is possible for the compiler to compile it, it generally will.
+					</p>
+    			</div>
+    			<div class="col-sm-4">
+    				<img src="images/c2.jpg" class="img-responsive"  id="img_feature" alt="">
+    			</div>
+    		</div><!-- end of row -->
+    		<br><br>
+    		<div class="row">
+    			<div class="col-sm-8">
+    				<h4><a href="">C is an imperative (procedural) language</a></h4>
+    				<p>
+					C is an imperative (procedural) language. It was designed to be compiled using a relatively straightforward compiler, to provide low-level access to memory, to provide language constructs that map efficiently to machine instructions, and to require minimal run-time support. C was therefore useful for many applications that had formerly been coded in assembly language, such as in system programming.
+					</p>
+    			</div>
+    			<div class="col-sm-4">
+    				<img src="images/c3.jpg" class="img-responsive"  id="img_feature" alt="">
+    			</div>
+    		</div><!-- end of row -->
+    		<br>
+    	</section>    	
+    </div><!-- end of features section -->
+
+</div>
+<div><br><br>

@@ -1,0 +1,109 @@
+<div ng-controller='trainerCtrl' style="margin-top:44px;"> 
+
+<!-- Header of trainer section  -->
+<div style="margin-left:20%;margin-right:20%;background-color:lightgreen;">
+	<a href="" ng-click="setTest();" style="margin-left:10px;">Set Test</a>
+	<a href="" ng-click="getTestList();" style="margin-left:10px;">Test List</a>
+	<a href="" ng-click="getTestResult();" style="margin-left:10px;">Test Result</a>
+	<a href="#/login" ng-click="logOut();" style="margin-left:10px;">Goto Home</a> 
+</div>
+
+
+<!-- Start of assign test section -->
+<div class="row" style="margin-top:30px;" ng-show="var_test"><!-- form row starts -->
+       <div class="row" ng-show='save_test'>
+			<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="alert alert-info fade in">
+						<a href="" class="close" data-dismiss="alert">&times;</a>
+						<strong>Congrats!</strong> Test created successfully.
+					</div>
+				</div>
+			<div class="col-md-3"></div>
+		</div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+                  Test Creation Panel
+               </div>
+
+          <!-- form -->    
+          <div class="panel-body">
+          <form name="myForm" ng-submit="saveTest();">             
+           
+                  <div class="form-group">
+      				    <label for="ddType">User Name</label>
+      				    <select id="ddType" class="form-control" ng-model="user.username" required>
+   	  						<option ng-repeat="person in persons">{{person.username}}</option>
+   	  					</select>            			
+            	    </div>
+                  <div class="form-group">
+                  <label for="txtPassword">Test Name</label>
+                  <input type="text" id="txtPassword" class="form-control" ng-model="user.testname" placeholder="Enter test name" required/>
+                  </div>
+                  <div class="form-group">
+                <label for="txtNumber">Test File Name</label>
+            <input type="text" id="txtNumber" class="form-control" ng-model="user.filename" placeholder="Enter data file name" required />
+                  </div>
+               <input type="submit" value="Create-Test"
+  ng-disabled="myForm.$dirty && myForm.$invalid" class="btn btn-info" style="margin-left:30%;">  
+            </form>
+          </div> 
+       <!-- End of form  -->
+        
+      </div>   </div>     
+      <div class="col-md-3"></div>                  
+    </div><!-- form row end -->
+<!-- End of assign test section -->
+    
+    
+<!-- Start of test List section -->    
+<div ng-show="var_test_list" style="margin-top:20px;"><hr>
+
+		<table class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th class="text-center">User Name</th>
+                <th class="text-center">Test Name</th>
+                <th class="text-center">Action</th>                
+            </tr>
+        </thead>
+        <tbody>
+        	<tr ng-repeat="test in testList">
+                <td>{{test.username}}</td>
+                <td>{{test.testname}}</td>  
+                <td><a href="" class="btn btn-sm btn-danger"ng-click="deleteTest($index);">Delete</a></td>              
+            </tr>
+        </tbody>
+    </table>
+</div>  
+<!-- End of test List section -->
+
+<!-- Start of test result section -->
+<div ng-show="var_test_result" style="margin-top:20px;">
+
+	<table class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th class="text-center">User Name</th>
+                <th class="text-center">Write Answer</th>
+                <th class="text-center">Wrong Answer</th>
+                <th class="text-center">Result</th>
+                <th class="text-center">Action</th>                
+            </tr>
+        </thead>
+        <tbody>
+        	<tr ng-repeat="test in testResult">
+                <td>{{test.name}}</td>
+                <td>{{test.write}}</td>
+                <td>{{test.wrong}}</td>
+                <td>{{test.write>5?'Pass':'Fail'}}</td>   
+                <td><a href="" class="btn btn-sm btn-danger"ng-click="deleteTestResult($index);">Delete</a></td>             
+            </tr>
+        </tbody>
+    </table>
+    
+</div> 
+<!-- End of test result section -->
+</div>

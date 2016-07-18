@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+  </head>
+  <body>
+    Enter your name: <input type="text"></input>
+    <p id="name"></p>
+
+    <script>
+      $(document).ready(function() {
+        $("input").keyup(function() {
+          $("#name").text($(this).val());
+        });
+      });
+    </script>
+
+  </body>
+</html>

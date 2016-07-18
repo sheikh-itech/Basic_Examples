@@ -1,0 +1,22 @@
+<div ng-controller='examCtrl'>
+  
+  	
+          <!-- form -->  	 
+      		<div class="panel-body">
+      		<form name="myForm" ng-submit="demo();">      		   
+      			
+      				<div class="form-group">
+      					<label for="txtFullName">Username</label>
+ 						<input type="text" id="txtFullName" class="form-control" ng-model="demo.name" placeholder="Enter name" autofocus required />
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="txtPassword">Password</label>
+            			<input type="password" id="txtPassword" class="form-control" ng-model="demo.pass" placeholder="Enter password" required/>
+            	    </div>            	    
+            	 <input type="submit" value="Sign In" 
+  ng-disabled="myForm.$dirty && myForm.$invalid" class="btn btn-lg btn-info" style="margin-left:33%;">
+           	</form>   
+      		</div> 
+       <!-- End of form  -->      
+   		  	             	
+</div>

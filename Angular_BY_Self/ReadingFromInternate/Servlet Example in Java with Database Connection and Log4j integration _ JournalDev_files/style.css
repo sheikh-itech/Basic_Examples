@@ -1,0 +1,62 @@
+@charset "utf-8";
+/*
+Theme Name: Pinboard-Child
+Theme URI: http://www.onedesigns.com/wordpress-themes/pinboard
+Description: A crafty and elegant theme powered by an advanced theme framework and grid system. With virtually unlimited layout options and styles, ideal for showcasing your portfolio of works or other multimedia elements like images, photo galleries, videos and podcasts.
+Version: 1.0.6
+Author: Pankaj
+Author URI: http://www.journaldev.com/
+Tags: blue, gray, silver, white, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Template: pinboard
+License: GNU General Public License v2.0
+License URI: license.txt
+*/
+
+@import url("../pinboard/style.css");
+
+ins {
+padding:1px 4px;
+background:#FF0;
+background:-moz-linear-gradient(#FF3, #EE0);
+background:-webkit-linear-gradient(#FF3, #EE0);
+background:-o-linear-gradient(#FF3, #EE0);
+background:-ms-linear-gradient(#FF3, #EE0);
+background:linear-gradient(#FF3, #EE0);
+border-radius:4px;
+box-shadow:0 1px 1px rgba(0, 0, 0, .2);
+text-decoration:none;
+}
+
+#wrapper {
+position:relative;
+max-width:1212px;
+margin:0 auto;
+box-shadow:0 0 18px rgba(0, 0, 0, .4);
+background:#f8f8f8;
+overflow:hidden;
+}
+
+#container{
+margin:0.5%
+}
+
+.single .entry,
+.page .entry,
+.error404 .entry {
+padding: 6px;
+margin-bottom:5.1% !important;
+}
+ins{background:#fff}
+
+#site-title,
+#site-description {
+line-height:95px;
+}
+
+ol ol {
+margin-bottom:10px;
+}
+
+#sidebar-header{float:right;width:850px;height:90px;margin:0 0 0 0;overflow:hidden;}
+#site-title {margin: 0 0%;}
+#site-title img {margin:0;vertical-align:middle;}

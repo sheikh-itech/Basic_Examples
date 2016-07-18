@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Implemented by sheikh</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <style>
+    #header1 {
+    color: indianred;                
+    font-size: 30px;
+    float:right;
+    padding:20px;
+    margin-left: auto;
+	margin-right: auto;
+    overflow: hidden;
+    }
+
+   a {
+      color: red;  
+      text-decoration: underline;
+	  border-radius: 10px;
+   }    
+   a:link, a:visited {
+    display: inline;
+    font-weight: italic;
+    color: #ffffff;
+    background-color: #98bf21;
+    width: 120px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    background-color: #7A991A;
+}
+    #header {    
+    height: 100px;
+    background-color: #eeefff;
+    margin: 0px;
+    padding: 0px;
+   }
+
+</style>
+
+		<script>
+		  function validate() {
+             var name = document.getElementById("name").value;
+			 var pass = document.getElementById("pass").value;
+
+			 if (name == pass)
+			 {
+			    return true;
+			 }
+			 else false;
+		  }
+		</script>
+    </head>
+    <body>
+        <div id="header">
+            <div style="float:left;">
+              <img src="logo.jpg" alt="Signal strength" 
+                   style="width:100px;height:100px;border-radius:50px; " />    
+            </div>
+            <div id="header1">
+			<a href="home.htm">Home</a>
+			<a href="add_task.htm">Add Task</a>
+			<a href="show_task.htm">Show Todays Task</a>
+			<a href="">Update Task</a>
+
+			</div>
+        </div>
+
+    </body>
+</html>

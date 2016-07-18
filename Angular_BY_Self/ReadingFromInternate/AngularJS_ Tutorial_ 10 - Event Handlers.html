@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://docs.angularjs.org/tutorial/step_10 -->
+<html lang="en" ng-app="docsApp" ng-strict-di="" ng-controller="DocsController" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Description" content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+                 Declarative templates with data-binding, MVC, dependency injection and great
+                 testability story all implemented with pure client-side JavaScript!">
+  <meta name="fragment" content="!">
+  <title ng-bind-template="AngularJS: Tutorial: 10 - Event Handlers" class="ng-binding">AngularJS: Tutorial: 10 - Event Handlers</title>
+
+  <script type="text/javascript" async="" src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/ga.js"></script><script type="text/javascript">
+    // dynamically add base tag as well as css and javascript files.
+    // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
+    // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
+    (function() {
+      var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
+          rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
+          baseUrl = location.href.replace(rUrl, indexFile),
+          production = location.hostname === 'docs.angularjs.org',
+          headEl = document.getElementsByTagName('head')[0],
+          sync = true;
+
+      addTag('base', {href: baseUrl});
+
+
+      addTag('link', {rel: 'stylesheet', href: 'components/bootstrap-3.1.1/css/bootstrap.min.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'components/open-sans-fontface-1.0.4/open-sans.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'css/prettify-theme.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'css/docs.css', type: 'text/css'});
+      addTag('link', {rel: 'stylesheet', href: 'css/animations.css', type: 'text/css'});
+      
+
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-resource.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-cookies.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.min.js' }, sync);
+      addTag('script', {src: '//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js' }, sync);
+      addTag('script', {src: 'components/marked-0.3.3/lib/marked.js' }, sync);
+      addTag('script', {src: 'js/angular-bootstrap/bootstrap.min.js' }, sync);
+      addTag('script', {src: 'js/angular-bootstrap/dropdown-toggle.min.js' }, sync);
+      addTag('script', {src: 'components/lunr.js-0.4.2/lunr.min.js' }, sync);
+      addTag('script', {src: 'components/google-code-prettify-1.0.1/src/prettify.js' }, sync);
+      addTag('script', {src: 'components/google-code-prettify-1.0.1/src/lang-css.js' }, sync);
+      addTag('script', {src: 'js/versions-data.js' }, sync);
+      addTag('script', {src: 'js/pages-data.js' }, sync);
+      addTag('script', {src: 'js/nav-data.js' }, sync);
+      addTag('script', {src: 'js/docs.min.js' }, sync);
+      
+
+      function addTag(name, attributes, sync) {
+        var el = document.createElement(name),
+            attrName;
+
+        for (attrName in attributes) {
+          el.setAttribute(attrName, attributes[attrName]);
+        }
+
+        sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+      }
+
+      function outerHTML(node){
+        // if IE, Chrome take the internal method otherwise build one
+        return node.outerHTML || (
+            function(n){
+                var div = document.createElement('div'), h;
+                div.appendChild(n);
+                h = div.innerHTML;
+                div = null;
+                return h;
+            })(node);
+      }
+    })();
+
+    // GA asynchronous tracker
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8594346-3']);
+    _gaq.push(['_setDomainName', '.angularjs.org']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script><!--<base href="https://docs.angularjs.org/">--><base href="."><link rel="stylesheet" href="./AngularJS_ Tutorial_ 10 - Event Handlers_files/bootstrap.min.css" type="text/css"><link rel="stylesheet" href="./AngularJS_ Tutorial_ 10 - Event Handlers_files/open-sans.css" type="text/css"><link rel="stylesheet" href="./AngularJS_ Tutorial_ 10 - Event Handlers_files/prettify-theme.css" type="text/css"><link rel="stylesheet" href="./AngularJS_ Tutorial_ 10 - Event Handlers_files/docs.css" type="text/css"><link rel="stylesheet" href="./AngularJS_ Tutorial_ 10 - Event Handlers_files/animations.css" type="text/css"><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/angular.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/angular-resource.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/angular-route.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/angular-cookies.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/angular-sanitize.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/angular-touch.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/angular-animate.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/marked.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/bootstrap.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/dropdown-toggle.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/lunr.min.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/prettify.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/lang-css.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/versions-data.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/pages-data.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/nav-data.js"></script><script src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/docs.min.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <header scroll-y-offset-element="" class="header header-fixed">
+      <section class="navbar navbar-inverse docs-navbar-primary ng-scope" ng-controller="DocsSearchCtrl">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 header-branding">
+              <a class="brand navbar-brand" href="http://angularjs.org/">
+                <img width="117" height="30" class="logo" alt="Link to Angular JS Homepage" ng-src="img/angularjs-for-header-only.svg" src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/angularjs-for-header-only.svg">
+              </a>
+              <ul class="nav navbar-nav">
+                <li class="divider-vertical"></li>
+                <li><a href="http://angularjs.org/"><i class="icon-home icon-white"></i> Home</a></li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown ng-isolate-scope">
+                  <a href="https://docs.angularjs.org/#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon-eye-open icon-white"></i> Learn <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="disabled"><a href="http://angularjs.org/">Why AngularJS?</a></li>
+                    <li><a href="http://www.youtube.com/user/angularjs">Watch</a></li>
+                    <li><a href="https://docs.angularjs.org/tutorial">Tutorial</a></li>
+                    <li><a href="http://builtwith.angularjs.org/">Case Studies</a></li>
+                    <li><a href="https://github.com/angular/angular-seed">Seed App project template</a></li>
+                    <li><a href="https://docs.angularjs.org/misc/faq">FAQ</a></li>
+                  </ul>
+                </li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown active ng-isolate-scope">
+                  <a href="https://docs.angularjs.org/#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon-book icon-white"></i> Develop <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://docs.angularjs.org/tutorial">Tutorial</a></li>
+                    <li><a href="https://docs.angularjs.org/guide">Developer Guide</a></li>
+                    <li><a href="https://docs.angularjs.org/api">API Reference</a></li>
+                    <li><a href="https://docs.angularjs.org/error">Error Reference</a></li>
+                    <li><a href="https://docs.angularjs.org/misc/contribute">Contribute</a></li>
+                    <li><a href="http://code.angularjs.org/">Download</a></li>
+                  </ul>
+                </li>
+                <li class="divider-vertical"></li>
+                <li class="dropdown ng-isolate-scope">
+                  <a href="https://docs.angularjs.org/#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon-comment icon-white"></i> Discuss <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://blog.angularjs.org/">Blog</a></li>
+                    <li><a href="http://groups.google.com/group/angular">Mailing List</a></li>
+                    <li><a href="http://webchat.freenode.net/?channels=angularjs&uio=d4">Chat Room</a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://twitter.com/#!/angularjs">Twitter</a></li>
+                    <li><a href="https://plus.google.com/110323587230527980117">Google+</a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://github.com/angular/angular.js">GitHub</a></li>
+                    <li><a href="https://github.com/angular/angular.js/issues">Issue Tracker</a></li>
+                  </ul>
+                </li>
+                <li class="divider-vertical"></li>
+              </ul>
+            </div>
+            <form ng-class="{focus:focus}" class="navbar-search col-md-3 docs-search ng-pristine ng-valid" ng-submit="submit()">
+              <span class="glyphicon glyphicon-search search-icon"></span>
+              <input type="text" name="as_q" class="search-query ng-pristine ng-untouched ng-valid" placeholder="Click or press / to search" ng-focus="focus=true" ng-blur="focus=false" ng-change="search(q)" ng-model="q" docs-search-input="" autocomplete="off">
+            </form>
+          </div>
+        </div>
+        <div class="search-results-container ng-hide" ng-show="hasResults">
+          <div class="container">
+            <div class="search-results-frame">
+              <!-- ngRepeat: (key, value) in results -->
+            </div>
+            <a href="" ng-click="hideResults()" class="search-close">
+              <span class="glyphicon glyphicon-remove search-close-icon"></span> Close
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="sup-header">
+        <div class="container main-grid main-header-grid">
+          <div class="grid-left">
+            <div ng-controller="DocsVersionsCtrl" class="picker version-picker ng-scope">
+              <select ng-options="v as (&#39;v&#39; + v.version + (v.isSnapshot ? &#39; (snapshot)&#39; : &#39;&#39;)) group by getGroupName(v) for v in docs_versions" ng-model="docs_version" ng-change="jumpToDocsVersion(docs_version)" class="docs-version-jump ng-pristine ng-untouched ng-valid"><optgroup label="Latest"><option value="object:8" label="v1.4.4-build.4141 (snapshot)" selected="selected">v1.4.4-build.4141 (snapshot)</option><option value="object:23" label="v1.3.17">v1.3.17</option><option value="object:66" label="v1.2.28">v1.2.28</option><option value="object:97" label="v1.1.5">v1.1.5</option><option value="object:103" label="v1.0.8">v1.0.8</option></optgroup><optgroup label="v1.4.x"><option value="object:9" label="v1.4.3">v1.4.3</option><option value="object:10" label="v1.4.2">v1.4.2</option><option value="object:11" label="v1.4.1">v1.4.1</option><option value="object:12" label="v1.4.0">v1.4.0</option><option value="object:13" label="v1.4.0-rc.2">v1.4.0-rc.2</option><option value="object:14" label="v1.4.0-rc.1">v1.4.0-rc.1</option><option value="object:15" label="v1.4.0-rc.0">v1.4.0-rc.0</option><option value="object:16" label="v1.4.0-beta.6">v1.4.0-beta.6</option><option value="object:17" label="v1.4.0-beta.5">v1.4.0-beta.5</option><option value="object:18" label="v1.4.0-beta.4">v1.4.0-beta.4</option><option value="object:19" label="v1.4.0-beta.3">v1.4.0-beta.3</option><option value="object:20" label="v1.4.0-beta.2">v1.4.0-beta.2</option><option value="object:21" label="v1.4.0-beta.1">v1.4.0-beta.1</option><option value="object:22" label="v1.4.0-beta.0">v1.4.0-beta.0</option></optgroup><optgroup label="v1.3.x"><option value="object:24" label="v1.3.16">v1.3.16</option><option value="object:25" label="v1.3.15">v1.3.15</option><option value="object:26" label="v1.3.14">v1.3.14</option><option value="object:27" label="v1.3.13">v1.3.13</option><option value="object:28" label="v1.3.12">v1.3.12</option><option value="object:29" label="v1.3.11">v1.3.11</option><option value="object:30" label="v1.3.10">v1.3.10</option><option value="object:31" label="v1.3.9">v1.3.9</option><option value="object:32" label="v1.3.8">v1.3.8</option><option value="object:33" label="v1.3.7">v1.3.7</option><option value="object:34" label="v1.3.6">v1.3.6</option><option value="object:35" label="v1.3.5">v1.3.5</option><option value="object:36" label="v1.3.4">v1.3.4</option><option value="object:37" label="v1.3.3">v1.3.3</option><option value="object:38" label="v1.3.2">v1.3.2</option><option value="object:39" label="v1.3.1">v1.3.1</option><option value="object:40" label="v1.3.0">v1.3.0</option><option value="object:41" label="v1.3.0-rc.5">v1.3.0-rc.5</option><option value="object:42" label="v1.3.0-rc.4">v1.3.0-rc.4</option><option value="object:43" label="v1.3.0-rc.3">v1.3.0-rc.3</option><option value="object:44" label="v1.3.0-rc.2">v1.3.0-rc.2</option><option value="object:45" label="v1.3.0-rc.1">v1.3.0-rc.1</option><option value="object:46" label="v1.3.0-rc.0">v1.3.0-rc.0</option><option value="object:47" label="v1.3.0-beta.19">v1.3.0-beta.19</option><option value="object:48" label="v1.3.0-beta.18">v1.3.0-beta.18</option><option value="object:49" label="v1.3.0-beta.17">v1.3.0-beta.17</option><option value="object:50" label="v1.3.0-beta.16">v1.3.0-beta.16</option><option value="object:51" label="v1.3.0-beta.15">v1.3.0-beta.15</option><option value="object:52" label="v1.3.0-beta.14">v1.3.0-beta.14</option><option value="object:53" label="v1.3.0-beta.13">v1.3.0-beta.13</option><option value="object:54" label="v1.3.0-beta.12">v1.3.0-beta.12</option><option value="object:55" label="v1.3.0-beta.11">v1.3.0-beta.11</option><option value="object:56" label="v1.3.0-beta.10">v1.3.0-beta.10</option><option value="object:57" label="v1.3.0-beta.9">v1.3.0-beta.9</option><option value="object:58" label="v1.3.0-beta.8">v1.3.0-beta.8</option><option value="object:59" label="v1.3.0-beta.7">v1.3.0-beta.7</option><option value="object:60" label="v1.3.0-beta.6">v1.3.0-beta.6</option><option value="object:61" label="v1.3.0-beta.5">v1.3.0-beta.5</option><option value="object:62" label="v1.3.0-beta.4">v1.3.0-beta.4</option><option value="object:63" label="v1.3.0-beta.3">v1.3.0-beta.3</option><option value="object:64" label="v1.3.0-beta.2">v1.3.0-beta.2</option><option value="object:65" label="v1.3.0-beta.1">v1.3.0-beta.1</option></optgroup><optgroup label="v1.2.x"><option value="object:67" label="v1.2.27">v1.2.27</option><option value="object:68" label="v1.2.26">v1.2.26</option><option value="object:69" label="v1.2.25">v1.2.25</option><option value="object:70" label="v1.2.24">v1.2.24</option><option value="object:71" label="v1.2.23">v1.2.23</option><option value="object:72" label="v1.2.22">v1.2.22</option><option value="object:73" label="v1.2.21">v1.2.21</option><option value="object:74" label="v1.2.20">v1.2.20</option><option value="object:75" label="v1.2.19">v1.2.19</option><option value="object:76" label="v1.2.18">v1.2.18</option><option value="object:77" label="v1.2.17">v1.2.17</option><option value="object:78" label="v1.2.16">v1.2.16</option><option value="object:79" label="v1.2.15">v1.2.15</option><option value="object:80" label="v1.2.14">v1.2.14</option><option value="object:81" label="v1.2.13">v1.2.13</option><option value="object:82" label="v1.2.12">v1.2.12</option><option value="object:83" label="v1.2.11">v1.2.11</option><option value="object:84" label="v1.2.10">v1.2.10</option><option value="object:85" label="v1.2.9">v1.2.9</option><option value="object:86" label="v1.2.8">v1.2.8</option><option value="object:87" label="v1.2.7">v1.2.7</option><option value="object:88" label="v1.2.6">v1.2.6</option><option value="object:89" label="v1.2.5">v1.2.5</option><option value="object:90" label="v1.2.4">v1.2.4</option><option value="object:91" label="v1.2.3">v1.2.3</option><option value="object:92" label="v1.2.2">v1.2.2</option><option value="object:93" label="v1.2.1">v1.2.1</option><option value="object:94" label="v1.2.0">v1.2.0</option><option value="object:95" label="v1.2.0-rc.3">v1.2.0-rc.3</option><option value="object:96" label="v1.2.0-rc.2">v1.2.0-rc.2</option></optgroup><optgroup label="v1.1.x"><option value="object:98" label="v1.1.4">v1.1.4</option><option value="object:99" label="v1.1.3">v1.1.3</option><option value="object:100" label="v1.1.2">v1.1.2</option><option value="object:101" label="v1.1.1">v1.1.1</option><option value="object:102" label="v1.1.0">v1.1.0</option></optgroup><optgroup label="v1.0.x"><option value="object:104" label="v1.0.7">v1.0.7</option><option value="object:105" label="v1.0.6">v1.0.6</option><option value="object:106" label="v1.0.5">v1.0.5</option><option value="object:107" label="v1.0.4">v1.0.4</option><option value="object:108" label="v1.0.3">v1.0.3</option><option value="object:109" label="v1.0.2">v1.0.2</option><option value="object:110" label="v1.0.1">v1.0.1</option><option value="object:111" label="v1.0.0">v1.0.0</option><option value="object:112" label="v1.0.0rc2">v1.0.0rc2</option></optgroup></select>
+            </div>
+          </div>
+          <div class="grid-right">
+            <ul class="nav-breadcrumb">
+              <!-- ngRepeat: crumb in breadcrumb --><li ng-repeat="crumb in breadcrumb" class="nav-breadcrumb-entry naked-list ng-scope">
+                <span class="divider"> /</span>
+                <a ng-href="tutorial" class="ng-binding" href="https://docs.angularjs.org/tutorial">Tutorial</a>
+              </li><!-- end ngRepeat: crumb in breadcrumb --><li ng-repeat="crumb in breadcrumb" class="nav-breadcrumb-entry naked-list ng-scope">
+                <span class="divider"> /</span>
+                <a ng-href="tutorial/step_10" class="ng-binding" href="./AngularJS_ Tutorial_ 10 - Event Handlers_files/AngularJS_ Tutorial_ 10 - Event Handlers.html">10 - Event Handlers</a>
+              </li><!-- end ngRepeat: crumb in breadcrumb -->
+            </ul>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section role="main" class="container main-body">
+      <div class="main-grid main-body-grid">
+        <div class="grid-left">
+          <a class="btn toc-toggle visible-xs" ng-click="toc=!toc">Show / Hide Table of Contents</a>
+          <div class="side-navigation ng-hide" ng-show="toc==true">
+            <ul class="nav-list naked-list">
+              <!-- ngRepeat: navGroup in currentArea.navGroups track by navGroup.name --><li ng-repeat="navGroup in currentArea.navGroups track by navGroup.name" class="nav-index-group ng-scope">
+                <a href="https://docs.angularjs.org/tutorial" ng-class="navClass(navGroup)" class="nav-index-group-heading ng-binding active">Tutorial</a>
+                <ul class="aside-nav">
+                  <!-- ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_00" class="ng-binding">0 - Bootstrapping</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_01" class="ng-binding">1 - Static Template</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_02" class="ng-binding">2 - Angular Templates</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_03" class="ng-binding">3 - Filtering Repeaters</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_04" class="ng-binding">4 - Two-way Data Binding</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_05" class="ng-binding">5 - XHRs &amp; Dependency Injection</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_06" class="ng-binding">6 - Templating Links &amp; Images</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_07" class="ng-binding">7 - Routing &amp; Multiple Views</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_08" class="ng-binding">8 - More Templating</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_09" class="ng-binding">9 - Filters</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active current">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="./AngularJS_ Tutorial_ 10 - Event Handlers_files/AngularJS_ Tutorial_ 10 - Event Handlers.html" class="ng-binding">10 - Event Handlers</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_11" class="ng-binding">11 - REST and Custom Services</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/step_12" class="ng-binding">12 - Applying Animations</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems --><li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing ng-scope active">
+                    <!-- ngIf: navItem.extra.href -->
+                    <a tabindex="2" ng-class="linkClass(navItem)" href="https://docs.angularjs.org/tutorial/the_end" class="ng-binding">The End</a>
+                  </li><!-- end ngRepeat: navItem in navGroup.navItems -->
+                </ul>
+              </li><!-- end ngRepeat: navGroup in currentArea.navGroups track by navGroup.name -->
+            </ul>
+            <a href="" ng-click="toc=false" class="toc-close visible-xs">
+              <span class="glyphicon glyphicon-remove toc-close-icon"></span> Close
+            </a>
+          </div>
+        </div>
+        <div class="grid-right">
+          <div id="loading" ng-show="loading" class="ng-hide">Loading...</div>
+          <!-- ngInclude: partialPath --><div ng-hide="loading" ng-include="partialPath" autoscroll="" class="ng-scope"><a href="https://github.com/angular/angular.js/edit/master/docs/content/tutorial/step_10.ngdoc?message=docs(tutorial%2F10%20-%20Event%20Handlers)%3A%20describe%20your%20change..." class="improve-docs btn btn-primary ng-scope"><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
+
+
+<ul doc-tutorial-nav="10" class="ng-scope ng-isolate-scope btn-group tutorial-nav"><a ng-href="tutorial/step_09" href="https://docs.angularjs.org/tutorial/step_09"><li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> Previous</li></a>
+<a ng-href="http://angular.github.io/angular-phonecat/step-10/app" href="http://angular.github.io/angular-phonecat/step-10/app"><li class="btn btn-primary"><i class="glyphicon glyphicon-play"></i> Live Demo</li></a>
+<a ng-href="https://github.com/angular/angular-phonecat/compare/step-9...step-10" href="https://github.com/angular/angular-phonecat/compare/step-9...step-10"><li class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Code Diff</li></a>
+<a ng-href="tutorial/step_11" href="https://docs.angularjs.org/tutorial/step_11"><li class="btn btn-primary">Next <i class="glyphicon glyphicon-step-forward"></i></li></a></ul>
+
+
+<p class="ng-scope">In this step, you will add a clickable phone image swapper to the phone details page.</p>
+<ul class="ng-scope">
+<li>The phone details view displays one large image of the current phone and several smaller thumbnail
+images. It would be great if we could replace the large image with any of the thumbnails just by
+clicking on the desired thumbnail image. Let's have a look at how we can do this with Angular.</li>
+</ul>
+<div doc-tutorial-reset="10" class="ng-scope ng-isolate-scope"><p><button class="btn" ng-click="show=!show">Workspace Reset Instructions  ➤</button></p>
+<div class="alert alert-info ng-hide" ng-show="show">
+  <p class="ng-binding">Reset the workspace to step 10.</p>  <p></p><pre class="ng-binding">git checkout -f step-10</pre><p></p>
+  <p>Refresh your browser or check out this step online: <a href="http://angular.github.io/angular-phonecat/step-10/app" class="ng-binding">Step 10 Live Demo</a>.</p>
+</div>
+<p>The most important changes are listed below. You can see the full diff on <a ng-href="https://github.com/angular/angular-phonecat/compare/step-9...step-10" title="See diff on Github" href="https://github.com/angular/angular-phonecat/compare/step-9...step-10">GitHub</a>
+</p></div>
+
+<h2 id="controller" class="ng-scope">Controller</h2>
+<p class="ng-scope"><strong><code><span class="pln">app</span><span class="pun">/</span><span class="pln">js</span><span class="pun">/</span><span class="pln">controllers</span><span class="pun">.</span><span class="pln">js</span></code>:</strong></p>
+<pre class="ng-scope"><code class="lang-js"><span class="pun">...</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> phonecatControllers </span><span class="pun">=</span><span class="pln"> angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'phonecatControllers'</span><span class="pun">,[]);</span><span class="pln">
+
+phonecatControllers</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'PhoneDetailCtrl'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'$routeParams'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'$http'</span><span class="pun">,</span><span class="pln">
+  </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">,</span><span class="pln"> $routeParams</span><span class="pun">,</span><span class="pln"> $http</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    $http</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'phones/'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> $routeParams</span><span class="pun">.</span><span class="pln">phoneId </span><span class="pun">+</span><span class="pln"> </span><span class="str">'.json'</span><span class="pun">).</span><span class="pln">success</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      $scope</span><span class="pun">.</span><span class="pln">phone </span><span class="pun">=</span><span class="pln"> data</span><span class="pun">;</span><span class="pln">
+      $scope</span><span class="pun">.</span><span class="pln">mainImageUrl </span><span class="pun">=</span><span class="pln"> data</span><span class="pun">.</span><span class="pln">images</span><span class="pun">[</span><span class="lit">0</span><span class="pun">];</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+
+    $scope</span><span class="pun">.</span><span class="pln">setImage </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">imageUrl</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      $scope</span><span class="pun">.</span><span class="pln">mainImageUrl </span><span class="pun">=</span><span class="pln"> imageUrl</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+  </span><span class="pun">}]);</span></code></pre>
+<p class="ng-scope">In the <code><span class="typ">PhoneDetailCtrl</span></code> controller, we created the <code><span class="pln">mainImageUrl</span></code> model property and set its
+default value to the first phone image URL.</p>
+<p class="ng-scope">We also created a <code><span class="pln">setImage</span></code> event handler function that will change the value of <code><span class="pln">mainImageUrl</span></code>.</p>
+<h2 id="template" class="ng-scope">Template</h2>
+<p class="ng-scope"><strong><code><span class="pln">app</span><span class="pun">/</span><span class="pln">partials</span><span class="pun">/</span><span class="pln">phone</span><span class="pun">-</span><span class="pln">detail</span><span class="pun">.</span><span class="pln">html</span></code>:</strong></p>
+<pre class="ng-scope"><code class="lang-html"><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">ng-src</span><span class="pun">=</span><span class="atv">"{{mainImageUrl}}"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"phone"</span><span class="tag">&gt;</span><span class="pln">
+
+...
+
+</span><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"phone-thumbs"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"img in phone.images"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">ng-src</span><span class="pun">=</span><span class="atv">"{{img}}"</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"setImage(img)"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;/li&gt;</span><span class="pln">
+</span><span class="tag">&lt;/ul&gt;</span><span class="pln">
+...</span></code></pre>
+<p class="ng-scope">We bound the <code><span class="pln">ngSrc</span></code> directive of the large image to the <code><span class="pln">mainImageUrl</span></code> property.</p>
+<p class="ng-scope">We also registered an <a href="https://docs.angularjs.org/api/ng/directive/ngClick"><code><span class="pln">ngClick</span></code></a>
+handler with thumbnail images. When a user clicks on one of the thumbnail images, the handler will
+use the <code><span class="pln">setImage</span></code> event handler function to change the value of the <code><span class="pln">mainImageUrl</span></code> property to the
+URL of the thumbnail image.</p>
+<div style="display: none" class="ng-scope">
+TODO!
+<img class="diagram" src="./AngularJS_ Tutorial_ 10 - Event Handlers_files/tutorial_10-11_final.png">
+</div>
+
+<h2 id="test" class="ng-scope">Test</h2>
+<p class="ng-scope">To verify this new feature, we added two end-to-end tests. One verifies that the main image is set
+to the first phone image by default. The second test clicks on several thumbnail images and
+verifies that the main image changed appropriately.</p>
+<p class="ng-scope"><strong><code><span class="pln">test</span><span class="pun">/</span><span class="pln">e2e</span><span class="pun">/</span><span class="pln">scenarios</span><span class="pun">.</span><span class="pln">js</span></code>:</strong></p>
+<pre class="ng-scope"><code class="lang-js"><span class="pun">...</span><span class="pln">
+  describe</span><span class="pun">(</span><span class="str">'Phone detail view'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+</span><span class="pun">...</span><span class="pln">
+
+    it</span><span class="pun">(</span><span class="str">'should display the first phone image as the main phone image'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      expect</span><span class="pun">(</span><span class="pln">element</span><span class="pun">(</span><span class="pln">by</span><span class="pun">.</span><span class="pln">css</span><span class="pun">(</span><span class="str">'img.phone'</span><span class="pun">)).</span><span class="pln">getAttribute</span><span class="pun">(</span><span class="str">'src'</span><span class="pun">)).</span><span class="pln">toMatch</span><span class="pun">(</span><span class="str">/img\/phones\/nexus-s.0.jpg/</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+
+
+    it</span><span class="pun">(</span><span class="str">'should swap main image if a thumbnail image is clicked on'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      element</span><span class="pun">(</span><span class="pln">by</span><span class="pun">.</span><span class="pln">css</span><span class="pun">(</span><span class="str">'.phone-thumbs li:nth-child(3) img'</span><span class="pun">)).</span><span class="pln">click</span><span class="pun">();</span><span class="pln">
+      expect</span><span class="pun">(</span><span class="pln">element</span><span class="pun">(</span><span class="pln">by</span><span class="pun">.</span><span class="pln">css</span><span class="pun">(</span><span class="str">'img.phone'</span><span class="pun">)).</span><span class="pln">getAttribute</span><span class="pun">(</span><span class="str">'src'</span><span class="pun">)).</span><span class="pln">toMatch</span><span class="pun">(</span><span class="str">/img\/phones\/nexus-s.2.jpg/</span><span class="pun">);</span><span class="pln">
+
+      element</span><span class="pun">(</span><span class="pln">by</span><span class="pun">.</span><span class="pln">css</span><span class="pun">(</span><span class="str">'.phone-thumbs li:nth-child(1) img'</span><span class="pun">)).</span><span class="pln">click</span><span class="pun">();</span><span class="pln">
+      expect</span><span class="pun">(</span><span class="pln">element</span><span class="pun">(</span><span class="pln">by</span><span class="pun">.</span><span class="pln">css</span><span class="pun">(</span><span class="str">'img.phone'</span><span class="pun">)).</span><span class="pln">getAttribute</span><span class="pun">(</span><span class="str">'src'</span><span class="pun">)).</span><span class="pln">toMatch</span><span class="pun">(</span><span class="str">/img\/phones\/nexus-s.0.jpg/</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+  </span><span class="pun">});</span></code></pre>
+<p class="ng-scope">You can now rerun <code><span class="pln">npm run protractor</span></code> to see the tests run.</p>
+<p class="ng-scope">You also have to refactor one of your unit tests because of the addition of the <code><span class="pln">mainImageUrl</span></code>
+model property to the <code><span class="typ">PhoneDetailCtrl</span></code> controller. Below, we create the function <code><span class="pln">xyzPhoneData</span></code>
+which returns the appropriate json with the <code><span class="pln">images</span></code> attribute in order to get the test to pass.</p>
+<p class="ng-scope"><strong><code><span class="pln">test</span><span class="pun">/</span><span class="pln">unit</span><span class="pun">/</span><span class="pln">controllersSpec</span><span class="pun">.</span><span class="pln">js</span></code>:</strong></p>
+<pre class="ng-scope"><code class="lang-js"><span class="pun">...</span><span class="pln">
+  beforeEach</span><span class="pun">(</span><span class="pln">module</span><span class="pun">(</span><span class="str">'phonecatApp'</span><span class="pun">));</span><span class="pln">
+
+</span><span class="pun">...</span><span class="pln">
+
+ describe</span><span class="pun">(</span><span class="str">'PhoneDetailCtrl'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> scope</span><span class="pun">,</span><span class="pln"> $httpBackend</span><span class="pun">,</span><span class="pln"> ctrl</span><span class="pun">,</span><span class="pln">
+        xyzPhoneData </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            name</span><span class="pun">:</span><span class="pln"> </span><span class="str">'phone xyz'</span><span class="pun">,</span><span class="pln">
+            images</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">'image/url1.png'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'image/url2.png'</span><span class="pun">]</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">};</span><span class="pln">
+
+
+    beforeEach</span><span class="pun">(</span><span class="pln">inject</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">_$httpBackend_</span><span class="pun">,</span><span class="pln"> $rootScope</span><span class="pun">,</span><span class="pln"> $routeParams</span><span class="pun">,</span><span class="pln"> $controller</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      $httpBackend </span><span class="pun">=</span><span class="pln"> _$httpBackend_</span><span class="pun">;</span><span class="pln">
+      $httpBackend</span><span class="pun">.</span><span class="pln">expectGET</span><span class="pun">(</span><span class="str">'phones/xyz.json'</span><span class="pun">).</span><span class="pln">respond</span><span class="pun">(</span><span class="pln">xyzPhoneData</span><span class="pun">());</span><span class="pln">
+
+      $routeParams</span><span class="pun">.</span><span class="pln">phoneId </span><span class="pun">=</span><span class="pln"> </span><span class="str">'xyz'</span><span class="pun">;</span><span class="pln">
+      scope </span><span class="pun">=</span><span class="pln"> $rootScope</span><span class="pun">.</span><span class="pln">$new</span><span class="pun">();</span><span class="pln">
+      ctrl </span><span class="pun">=</span><span class="pln"> $controller</span><span class="pun">(</span><span class="str">'PhoneDetailCtrl'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln">$scope</span><span class="pun">:</span><span class="pln"> scope</span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}));</span><span class="pln">
+
+
+    it</span><span class="pun">(</span><span class="str">'should fetch phone detail'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      expect</span><span class="pun">(</span><span class="pln">scope</span><span class="pun">.</span><span class="pln">phone</span><span class="pun">).</span><span class="pln">toBeUndefined</span><span class="pun">();</span><span class="pln">
+      $httpBackend</span><span class="pun">.</span><span class="pln">flush</span><span class="pun">();</span><span class="pln">
+
+      expect</span><span class="pun">(</span><span class="pln">scope</span><span class="pun">.</span><span class="pln">phone</span><span class="pun">).</span><span class="pln">toEqual</span><span class="pun">(</span><span class="pln">xyzPhoneData</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+  </span><span class="pun">});</span></code></pre>
+<p class="ng-scope">Your unit tests should now be passing.</p>
+<h1 id="experiments" class="ng-scope">Experiments</h1>
+<ul class="ng-scope">
+<li><p>Let's add a new controller method to <code><span class="typ">PhoneDetailCtrl</span></code>:</p>
+<pre><code><span class="pln">$scope</span><span class="pun">.</span><span class="pln">hello </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">name</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    alert</span><span class="pun">(</span><span class="str">'Hello '</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">(</span><span class="pln">name </span><span class="pun">||</span><span class="pln"> </span><span class="str">'world'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">'!'</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p>and add:</p>
+<pre><code><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"hello('Elmo')"</span><span class="tag">&gt;</span><span class="pln">Hello</span><span class="tag">&lt;/button&gt;</span></code></pre>
+<p>to the <code><span class="pln">phone</span><span class="pun">-</span><span class="pln">detail</span><span class="pun">.</span><span class="pln">html</span></code> template.</p>
+</li>
+</ul>
+<div style="display: none" class="ng-scope">
+TODO!
+  The controller methods are inherited between controllers/scopes, so you can use the same snippet
+in the <code><span class="pln">phone</span><span class="pun">-</span><span class="pln">list</span><span class="pun">.</span><span class="pln">html</span></code> template as well.
+
+* Move the <code><span class="pln">hello</span></code> method from <code><span class="typ">PhoneCatCtrl</span></code> to <code><span class="typ">PhoneListCtrl</span></code> and you'll see that the button
+declared in <code><span class="pln">index</span><span class="pun">.</span><span class="pln">html</span></code> will stop working, while the one declared in the <code><span class="pln">phone</span><span class="pun">-</span><span class="pln">list</span><span class="pun">.</span><span class="pln">html</span></code>
+template remains operational.
+</div>
+
+
+<h1 id="summary" class="ng-scope">Summary</h1>
+<p class="ng-scope">With the phone image swapper in place, we're ready for <a href="https://docs.angularjs.org/tutorial/step_11">step 11</a> to
+learn an even better way to fetch data.</p>
+<ul doc-tutorial-nav="10" class="ng-scope ng-isolate-scope btn-group tutorial-nav"><a ng-href="tutorial/step_09" href="https://docs.angularjs.org/tutorial/step_09"><li class="btn btn-primary"><i class="glyphicon glyphicon-step-backward"></i> Previous</li></a>
+<a ng-href="http://angular.github.io/angular-phonecat/step-10/app" href="http://angular.github.io/angular-phonecat/step-10/app"><li class="btn btn-primary"><i class="glyphicon glyphicon-play"></i> Live Demo</li></a>
+<a ng-href="https://github.com/angular/angular-phonecat/compare/step-9...step-10" href="https://github.com/angular/angular-phonecat/compare/step-9...step-10"><li class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Code Diff</li></a>
+<a ng-href="tutorial/step_11" href="https://docs.angularjs.org/tutorial/step_11"><li class="btn btn-primary">Next <i class="glyphicon glyphicon-step-forward"></i></li></a></ul>
+
+
+</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a back-to-top="">Back to top</a></p>
+
+        <p>
+          Super-powered by Google  ©2010-2015
+          ( <a id="version" ng-href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md#1.4.3" ng-bind-template="v1.4.3  foam-acceleration" title="Changelog of this version of Angular JS" class="ng-binding" href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md#1.4.3">v1.4.3  foam-acceleration</a>
+          )
+        </p>
+        <p>
+          Code licensed under the
+          <a href="https://github.com/angular/angular.js/blob/master/LICENSE" target="_blank">The
+            MIT License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+
+</body></html>

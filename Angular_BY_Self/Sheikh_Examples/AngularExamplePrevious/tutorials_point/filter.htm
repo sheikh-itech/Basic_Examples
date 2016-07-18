@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Basic controller</title>
+  <style>
+     div {
+		border:solid 1px red;
+		background-color: 'success';
+		margin:10px;
+		padding:20px;
+	 }
+  </style>
+    <script src="angular.min.js"></script>
+  <link rel="stylesheet" href="bootstrap.min.css">
+ </head>
+ <body>
+
+  <div class="well bg-success" ng-app="myapp" ng-controller="firstController">
+
+Enter first name: 
+	<input type="text" ng-model="student.firstName"><br><br>
+Enter last name: 
+	<input type="text" ng-model="student.lastName"><br><br>
+Lowercase: {{student.firstName | lowercase}}<br>
+Uppercase: {{student.lastName | uppercase}}<br>
+Salary: {{student.sal | currency}}<br>
+  </div>
+  <script>
+  angular.module("myapp",[])
+  .controller("firstController",
+   function($scope) {
+		$scope.student={
+			firstName: 'sheikh',
+			lastName: 'hafeez',
+			sal: 00,
+			fullName: function() {
+					var std = $scope.student;
+
+					return std.firstName+" "+std.lastName;
+				}
+		};
+   })
+
+  </script>
+ </body>
+</html>

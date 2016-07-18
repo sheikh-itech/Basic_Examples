@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Simple expense manager project - CodePen</title>
+
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+</head>
+
+<body>
+<h1>Simple expense manager project</h1>
+
+<div id="form-box">
+<h2>Add a new item:</h2>
+<div class="add-btn">
+    <span class="add-text">Add a friend</span>
+    <div class="friend-input">
+        <div><input type="text" placeholder="Eg: Vandy" /></div>
+    </div>
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-plus fa-stack-1x" title="Add a friend"></i>
+    </span>
+</div>
+<form>
+  <div>
+    <span>Type:</span> 
+      <select name="type">
+          <option value="card">Card</option>
+          <option value="cash">Cash</option>
+          <option value="other">Other</option>
+      </select>
+  </div>
+  <div>
+    <span>Add friend:</span> 
+      <select name="friend" multiple="multiple">
+          <option value="Andy">Andy</option>
+          <option value="Sandy">Sandy</option>
+          <option value="Randy">Randy</option>
+          <option value="Mandy">Mandy</option>
+      </select>
+    <div class="error-msg"></div>
+  </div>
+
+  <div>
+    <span>Name:</span> <input type="text" name="item-name" placeholder="What did you spend on?">
+    <div class="error-msg"><!--Please select an option--></div>
+  </div>
+
+  <div>
+    <span>Date:</span> <input type="date" name="date">
+    <div class="error-msg"><!--Please select an option--></div>
+  </div>
+
+  <div>
+    <span>Currency:</span> 
+      <select name="currency">
+          <option value="dollar">USD</option>
+          <option value="rupee">INR</option>
+          <option value="euro">EUR</option>
+      </select>
+  </div>
+  <div>
+    <span>Amount:</span> <input type="number" name="amount" placeholder="How much?">
+    <div class="error-msg">Cannot be empty</div>
+  </div>
+
+  <div id="button">Add a new expense</div>
+
+</form>
+</div>
+<div class="filter-block">
+    <div class="filter-option">
+      <span>Filter by friend:</span>
+      <select name="filter-friend">
+          <option value="Andy">Andy</option>
+          <option value="Sandy">Sandy</option>
+          <option value="Randy">Randy</option>
+          <option value="Mandy">Mandy</option>
+      </select>
+    </div>
+    <div class="filter-option">
+      <span>Currency:</span>
+      <select name="filter-currency">
+          <option value="dollar">USD</option>
+          <option value="rupee">INR</option>
+          <option value="euro">EUR</option>
+      </select>
+    </div>
+</div>
+<table>
+  <tr>
+    <th id="type" class="center">type</th>
+    <th>name</th>
+    <th>Friends</th>
+    <th id="date">date</th>
+    <th style="text-align: right" id="amount">amount</th>
+    <th class="table-btn">edit</th>
+    <th class="table-btn">delete</th>
+  </tr>
+  <tr id="if-empty">
+    <td colspan="4"><span>Your added items will show up here!</span></td>
+  </tr>
+
+</table>
+
+  <script src='js/jquery.js'></script>
+
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>

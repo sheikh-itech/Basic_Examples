@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)https://angularjs.org/ -->
+<html class="no-js" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Description" content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+                 Declarative templates with data-binding, MVW, MVVM, MVC, dependency injection and great
+                 testability story all implemented with pure client-side JavaScript!">
+  <title>AngularJS — Superheroic JavaScript MVW Framework</title>
+  <link rel="icon" href="https://angularjs.org/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://angularjs.org/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://angularjs.org/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://angularjs.org/css/docs.css">
+  <link rel="stylesheet" href="https://angularjs.org/css/font-awesome.css">
+  <link href="./AngularJS — Superheroic JavaScript MVW Framework_files/prettify.css" type="text/css" rel="stylesheet">
+  <!--<base href="/">--><base href=".">
+
+  <script type="text/javascript" async="" src="./AngularJS — Superheroic JavaScript MVW Framework_files/ga.js"></script><script src="./AngularJS — Superheroic JavaScript MVW Framework_files/jquery.min.js"></script>
+  <script id="angularScript" src="./AngularJS — Superheroic JavaScript MVW Framework_files/angular.min.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/angular-animate.min.js"></script>
+
+  </head><body ng-controller="AppController" class="ng-scope">﻿<!--[if lte IE 8]>
+    <script>
+      document.createElement('tabs');
+      document.createElement('pane');
+      document.createElement('ng-pluralize');
+    </script>
+  <![endif]-->
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> to experience this site.</p><![endif]-->
+  <header class="header">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="http://angularjs.org/" style="padding-top: 6px; padding-bottom: 0px;">
+            <img class="AngularJS-small" src="./AngularJS — Superheroic JavaScript MVW Framework_files/AngularJS-small.png">
+          </a>
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            <li class="active"><a href="http://angularjs.org/"><i class="icon-home icon-white"></i> Home</a></li>
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a href="https://angularjs.org/#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-eye-open icon-white"></i> Learn <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="disabled"><a href="">Home</a></li>
+                <li><a href="https://www.youtube.com/user/angularjs">Videos</a></li>
+                <li><a href="http://angular.codeschool.com/">Free Course</a></li>
+                <li><a href="http://docs.angularjs.org/tutorial">Tutorial</a></li>
+                <li><a href="http://builtwith.angularjs.org/">Case Studies</a></li>
+                <li><a href="https://github.com/angular/angular-seed">Seed App project template</a></li>
+                <li><a href="http://docs.angularjs.org/misc/faq">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a href="https://angularjs.org/#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-book icon-white"></i> Develop <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="http://docs.angularjs.org/tutorial">Tutorial</a></li>
+                <li><a href="http://docs.angularjs.org/guide">Developer Guide</a></li>
+                <li><a href="http://docs.angularjs.org/api">API Reference</a></li>
+                <li><a href="http://docs.angularjs.org/misc/contribute">Contribute</a></li>
+                <li><a href="http://code.angularjs.org/">Download</a></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a href="https://angularjs.org/#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-comment icon-white"></i> Discuss <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="http://blog.angularjs.org/">Blog</a></li>
+                <li><a href="http://groups.google.com/group/angular">Mailing List</a></li>
+                <li><a href="http://webchat.freenode.net/?channels=angularjs&uio=d4">Chat Room</a></li>
+                <li class="divider"></li>
+                <li><a href="https://twitter.com/#!/angularjs">Twitter</a></li>
+                <li><a href="https://plus.google.com/110323587230527980117">Google+</a></li>
+                <li class="divider"></li>
+                <li><a href="https://github.com/angular/angular.js">GitHub</a></li>
+                <li><a href="https://github.com/angular/angular.js/issues">Issue Tracker</a></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+          </ul>
+          <form class="navbar-search pull-right ng-pristine ng-valid" method="GET" action="https://www.google.com/search">
+            <input type="text" name="as_q" class="search-query" placeholder="Search">
+            <input type="hidden" name="as_sitesearch" value="angularjs.org">
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div role="main">
+    <div class="stage-container">
+      <div class="hero-unit">
+        <div class="center">
+          <img class="AngularJS-large" src="./AngularJS — Superheroic JavaScript MVW Framework_files/AngularJS-large.png">
+        </div>
+        <div class="center">
+          <h1>HTML enhanced for web apps!</h1>
+        </div>
+        <div class="center stage-buttons">
+          <a class="btn btn-large" href="https://github.com/angular/angular.js">
+            <i class="icon-github-sign"></i> View on GitHub
+          </a>
+          <a class="btn btn-large btn-primary" href="" ng-click="showDownloadModal()">
+            <i class="icon-download-alt icon-large"></i> Download
+            <span class="version">
+              (<!-- ngRepeat: branch in BRANCHES --><span ng-repeat="branch in BRANCHES" class="ng-binding ng-scope">1.4.3 / </span><!-- end ngRepeat: branch in BRANCHES --><span ng-repeat="branch in BRANCHES" class="ng-binding ng-scope">1.2.28</span><!-- end ngRepeat: branch in BRANCHES -->)
+            </span>
+          </a>
+          <a class="btn btn-large btn-warning" href="http://goo.gl/sj0Nk1" target="_blank">
+            <i class="icon-folder-open icon-large"></i> Design Docs &amp; Notes
+          </a>
+        </div>
+        <div class="quick-links-container">
+          <ul class="quick-links">
+            <li class="google-follow">
+              Follow +AngularJS on
+              <a href="https://plus.google.com/110323587230527980117?prsrc=3" rel="publisher" style="text-decoration:none;"><img src="./AngularJS — Superheroic JavaScript MVW Framework_files/gplus-32.png" style="border:0;width:20px;height:20px;" alt=""></a>
+            </li>
+            <li>
+                <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./AngularJS — Superheroic JavaScript MVW Framework_files/follow_button.a64cf823bcb784855b86e2970134bd2a.en.html" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="position: static; visibility: visible; width: 201px; height: 20px;"></iframe>
+            </li>
+            <li>
+              <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./AngularJS — Superheroic JavaScript MVW Framework_files/tweet_button.bd0320cab493e168513c7173184c1d5c.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="position: static; visibility: visible; width: 96px; height: 20px;"></iframe>
+            </li>
+          </ul>
+
+          <a class="learn-link" href="http://angular.codeschool.com/">
+            <img class="learn-link-badge" src="./AngularJS — Superheroic JavaScript MVW Framework_files/codeschool-badge.png" alt="Shaping up with Angular.js" width="52" height="52">
+            Learn Angular in your browser for free!
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container about-container">
+      <div class="row first">
+        <div class="span4">
+          <h1>Why AngularJS?</h1>
+          <p>
+            HTML is great for declaring static documents, but it falters when we try to use it for
+            declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary
+            for your application. The resulting environment is extraordinarily expressive, readable,
+            and quick to develop.
+          </p>
+        </div>
+        <div class="span4">
+          <h1>Alternatives</h1>
+          <p>
+            Other frameworks deal with HTML’s shortcomings by either abstracting away HTML, CSS,
+            and/or JavaScript or by providing an imperative way for manipulating the DOM. Neither of
+            these address the root problem that HTML was not designed for dynamic views.
+          </p>
+        </div>
+        <div class="span4">
+          <h1>Extensibility</h1>
+          <p>
+            AngularJS is a toolset for building the framework most suited to your application
+            development. It is fully extensible and works well with other libraries. Every feature
+            can be modified or replaced to suit your unique development workflow and feature needs.
+            Read on to find out how.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="jumbotron-header">
+      <nav class="jumbotron-sections">
+        <div class="ng-link-left">
+          <a href="http://angularconnect.com/?utm_source=angularjs-org&utm_medium=angularjs-org&utm_campaign=angularjs-org" target="_blank">
+            <div class="jumbotron-logo">
+              <img src="./AngularJS — Superheroic JavaScript MVW Framework_files/angularconnect-conf.png">
+            </div>
+            <div class="data">
+              <h2>AngularConnect</h2>
+              <p class="date">Oct 20th - 21st 2015</p>
+              <p>London, United Kingdom</p>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div role="main" class="container">
+    <h1 id="the-basics">The Basics</h1>
+    <div class="row example">
+      <div class="span8 app-source ng-scope" app-source="hello.html" annotate="hello.annotation" style="clear: both;"><div class="tabbable ng-isolate-scope">
+  <ul class="nav nav-tabs" ng-class="{&#39;nav-stacked&#39;: vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+</li>
+</ul>
+  <div class="tab-content">
+    <!-- ngRepeat: tab in tabs --><div class="tab-pane ng-scope active" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="dec">&lt;!doctype html&gt;</span></li><li class="L1"><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-app" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Tells AngularJS to be active in this portion of the page. In this case the entire document."><code>ng-app</code></span></span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;head&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/<span class="nocode ng-scope" popover-title="angular.min.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Load AngularJS."><code>angular.min.js</code></span>"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;/head&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;body&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;div&gt;</span></li><li class="L7"><span class="pln">      </span><span class="tag">&lt;label&gt;</span><span class="pln">Name:</span><span class="tag">&lt;/label&gt;</span></li><li class="L8"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-model" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="This links the form and the model. This means that any changes to the control update the data in your model, and when you change the model it updates the control. Try it! Type in the control and see it update below."><code>ng-model</code></span></span><span class="pun">=</span><span class="atv">"yourName"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Enter a name here"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">      </span><span class="tag">&lt;hr&gt;</span></li><li class="L0"><span class="pln">      </span><span class="tag">&lt;h1&gt;</span><span class="pln">Hello <span class="nocode ng-scope" popover-title="" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;&amp;#123;&amp;#123; &amp;#125;&amp;#125;&lt;/code&gt; are a declarative way of specifying data binding locations in the HTML. AngularJS will automatically update this text whenever the &lt;code&gt;yourName&lt;/code&gt; property changes."><code>{{yourName}}</code></span>!</span><span class="tag">&lt;/h1&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;/body&gt;</span></li><li class="L3"><span class="tag">&lt;/html&gt;</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs -->
+  </div>
+</div></div>
+      <div class="span4">
+        <span hint=""><em>Hint:</em> Click <code class="nocode ng-scope" popover-title="Hover" popover-trigger="click" popover-append-to-body="true" popover="Click highlighted areas in the code for explanations.">me</code>.</span>
+        <span class="pull-right" js-fiddle="hello.html"><form class="jsfiddle" method="post" action="https://jsfiddle.net/api/post/library/pure/" target="_blank"><input type="hidden" name="title" value="AngularJS Example: "><input type="hidden" name="css" value="&lt;/style&gt; &lt;!-- Ugly Hack due to jsFiddle issue: http://goo.gl/BUfGZ --&gt; 
+&lt;link rel=&quot;stylesheet&quot; href=&quot;http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css&quot;&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+"><input type="hidden" name="html" value="&lt;div ng-app&gt;
+  &lt;div&gt;
+    &lt;label&gt;Name:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; ng-model=&quot;yourName&quot; placeholder=&quot;Enter a name here&quot;&gt;
+    &lt;hr&gt;
+    &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+"><input type="hidden" name="js" value=""><button class="btn btn-primary"><i class="icon-white icon-pencil"></i> Edit Me</button></form></span>
+        <div class="tabs-spacer"></div>
+        <div app-run="hello.html" class="well ng-scope"><div>
+  <label>Name:</label>
+  <input type="text" ng-model="yourName" placeholder="Enter a name here" class="ng-pristine ng-untouched ng-valid">
+  <hr>
+  <h1 class="ng-binding">Hello !</h1>
+</div>
+</div>
+        <h3>Watch as we build this app</h3>
+        <div class="video-img" ng-click="showVideo(&#39;https://www.youtube.com/embed/uFTFsKmkQnQ?&amp;autoplay=1&#39;)">
+          <img class="video" src="./AngularJS — Superheroic JavaScript MVW Framework_files/video.png">
+        </div>
+      </div>
+    </div>
+
+
+
+    <h1 id="add-some-control">Add Some Control</h1>
+    <div class="row">
+      <div class="span4">
+        <h3>Data Binding</h3>
+        <p>
+          Data-binding is an automatic way of updating the view whenever the model changes, as
+          well as updating the model whenever the view changes. This is awesome because it
+          eliminates DOM manipulation from the list of things you have to worry about.
+        </p>
+      </div>
+      <div class="span4">
+        <h3>Controller</h3>
+        <p>
+          Controllers are the behavior behind the DOM elements. AngularJS lets you express the
+          behavior in a clean readable form without the usual boilerplate of updating the DOM,
+          registering callbacks or watching model changes.
+        </p>
+      </div>
+      <div class="span4">
+        <h3>Plain JavaScript</h3>
+        <p>
+          Unlike other frameworks, there is no need to inherit from proprietary types in order to wrap the
+          model in accessors methods. Angular models are plain old JavaScript objects. This makes your code easy to
+          test, maintain, reuse, and again free from boilerplate.
+        </p>
+      </div>
+    </div>
+    <div class=" row example">
+      <div class="span8 app-source ng-scope" app-source="todo.html todo.js todo.css" annotate="todo.annotation" module="todoApp" style="clear: both;"><div class="tabbable ng-isolate-scope">
+  <ul class="nav nav-tabs" ng-class="{&#39;nav-stacked&#39;: vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="todo.js" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">todo.js</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="todo.css" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">todo.css</a>
+</li>
+</ul>
+  <div class="tab-content">
+    <!-- ngRepeat: tab in tabs --><div class="tab-pane ng-scope active" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="dec">&lt;!doctype html&gt;</span></li><li class="L1"><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-app" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Tells AngularJS to be active in this portion of the page. In this case the entire document."><code>ng-app</code></span></span><span class="pun">=</span><span class="atv">"todoApp"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;head&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/<span class="nocode ng-scope" popover-title="angular.min.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Load AngularJS."><code>angular.min.js</code></span>"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="todo.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Your behavior lives in JavaScript controllers."><code>todo.js</code></span>"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"todo.css"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">  </span><span class="tag">&lt;/head&gt;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;body&gt;</span></li><li class="L8"><span class="pln">    </span><span class="tag">&lt;h2&gt;</span><span class="pln">Todo</span><span class="tag">&lt;/h2&gt;</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-controller" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The behavior of content under this element will be managed using the &lt;code&gt;TodoController&lt;/code&gt; class defined in &lt;code&gt;todo.js&lt;/code&gt;."><code>ng-controller</code></span></span><span class="pun">=</span><span class="atv">"TodoListController as todoList"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">      </span><span class="tag">&lt;span&gt;</span><span class="pln">{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span><span class="tag">&lt;/span&gt;</span></li><li class="L1"><span class="pln">      [ </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">""</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-click" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Instead of registering event-handlers, you declare which method on the controller to call. Here clicking the link will call &lt;code&gt;archive()&lt;/code&gt; method."><code>ng-click</code></span></span><span class="pun">=</span><span class="atv">"todoList.archive()"</span><span class="tag">&gt;</span><span class="pln">archive</span><span class="tag">&lt;/a&gt;</span><span class="pln"> ]</span></li><li class="L2"><span class="pln">      </span><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"unstyled"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">        </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-repeat" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Use &lt;code&gt;ng-repeat&lt;/code&gt; to unroll a collection. Here, for every object in &lt;code&gt;todos&lt;/code&gt;, AngularJS will create new copy of the &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; element. When objects are added to the &lt;code&gt;todos&lt;/code&gt; collection the &lt;code&gt;ng-repeat&lt;/code&gt; automatically adds new &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; elements into the DOM. Similarly when the objects are removed from &lt;code&gt;todos&lt;/code&gt; then the corresponding &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; element is removed as well. This is one of the most versatile directives in AngularJS."><code>ng-repeat</code></span></span><span class="pun">=</span><span class="atv">"todo in todoList.todos"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">          </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-model" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="This links the form and the model. This means that any changes to the control update the data in your model, and when you change the model it updates the control. AngularJS automatically copies the state of the checkbox into &lt;code&gt;todo.done&lt;/code&gt;. Conversely, if you update &lt;code&gt;todo.done&lt;/code&gt; you will see the checkbox respond accordingly."><code>ng-model</code></span></span><span class="pun">=</span><span class="atv">"todo.done"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">          </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"done-<span class="nocode ng-scope" popover-title="" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="To show strikethroughs for completed tasks we have created a CSS class &lt;code&gt;done-true&lt;/code&gt;. When the &lt;code&gt;todo.done&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt; the resulting CSS selector is &lt;code&gt;done-true&lt;/code&gt; which then applies the strikethrough."><code>{{todo.done}}</code></span>"</span><span class="tag">&gt;</span><span class="pln">{{todo.text}}</span><span class="tag">&lt;/span&gt;</span></li><li class="L6"><span class="pln">        </span><span class="tag">&lt;/li&gt;</span></li><li class="L7"><span class="pln">      </span><span class="tag">&lt;/ul&gt;</span></li><li class="L8"><span class="pln">      </span><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-submit" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Intercepts form submission and instead calls &lt;code&gt;addTodo()&lt;/code&gt;. Inside this method we read the &lt;code&gt;todoText&lt;/code&gt; property and insert it into the &lt;code&gt;todos&lt;/code&gt; collection."><code>ng-submit</code></span></span><span class="pun">=</span><span class="atv">"todoList.addTodo()"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">        </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"todoList.todoText"</span><span class="pln">  </span><span class="atn">size</span><span class="pun">=</span><span class="atv">"30"</span></li><li class="L0"><span class="pln">               </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"add new todo here"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">        </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn-primary"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"add"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">      </span><span class="tag">&lt;/form&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;/body&gt;</span></li><li class="L5"><span class="tag">&lt;/html&gt;</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'todoApp'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span></li><li class="L1"><span class="pln">  </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'<span class="nocode ng-scope" popover-title="TodoListController" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The controller is the code behind the view. You can clearly see your application behavior because there is no DOM manipulation or framework specific boilerplate. Just simple, readable JavaScript."><code>TodoListController</code></span>'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> todoList </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">;</span></li><li class="L3"><span class="pln">    todoList</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="todos" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="We are creating the model with two initial todo items. Notice that you simply assign your model to the &lt;code&gt;$scope&lt;/code&gt; and AngularJS reflects the state in the UI automatically. The model data is a Plain-Old-JavaScript-Object no need to wrap it in proxy or accesses the property through special setter methods."><code>todos</code></span> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span></li><li class="L4"><span class="pln">      </span><span class="pun">{</span><span class="pln">text</span><span class="pun">:</span><span class="str">'learn angular'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">done</span><span class="pun">:</span><span class="kwd">true</span><span class="pun">},</span></li><li class="L5"><span class="pln">      </span><span class="pun">{</span><span class="pln">text</span><span class="pun">:</span><span class="str">'build an angular app'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">done</span><span class="pun">:</span><span class="kwd">false</span><span class="pun">}];</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="pln">    todoList</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="addTodo" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="We are assigning the behavior into the &lt;code&gt;$scope&lt;/code&gt; so that the &lt;code&gt;ng-submit&lt;/code&gt; can invoke it."><code>addTodo</code></span> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">      todoList</span><span class="pun">.</span><span class="pln">todos</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="push" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="This is just the &lt;code&gt;Array.push&lt;/code&gt; method. Calling it updates the model, which then updates the view through data-binding. The &lt;code&gt;ng&amp;ndash;repeat&lt;/code&gt; is bound to this array. It automatically unrolls the array and adds the new DOM element into the view. (see &lt;code&gt;ng&amp;ndash;repeat&lt;/code&gt; in the &lt;code&gt;index.html&lt;/code&gt; tab.)"><code>push</code></span></span><span class="pun">({</span><span class="pln">text</span><span class="pun">:</span><span class="pln">todoList</span><span class="pun">.</span><span class="pln">todoText</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">done</span><span class="pun">:</span><span class="kwd">false</span><span class="pun">});</span></li><li class="L9"><span class="pln">      todoList</span><span class="pun">.</span><span class="pln">todoText </span><span class="pun">=</span><span class="pln"> </span><span class="str"><span class="nocode ng-scope" popover-title="&#39;&#39;" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Writing to the form controls is just as easy. The data-binding will clear the control for us."><code>''</code></span></span><span class="pun">;</span></li><li class="L0"><span class="pln">    </span><span class="pun">};</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pln">    todoList</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="remaining" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="This is a computed property. No need to define its dependencies or worry about when it needs to be updated."><code>remaining</code></span> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></li><li class="L4"><span class="pln">      angular</span><span class="pun">.</span><span class="pln">forEach</span><span class="pun">(</span><span class="pln">todoList</span><span class="pun">.</span><span class="pln">todos</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">todo</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">        count </span><span class="pun">+=</span><span class="pln"> todo</span><span class="pun">.</span><span class="kwd">done</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span></li><li class="L6"><span class="pln">      </span><span class="pun">});</span></li><li class="L7"><span class="pln">      </span><span class="kwd">return</span><span class="pln"> count</span><span class="pun">;</span></li><li class="L8"><span class="pln">    </span><span class="pun">};</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">    todoList</span><span class="pun">.</span><span class="pln">archive </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> oldTodos </span><span class="pun">=</span><span class="pln"> todoList</span><span class="pun">.</span><span class="pln">todos</span><span class="pun">;</span></li><li class="L2"><span class="pln">      todoList</span><span class="pun">.</span><span class="pln">todos </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[];</span></li><li class="L3"><span class="pln">      angular</span><span class="pun">.</span><span class="pln">forEach</span><span class="pun">(</span><span class="pln">oldTodos</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">todo</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">todo</span><span class="pun">.</span><span class="kwd">done</span><span class="pun">)</span><span class="pln"> todoList</span><span class="pun">.</span><span class="pln">todos</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="pln">todo</span><span class="pun">);</span></li><li class="L5"><span class="pln">      </span><span class="pun">});</span></li><li class="L6"><span class="pln">    </span><span class="pun">};</span></li><li class="L7"><span class="pln">  </span><span class="pun">});</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="pln"><span class="nocode ng-scope" popover-title=".done-true" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Add strikethrough decoration when the task is done."><code>.done-true</code></span> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  text</span><span class="pun">-</span><span class="pln">decoration</span><span class="pun">:</span><span class="pln"> line</span><span class="pun">-</span><span class="pln">through</span><span class="pun">;</span></li><li class="L2"><span class="pln">  color</span><span class="pun">:</span><span class="pln"> grey</span><span class="pun">;</span></li><li class="L3"><span class="pun">}</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs -->
+  </div>
+</div></div>
+      <div class="span4">
+        <span hint=""><em>Hint:</em> Click <code class="nocode ng-scope" popover-title="Hover" popover-trigger="click" popover-append-to-body="true" popover="Click highlighted areas in the code for explanations.">me</code>.</span>
+        <span class="pull-right" js-fiddle="todo.html todo.js todo.css" module="todoApp"><form class="jsfiddle" method="post" action="https://jsfiddle.net/api/post/library/pure/" target="_blank"><input type="hidden" name="title" value="AngularJS Example: "><input type="hidden" name="css" value="&lt;/style&gt; &lt;!-- Ugly Hack due to jsFiddle issue: http://goo.gl/BUfGZ --&gt; 
+&lt;link rel=&quot;stylesheet&quot; href=&quot;http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css&quot;&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+"><input type="hidden" name="html" value="&lt;div ng-app=&quot;todoApp&quot;&gt;
+  &lt;h2&gt;Todo&lt;/h2&gt;
+  &lt;div ng-controller=&quot;TodoListController as todoList&quot;&gt;
+    &lt;span&gt;{{todoList.remaining()}} of {{todoList.todos.length}} remaining&lt;/span&gt;
+    [ &lt;a href=&quot;&quot; ng-click=&quot;todoList.archive()&quot;&gt;archive&lt;/a&gt; ]
+    &lt;ul class=&quot;unstyled&quot;&gt;
+      &lt;li ng-repeat=&quot;todo in todoList.todos&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; ng-model=&quot;todo.done&quot;&gt;
+        &lt;span class=&quot;done-{{todo.done}}&quot;&gt;{{todo.text}}&lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;form ng-submit=&quot;todoList.addTodo()&quot;&gt;
+      &lt;input type=&quot;text&quot; ng-model=&quot;todoList.todoText&quot;  size=&quot;30&quot;
+             placeholder=&quot;add new todo here&quot;&gt;
+      &lt;input class=&quot;btn-primary&quot; type=&quot;submit&quot; value=&quot;add&quot;&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+"><input type="hidden" name="js" value="angular.module(&#39;todoApp&#39;, [])
+  .controller(&#39;TodoListController&#39;, function() {
+    var todoList = this;
+    todoList.todos = [
+      {text:&#39;learn angular&#39;, done:true},
+      {text:&#39;build an angular app&#39;, done:false}];
+
+    todoList.addTodo = function() {
+      todoList.todos.push({text:todoList.todoText, done:false});
+      todoList.todoText = &#39;&#39;;
+    };
+
+    todoList.remaining = function() {
+      var count = 0;
+      angular.forEach(todoList.todos, function(todo) {
+        count += todo.done ? 0 : 1;
+      });
+      return count;
+    };
+
+    todoList.archive = function() {
+      var oldTodos = todoList.todos;
+      todoList.todos = [];
+      angular.forEach(oldTodos, function(todo) {
+        if (!todo.done) todoList.todos.push(todo);
+      });
+    };
+  });
+
+"><button class="btn btn-primary"><i class="icon-white icon-pencil"></i> Edit Me</button></form></span>
+        <div class="tabs-spacer"></div>
+        <div app-run="todo.html" module="todoApp" class="well ng-scope"><h2>Todo</h2>
+<div ng-controller="TodoListController as todoList" class="ng-scope">
+  <span class="ng-binding">1 of 2 remaining</span>
+  [ <a href="" ng-click="todoList.archive()">archive</a> ]
+  <ul class="unstyled">
+    <!-- ngRepeat: todo in todoList.todos --><li ng-repeat="todo in todoList.todos" class="ng-scope">
+      <input type="checkbox" ng-model="todo.done" class="ng-pristine ng-untouched ng-valid">
+      <span class="done-true">learn angular</span>
+    </li><!-- end ngRepeat: todo in todoList.todos --><li ng-repeat="todo in todoList.todos" class="ng-scope">
+      <input type="checkbox" ng-model="todo.done" class="ng-pristine ng-untouched ng-valid">
+      <span class="done-false">build an angular app</span>
+    </li><!-- end ngRepeat: todo in todoList.todos -->
+  </ul>
+  <form ng-submit="todoList.addTodo()" class="ng-pristine ng-valid">
+    <input type="text" ng-model="todoList.todoText" size="30" placeholder="add new todo here" class="ng-pristine ng-untouched ng-valid">
+    <input class="btn-primary" type="submit" value="add">
+  </form>
+</div>
+</div>
+        <h3>Watch as we build this app</h3>
+        <div class="video-img" ng-click="showVideo(&#39;https://www.youtube.com/embed/WuiHuZq_cg4?&amp;autoplay=1&#39;)">
+          <img class="video" src="./AngularJS — Superheroic JavaScript MVW Framework_files/video.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal hide fade" style="display: none;" id="videoModal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>AngularJS Todo Tutorial</h3>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+
+
+    <h1 id="wire-up-a-backend">Wire up a Backend</h1>
+    <div class="row">
+      <div class="span4">
+        <h3>Deep Linking</h3>
+        <p>
+          A deep link reflects where the user is in the app, this is useful so users can bookmark
+          and email links to locations within apps. Round trip apps get this automatically, but
+          AJAX apps by their nature do not. AngularJS combines the benefits of deep link with
+          desktop app-like behavior.
+        </p>
+      </div>
+      <div class="span4">
+        <h3>Form Validation</h3>
+        <p>
+          Client-side form validation is an important part of great user experience.
+          AngularJS lets you declare the validation rules of the form without having to write
+          JavaScript code. Write less code, go have beer sooner.
+        </p>
+      </div>
+      <div class="span4">
+        <h3>Server Communication</h3>
+        <p>
+          AngularJS provides built-in services on top of XHR as well as various other backends
+          using third party libraries. Promises further simplify your code
+          by handling asynchronous return of data. In this example, we use the AngularFire
+          library to wire up a <a href="https://www.firebase.com/">Firebase</a> backend to a simple Angular app.
+        </p>
+      </div>
+    </div>
+    <div class=" row example">
+      <div class="span8 app-source ng-scope" app-source="project.html bootstrap.css project.js list.html detail.html" resource="resource" route="route" firebase="firebase" annotate="project.annotation" module="project" style="clear: both;"><div class="tabbable ng-isolate-scope">
+  <ul class="nav nav-tabs" ng-class="{&#39;nav-stacked&#39;: vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="bootstrap.css" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">bootstrap.css</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="project.js" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">project.js</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="list.html" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">list.html</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="detail.html" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">detail.html</a>
+</li>
+</ul>
+  <div class="tab-content">
+    <!-- ngRepeat: tab in tabs --><div class="tab-pane ng-scope active" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="dec">&lt;!doctype html&gt;</span></li><li class="L1"><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-app" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Tells AngularJS to be active in this portion of the page. In this case the entire document."><code>ng-app</code></span></span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="project" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;ng-app&lt;/code&gt; activates the &lt;code&gt;project&lt;/code&gt; module for this page region. This lets you have modules that run in different parts of the page."><code>project</code></span>"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;head&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/<span class="nocode ng-scope" popover-title="angular.min.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Load AngularJS."><code>angular.min.js</code></span>"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/<span class="nocode ng-scope" popover-title="angular-resource.min.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Load AngularJS resource module."><code>angular-resource.min.js</code></span>"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;/script&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/<span class="nocode ng-scope" popover-title="angular-route.min.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Load AngularJS route module."><code>angular-route.min.js</code></span>"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">   </span><span class="tag">&lt;/script&gt;</span></li><li class="L8"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://cdn.firebase.com/js/client/2.0.4/<span class="nocode ng-scope" popover-title="firebase.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Load the Firebase JavaScript SDK."><code>firebase.js</code></span>"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://cdn.firebase.com/libs/angularfire/0.9.0/<span class="nocode ng-scope" popover-title="angularfire.min.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Load the Angular bindings for Firebase."><code>angularfire.min.js</code></span>"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L0"><span class="pln">    </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"bootstrap.css"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="project.js" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;project.js&lt;/code&gt; file contains the controllers which specify your application’s behavior."><code>project.js</code></span>"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;/head&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;body&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;h2&gt;</span><span class="pln">JavaScript Projects</span><span class="tag">&lt;/h2&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-view" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="We’re marking this &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; as the place we’ll load partial pages or “views”. The surrounding page will stay static while we load changing UI into this section. In this case, we’ll be switching between a list of “projects” and the form to add new or edit existing “projects”."><code>ng-view</code></span></span><span class="tag">&gt;&lt;/div&gt;</span></li><li class="L6"><span class="pln">  </span><span class="tag">&lt;/body&gt;</span></li><li class="L7"><span class="tag">&lt;/html&gt;</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="com">// Uncomment this in Plunker or JSFiddle: @import '//netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css';</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'<span class="nocode ng-scope" popover-title="project" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="This defines the &lt;code&gt;project&lt;/code&gt; module. You use modules to configure existing services, and define new services, directives, filters, and so on. Here, we’ll set up ‘routes’ that map URLs to partials. AngularJS watches the browser location and automatically updates the partial when the URL changes."><code>project</code></span>'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'ngRoute'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'<span class="nocode ng-scope" popover-title="firebase" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Modules can depend on other modules. Here, &lt;code&gt;project&lt;/code&gt; needs &lt;code&gt;firebase&lt;/code&gt; which handles the persistence for this application."><code>firebase</code></span>'</span><span class="pun">])</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="value" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Define a singleton object that can be injected into controllers and services."><code>value</code></span></span><span class="pun">(</span><span class="str">'<span class="nocode ng-scope" popover-title="fbURL" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The URL to the Firebase location from which we want to load data (and store changes)."><code>fbURL</code></span>'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'https://ng-projects-list.firebaseio.com/'</span><span class="pun">)</span></li><li class="L3"><span class="pun">.</span><span class="pln">service</span><span class="pun">(</span><span class="str">'fbRef'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">fbURL</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">  </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Firebase</span><span class="pun">(</span><span class="pln">fbURL</span><span class="pun">)</span></li><li class="L5"><span class="pun">})</span></li><li class="L6"><span class="pun">.</span><span class="pln">service</span><span class="pun">(</span><span class="str">'fbAuth'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$q</span><span class="pun">,</span><span class="pln"> <span class="nocode ng-scope" popover-title="$firebase" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="A service provided by AngularFire for binding data from Firebase to Angular models."><code>$firebase</code></span></span><span class="pun">,</span><span class="pln"> $firebaseAuth</span><span class="pun">,</span><span class="pln"> fbRef</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> auth</span><span class="pun">;</span></li><li class="L8"><span class="pln">  </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">auth</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> $q</span><span class="pun">.</span><span class="kwd">when</span><span class="pun">(</span><span class="pln">auth</span><span class="pun">);</span></li><li class="L0"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> authObj </span><span class="pun">=</span><span class="pln"> $firebaseAuth</span><span class="pun">(</span><span class="pln">fbRef</span><span class="pun">);</span></li><li class="L1"><span class="pln">      </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">authObj</span><span class="pun">.</span><span class="pln">$getAuth</span><span class="pun">())</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> $q</span><span class="pun">.</span><span class="kwd">when</span><span class="pun">(</span><span class="pln">auth </span><span class="pun">=</span><span class="pln"> authObj</span><span class="pun">.</span><span class="pln">$getAuth</span><span class="pun">());</span></li><li class="L3"><span class="pln">      </span><span class="pun">}</span></li><li class="L4"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> deferred </span><span class="pun">=</span><span class="pln"> $q</span><span class="pun">.</span><span class="pln">defer</span><span class="pun">();</span></li><li class="L5"><span class="pln">      authObj</span><span class="pun">.</span><span class="pln">$authAnonymously</span><span class="pun">().</span><span class="kwd">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">authData</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">          auth </span><span class="pun">=</span><span class="pln"> authData</span><span class="pun">;</span></li><li class="L7"><span class="pln">          deferred</span><span class="pun">.</span><span class="pln">resolve</span><span class="pun">(</span><span class="pln">authData</span><span class="pun">);</span></li><li class="L8"><span class="pln">      </span><span class="pun">});</span></li><li class="L9"><span class="pln">      </span><span class="kwd">return</span><span class="pln"> deferred</span><span class="pun">.</span><span class="pln">promise</span><span class="pun">;</span></li><li class="L0"><span class="pln">  </span><span class="pun">}</span></li><li class="L1"><span class="pun">})</span></li><li class="L2"><span class="pln">&nbsp;</span></li><li class="L3"><span class="pun">.</span><span class="pln">service</span><span class="pun">(</span><span class="str">'<span class="nocode ng-scope" popover-title="Projects" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="&lt;code&gt;Projects&lt;/code&gt; is an instance of &lt;code&gt;$firebase&lt;/code&gt;, and is defined in the &lt;code&gt;projects&lt;/code&gt; module. It exposes method to add, remove and update projects in the collection. Its purpose is to abstract the server communication. This lets the controller focus on the behavior rather than the complexities of server access."><code>Projects</code></span>'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$q</span><span class="pun">,</span><span class="pln"> $firebase</span><span class="pun">,</span><span class="pln"> fbRef</span><span class="pun">,</span><span class="pln"> fbAuth</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> </span><span class="kwd">self</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">;</span></li><li class="L5"><span class="pln">  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">fetch </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> $q</span><span class="pun">.</span><span class="kwd">when</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">);</span></li><li class="L7"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> fbAuth</span><span class="pun">().</span><span class="kwd">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">auth</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> deferred </span><span class="pun">=</span><span class="pln"> $q</span><span class="pun">.</span><span class="pln">defer</span><span class="pun">();</span></li><li class="L9"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> </span><span class="kwd">ref</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> fbRef</span><span class="pun">.</span><span class="pln">child</span><span class="pun">(</span><span class="str">'projects-fresh/'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> auth</span><span class="pun">.</span><span class="pln">auth</span><span class="pun">.</span><span class="pln">uid</span><span class="pun">);</span></li><li class="L0"><span class="pln">      </span><span class="kwd">var</span><span class="pln"> $projects </span><span class="pun">=</span><span class="pln"> $firebase</span><span class="pun">(</span><span class="kwd">ref</span><span class="pun">);</span></li><li class="L1"><span class="pln">      </span><span class="kwd">ref</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="str">'value'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">snapshot</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">snapshot</span><span class="pun">.</span><span class="pln">val</span><span class="pun">()</span><span class="pln"> </span><span class="pun">===</span><span class="pln"> </span><span class="kwd"><span class="nocode ng-scope" popover-title="null" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="We can delete an object by simply setting its value to null."><code>null</code></span></span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">          $projects</span><span class="pun">.</span><span class="pln">$set</span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">projectsArray</span><span class="pun">);</span></li><li class="L4"><span class="pln">        </span><span class="pun">}</span></li><li class="L5"><span class="pln">        </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">projects </span><span class="pun">=</span><span class="pln"> $projects</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="$asArray" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="A method that returns data from Firebase in the form of a synchronized array."><code>$asArray</code></span></span><span class="pun">();</span></li><li class="L6"><span class="pln">        deferred</span><span class="pun">.</span><span class="pln">resolve</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">);</span></li><li class="L7"><span class="pln">      </span><span class="pun">});</span></li><li class="L8"><span class="pln">&nbsp;</span></li><li class="L9"><span class="pln">      </span><span class="com">//Remove projects list when no longer needed.</span></li><li class="L0"><span class="pln">      </span><span class="kwd">ref</span><span class="pun">.</span><span class="pln">onDisconnect</span><span class="pun">().</span><span class="pln">remove</span><span class="pun">();</span></li><li class="L1"><span class="pln">      </span><span class="kwd">return</span><span class="pln"> deferred</span><span class="pun">.</span><span class="pln">promise</span><span class="pun">;</span></li><li class="L2"><span class="pln">    </span><span class="pun">});</span></li><li class="L3"><span class="pln">  </span><span class="pun">};</span></li><li class="L4"><span class="pun">})</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="config" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="You use &lt;code&gt;config()&lt;/code&gt; to configure existing services. Here, we’re configuring the &lt;code&gt;$routeProvider&lt;/code&gt; responsible for mapping URL paths to partials."><code>config</code></span></span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$routeProvider</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">  $routeProvider</span></li><li class="L8"><span class="pln">    </span><span class="pun">.</span><span class="kwd">when</span><span class="pun">(</span><span class="str"><span class="nocode ng-scope" popover-title="&#39;/&#39;" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="When the URL is &lt;code&gt;/&lt;/code&gt; it will load &lt;code&gt;list.html&lt;/code&gt; into the view and attach the &lt;code&gt;ProjectListController&lt;/code&gt; controller. You can instantly get an overview of an app&#39;s structure by reading the route definitions."><code>'/'</code></span></span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">      <span class="nocode ng-scope" popover-title="controller" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Define a controller function that can be attached to the DOM using &lt;code&gt;ng-controller&lt;/code&gt; or to a view template by specifying it in the route configuration."><code>controller</code></span></span><span class="pun">:</span><span class="str">'ProjectListController as projectList'</span><span class="pun">,</span></li><li class="L0"><span class="pln">      templateUrl</span><span class="pun">:</span><span class="str">'list.html'</span><span class="pun">,</span></li><li class="L1"><span class="pln">      resolve</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">        projects</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Projects</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">          </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Projects</span><span class="pun">.</span><span class="pln">fetch</span><span class="pun">();</span></li><li class="L4"><span class="pln">        </span><span class="pun">}</span></li><li class="L5"><span class="pln">      </span><span class="pun">}</span></li><li class="L6"><span class="pln">    </span><span class="pun">})</span></li><li class="L7"><span class="pln">    </span><span class="pun">.</span><span class="kwd">when</span><span class="pun">(</span><span class="str">'<span class="nocode ng-scope" popover-title="/edit/:projectId" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="This route definition has a colon &#39;:&#39; in it. You use colons to make a component of the URL available to your controller. So now, &lt;code&gt;EditCtrl&lt;/code&gt; can refer to the &lt;code&gt;projectId&lt;/code&gt; property which tells it which project to edit."><code>/edit/:projectId</code></span>'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">      controller</span><span class="pun">:</span><span class="str">'EditProjectController as editProject'</span><span class="pun">,</span></li><li class="L9"><span class="pln">      templateUrl</span><span class="pun">:</span><span class="str">'detail.html'</span></li><li class="L0"><span class="pln">    </span><span class="pun">})</span></li><li class="L1"><span class="pln">    </span><span class="pun">.</span><span class="kwd">when</span><span class="pun">(</span><span class="str">'/new'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">      controller</span><span class="pun">:</span><span class="str">'NewProjectController as editProject'</span><span class="pun">,</span></li><li class="L3"><span class="pln">      templateUrl</span><span class="pun">:</span><span class="str">'detail.html'</span></li><li class="L4"><span class="pln">    </span><span class="pun">})</span></li><li class="L5"><span class="pln">    </span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="otherwise" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;otherwise&lt;/code&gt; route specifies which view to display when the URL doesn’t match any of the explicit routes. It’s the default."><code>otherwise</code></span></span><span class="pun">({</span></li><li class="L6"><span class="pln">      redirectTo</span><span class="pun">:</span><span class="str">'/'</span></li><li class="L7"><span class="pln">    </span><span class="pun">});</span></li><li class="L8"><span class="pun">})</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'ProjectListController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">projects</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> projectList </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">;</span></li><li class="L2"><span class="pln">  projectList</span><span class="pun">.</span><span class="pln">projects </span><span class="pun">=</span><span class="pln"> projects</span><span class="pun">;</span></li><li class="L3"><span class="pun">})</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'NewProjectController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln"><span class="nocode ng-scope" popover-title="$location" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="You use the &lt;code&gt;$location&lt;/code&gt; service to access the browser&#39;s location."><code>$location</code></span></span><span class="pun">,</span><span class="pln"> </span><span class="typ">Projects</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">  </span><span class="kwd">var</span><span class="pln"> editProject </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">;</span></li><li class="L7"><span class="pln">  editProject</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="save" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Called when the user clicks the save button in the view."><code>save</code></span> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">      </span><span class="typ">Projects</span><span class="pun">.</span><span class="pln">$add</span><span class="pun">(</span><span class="pln">editProject</span><span class="pun">.</span><span class="pln">project</span><span class="pun">).</span><span class="kwd">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L9"><span class="pln">          $location</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="path" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Use the &lt;code&gt;path&lt;/code&gt; method to change the application&#39;s &#39;deep-linking&#39; location. Changing the URL will automatically activate the new route, and transition the application to display that view -- in this case, the &lt;code&gt;/edit/&lt;/code&gt; view."><code>path</code></span></span><span class="pun">(</span><span class="str">'/'</span><span class="pun">);</span></li><li class="L0"><span class="pln">      </span><span class="pun">});</span></li><li class="L1"><span class="pln">  </span><span class="pun">};</span></li><li class="L2"><span class="pun">})</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'EditProjectController'</span><span class="pun">,</span></li><li class="L5"><span class="pln">  </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$location</span><span class="pun">,</span><span class="pln"> <span class="nocode ng-scope" popover-title="$routeParams" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Here, we ask AngularJS to inject the &lt;code&gt;$routeParams&lt;/code&gt; service.  We use it to access the parameters extracted from the route path definitions."><code>$routeParams</code></span></span><span class="pun">,</span><span class="pln"> </span><span class="typ">Projects</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> editProject </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">;</span></li><li class="L7"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> <span class="nocode ng-scope" popover-title="projectId" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="This extracts the &lt;code&gt;projectId&lt;/code&gt; from the URL. This allows the controller to use deep-linking information for processing."><code>projectId</code></span> </span><span class="pun">=</span><span class="pln"> $routeParams</span><span class="pun">.</span><span class="pln">projectId</span><span class="pun">,</span></li><li class="L8"><span class="pln">        projectIndex</span><span class="pun">;</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">    editProject</span><span class="pun">.</span><span class="pln">projects </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Projects</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">;</span></li><li class="L1"><span class="pln">    projectIndex </span><span class="pun">=</span><span class="pln"> editProject</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">.</span><span class="pln">$indexFor</span><span class="pun">(</span><span class="pln">projectId</span><span class="pun">);</span></li><li class="L2"><span class="pln">    editProject</span><span class="pun">.</span><span class="pln">project </span><span class="pun">=</span><span class="pln"> editProject</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">[</span><span class="pln">projectIndex</span><span class="pun">];</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="pln">    editProject</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="destroy" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Called when the user clicks the delete button in the view."><code>destroy</code></span> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">        editProject</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">.</span><span class="pln">$remove</span><span class="pun">(</span><span class="pln">editProject</span><span class="pun">.</span><span class="pln">project</span><span class="pun">).</span><span class="kwd">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">            $location</span><span class="pun">.</span><span class="pln">path</span><span class="pun">(</span><span class="str">'/'</span><span class="pun">);</span></li><li class="L7"><span class="pln">        </span><span class="pun">});</span></li><li class="L8"><span class="pln">    </span><span class="pun">};</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">    editProject</span><span class="pun">.</span><span class="pln">save </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">        editProject</span><span class="pun">.</span><span class="pln">projects</span><span class="pun">.</span><span class="pln">$save</span><span class="pun">(</span><span class="pln">editProject</span><span class="pun">.</span><span class="pln">project</span><span class="pun">).</span><span class="kwd">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">           $location</span><span class="pun">.</span><span class="pln">path</span><span class="pun">(</span><span class="str">'/'</span><span class="pun">);</span></li><li class="L3"><span class="pln">        </span><span class="pun">});</span></li><li class="L4"><span class="pln">    </span><span class="pun">};</span></li><li class="L5"><span class="pun">});</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-model" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Bind the input field to the &lt;code&gt;search&lt;/code&gt; property. The property is then used to filter for only the projects which contain the text entered by the user."><code>ng-model</code></span></span><span class="pun">=</span><span class="atv">"projectList.search"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"search-query"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"projects_search"</span></li><li class="L1"><span class="pln">       </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Search"</span><span class="tag">&gt;</span></li><li class="L2"><span class="tag">&lt;table&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;thead&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;tr&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;th&gt;</span><span class="pln">Project</span><span class="tag">&lt;/th&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;th&gt;</span><span class="pln">Description</span><span class="tag">&lt;/th&gt;</span></li><li class="L7"><span class="pln">    </span><span class="tag">&lt;th&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="#/new" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="A link to a &lt;code&gt;/new&lt;/code&gt; route defined in &lt;code&gt;projects.js&lt;/code&gt;. Note that we follow the spirit of the web. There is no need to register callbacks on links, we are simply navigating to a new URL. This automatically updates the browser history, and enables deep-linking. But unlike a server round trip application, this navigation event gets rendered instantly in the browser."><code>#/new</code></span>"</span><span class="tag">&gt;&lt;i</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"icon-plus-sign"</span><span class="tag">&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;/tr&gt;</span></li><li class="L9"><span class="pln">  </span><span class="tag">&lt;/thead&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;tbody&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;tr</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-repeat" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Use &lt;code&gt;ng-repeat&lt;/code&gt; to unroll a collection. Here, for every project in &lt;code&gt;projects&lt;/code&gt;, AngularJS will create new copy of the &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt; element."><code>ng-repeat</code></span></span><span class="pun">=</span><span class="atv">"project in projectList.projects | <span class="nocode ng-scope" popover-title="filter" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;filter&lt;/code&gt; uses the &lt;code&gt;search&lt;/code&gt; to return only a subset of items in the &lt;code&gt;projects&lt;/code&gt; array. As you enter text into the search box, the &lt;code&gt;filter&lt;/code&gt; will narrow down the list according to your criteria. &lt;code&gt;ng-repeat&lt;/code&gt; will then add or remove items from the table."><code>filter</code></span>:projectList.search | <span class="nocode ng-scope" popover-title="orderBy" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Returns the &lt;code&gt;project&lt;/code&gt; list ordered by &lt;code&gt;name&lt;/code&gt; property."><code>orderBy</code></span>:'name'"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;td&gt;&lt;a</span><span class="pln"> </span><span class="atn">ng-href</span><span class="pun">=</span><span class="atv">"{{project.site}}"</span><span class="pln"> </span><span class="atn">target</span><span class="pun">=</span><span class="atv">"_blank"</span><span class="tag">&gt;</span><span class="pln">{{project.name}}</span><span class="tag">&lt;/a&gt;&lt;/td&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;td&gt;</span><span class="pln">{{project.description}}</span><span class="tag">&lt;/td&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;td&gt;</span></li><li class="L5"><span class="pln">      </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">ng-href</span><span class="pun">=</span><span class="atv">"#/edit/{{project.$id}}"</span><span class="tag">&gt;&lt;i</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"icon-pencil"</span><span class="tag">&gt;&lt;/i&gt;&lt;/a&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;/td&gt;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;/tr&gt;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;/tbody&gt;</span></li><li class="L9"><span class="tag">&lt;/table&gt;</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="myForm" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Create a form named &lt;code&gt;myForm&lt;/code&gt;. We will declare form validation rules here which we&#39;ll use to show input errors and disable buttons."><code>myForm</code></span>"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group"</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-class" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Add an &lt;code&gt;error&lt;/code&gt; CSS class when the &lt;code&gt;myForm&lt;/code&gt;&#39;s input &lt;code&gt;name&lt;/code&gt; is invalid."><code>ng-class</code></span></span><span class="pun">=</span><span class="atv">"{error: myForm.name.$invalid &amp;&amp; !myForm.name.$pristine}"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;label&gt;</span><span class="pln">Name</span><span class="tag">&lt;/label&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"name"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"editProject.project.name"</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="required" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Invalidate the input control when no text is entered."><code>required</code></span></span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-show" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Show this error message when the &lt;code&gt;myForm&lt;/code&gt;&#39;s input &lt;code&gt;name&lt;/code&gt; has &lt;code&gt;required&lt;/code&gt; validation error."><code>ng-show</code></span></span><span class="pun">=</span><span class="atv">"myForm.name.$error.required &amp;&amp; !myForm.name.$pristine"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"help-inline"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">        Required {{myForm.name.$pristine}}</span><span class="tag">&lt;/span&gt;</span></li><li class="L6"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group"</span><span class="pln"> </span><span class="atn">ng-class</span><span class="pun">=</span><span class="atv">"{error: myForm.site.$invalid &amp;&amp; !myForm.site.$pristine}"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;label&gt;</span><span class="pln">Website</span><span class="tag">&lt;/label&gt;</span></li><li class="L0"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="url" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The URL type automatically adds URL validation."><code>url</code></span>"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"site"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"editProject.project.site"</span><span class="pln"> </span><span class="atn">required</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">ng-show</span><span class="pun">=</span><span class="atv">"myForm.site.$error.required &amp;&amp; !myForm.site.$pristine"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"help-inline"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">        Required</span><span class="tag">&lt;/span&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">ng-show</span><span class="pun">=</span><span class="atv">"myForm.site.$error.url"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"help-inline"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">        Not a URL</span><span class="tag">&lt;/span&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;label&gt;</span><span class="pln">Description</span><span class="tag">&lt;/label&gt;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;textarea</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"description"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"editProject.project.description"</span><span class="tag">&gt;&lt;/textarea&gt;</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;br&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#/"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="tag">&gt;</span><span class="pln">Cancel</span><span class="tag">&lt;/a&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"editProject.save()"</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="ng-disabled" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Disable the &#39;Save&#39; button when the form has not been filled in or is invalid."><code>ng-disabled</code></span></span><span class="pun">=</span><span class="atv">"myForm.$invalid"</span></li><li class="L3"><span class="pln">          </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary"</span><span class="tag">&gt;</span><span class="pln">Save</span><span class="tag">&lt;/button&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"editProject.destroy()"</span></li><li class="L5"><span class="pln">          </span><span class="atn">ng-show</span><span class="pun">=</span><span class="atv">"editProject.project.$id"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-danger"</span><span class="tag">&gt;</span><span class="pln">Delete</span><span class="tag">&lt;/button&gt;</span></li><li class="L6"><span class="tag">&lt;/form&gt;</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs -->
+  </div>
+</div></div>
+      <div class="span4">
+        <span hint=""><em>Hint:</em> Click <code class="nocode ng-scope" popover-title="Hover" popover-trigger="click" popover-append-to-body="true" popover="Click highlighted areas in the code for explanations.">me</code>.</span>
+        <span class="pull-right" js-fiddle="project.html bootstrap.css list.html detail.html project.js" resource="resource" route="route" firebase="firebase" module="project"><form class="jsfiddle" method="post" action="https://jsfiddle.net/api/post/library/pure/" target="_blank"><input type="hidden" name="title" value="AngularJS Example: "><input type="hidden" name="css" value="&lt;/style&gt; &lt;!-- Ugly Hack due to jsFiddle issue: http://goo.gl/BUfGZ --&gt; 
+&lt;link rel=&quot;stylesheet&quot; href=&quot;http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css&quot;&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-resource.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.firebase.com/js/client/2.0.4/firebase.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+// Uncomment this in Plunker or JSFiddle: @import &#39;//netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css&#39;;
+
+"><input type="hidden" name="html" value="&lt;div ng-app=&quot;project&quot;&gt;
+  &lt;h2&gt;JavaScript Projects&lt;/h2&gt;
+  &lt;div ng-view&gt;&lt;/div&gt;
+
+
+
+  &lt;!-- CACHE FILE: list.html --&gt;
+  &lt;script type=&quot;text/ng-template&quot; id=&quot;list.html&quot;&gt;
+    &lt;input type=&quot;text&quot; ng-model=&quot;projectList.search&quot; class=&quot;search-query&quot; id=&quot;projects_search&quot;
+           placeholder=&quot;Search&quot;&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Project&lt;/th&gt;
+        &lt;th&gt;Description&lt;/th&gt;
+        &lt;th&gt;&lt;a href=&quot;#/new&quot;&gt;&lt;i class=&quot;icon-plus-sign&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+      &lt;tr ng-repeat=&quot;project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;&quot;&gt;
+        &lt;td&gt;&lt;a ng-href=&quot;{{project.site}}&quot; target=&quot;_blank&quot;&gt;{{project.name}}&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;{{project.description}}&lt;/td&gt;
+        &lt;td&gt;
+          &lt;a ng-href=&quot;#/edit/{{project.$id}}&quot;&gt;&lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/script&gt;
+
+
+
+  &lt;!-- CACHE FILE: detail.html --&gt;
+  &lt;script type=&quot;text/ng-template&quot; id=&quot;detail.html&quot;&gt;
+    &lt;form name=&quot;myForm&quot;&gt;
+      &lt;div class=&quot;control-group&quot; ng-class=&quot;{error: myForm.name.$invalid &amp;&amp; !myForm.name.$pristine}&quot;&gt;
+        &lt;label&gt;Name&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; ng-model=&quot;editProject.project.name&quot; required&gt;
+        &lt;span ng-show=&quot;myForm.name.$error.required &amp;&amp; !myForm.name.$pristine&quot; class=&quot;help-inline&quot;&gt;
+            Required {{myForm.name.$pristine}}&lt;/span&gt;
+      &lt;/div&gt;
+    
+      &lt;div class=&quot;control-group&quot; ng-class=&quot;{error: myForm.site.$invalid &amp;&amp; !myForm.site.$pristine}&quot;&gt;
+        &lt;label&gt;Website&lt;/label&gt;
+        &lt;input type=&quot;url&quot; name=&quot;site&quot; ng-model=&quot;editProject.project.site&quot; required&gt;
+        &lt;span ng-show=&quot;myForm.site.$error.required &amp;&amp; !myForm.site.$pristine&quot; class=&quot;help-inline&quot;&gt;
+            Required&lt;/span&gt;
+        &lt;span ng-show=&quot;myForm.site.$error.url&quot; class=&quot;help-inline&quot;&gt;
+            Not a URL&lt;/span&gt;
+      &lt;/div&gt;
+    
+      &lt;label&gt;Description&lt;/label&gt;
+      &lt;textarea name=&quot;description&quot; ng-model=&quot;editProject.project.description&quot;&gt;&lt;/textarea&gt;
+    
+      &lt;br&gt;
+      &lt;a href=&quot;#/&quot; class=&quot;btn&quot;&gt;Cancel&lt;/a&gt;
+      &lt;button ng-click=&quot;editProject.save()&quot; ng-disabled=&quot;myForm.$invalid&quot;
+              class=&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
+      &lt;button ng-click=&quot;editProject.destroy()&quot;
+              ng-show=&quot;editProject.project.$id&quot; class=&quot;btn btn-danger&quot;&gt;Delete&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/script&gt;
+&lt;/div&gt;
+"><input type="hidden" name="js" value="angular.module(&#39;project&#39;, [&#39;ngRoute&#39;, &#39;firebase&#39;])
+
+.value(&#39;fbURL&#39;, &#39;https://ng-projects-list.firebaseio.com/&#39;)
+.service(&#39;fbRef&#39;, function(fbURL) {
+  return new Firebase(fbURL)
+})
+.service(&#39;fbAuth&#39;, function($q, $firebase, $firebaseAuth, fbRef) {
+  var auth;
+  return function () {
+      if (auth) return $q.when(auth);
+      var authObj = $firebaseAuth(fbRef);
+      if (authObj.$getAuth()) {
+        return $q.when(auth = authObj.$getAuth());
+      }
+      var deferred = $q.defer();
+      authObj.$authAnonymously().then(function(authData) {
+          auth = authData;
+          deferred.resolve(authData);
+      });
+      return deferred.promise;
+  }
+})
+
+.service(&#39;Projects&#39;, function($q, $firebase, fbRef, fbAuth) {
+  var self = this;
+  this.fetch = function () {
+    if (this.projects) return $q.when(this.projects);
+    return fbAuth().then(function(auth) {
+      var deferred = $q.defer();
+      var ref = fbRef.child(&#39;projects-fresh/&#39; + auth.auth.uid);
+      var $projects = $firebase(ref);
+      ref.on(&#39;value&#39;, function(snapshot) {
+        if (snapshot.val() === null) {
+          $projects.$set(window.projectsArray);
+        }
+        self.projects = $projects.$asArray();
+        deferred.resolve(self.projects);
+      });
+
+      //Remove projects list when no longer needed.
+      ref.onDisconnect().remove();
+      return deferred.promise;
+    });
+  };
+})
+
+.config(function($routeProvider) {
+  $routeProvider
+    .when(&#39;/&#39;, {
+      controller:&#39;ProjectListController as projectList&#39;,
+      templateUrl:&#39;list.html&#39;,
+      resolve: {
+        projects: function (Projects) {
+          return Projects.fetch();
+        }
+      }
+    })
+    .when(&#39;/edit/:projectId&#39;, {
+      controller:&#39;EditProjectController as editProject&#39;,
+      templateUrl:&#39;detail.html&#39;
+    })
+    .when(&#39;/new&#39;, {
+      controller:&#39;NewProjectController as editProject&#39;,
+      templateUrl:&#39;detail.html&#39;
+    })
+    .otherwise({
+      redirectTo:&#39;/&#39;
+    });
+})
+
+.controller(&#39;ProjectListController&#39;, function(projects) {
+  var projectList = this;
+  projectList.projects = projects;
+})
+
+.controller(&#39;NewProjectController&#39;, function($location, Projects) {
+  var editProject = this;
+  editProject.save = function() {
+      Projects.$add(editProject.project).then(function(data) {
+          $location.path(&#39;/&#39;);
+      });
+  };
+})
+
+.controller(&#39;EditProjectController&#39;,
+  function($location, $routeParams, Projects) {
+    var editProject = this;
+    var projectId = $routeParams.projectId,
+        projectIndex;
+
+    editProject.projects = Projects.projects;
+    projectIndex = editProject.projects.$indexFor(projectId);
+    editProject.project = editProject.projects[projectIndex];
+
+    editProject.destroy = function() {
+        editProject.projects.$remove(editProject.project).then(function(data) {
+            $location.path(&#39;/&#39;);
+        });
+    };
+
+    editProject.save = function() {
+        editProject.projects.$save(editProject.project).then(function(data) {
+           $location.path(&#39;/&#39;);
+        });
+    };
+});
+
+"><button class="btn btn-primary"><i class="icon-white icon-pencil"></i> Edit Me</button></form></span>
+        <div class="tabs-spacer"></div>
+        <!--[if lt IE 10]>
+          <div class="alert alert-error">
+            Your browser doesn't support <a href="http://www.w3.org/TR/cors/">CORS</a>, therefore
+            it can not fetch data from an external domain resulting in no projects shown in this example.
+          </div>
+        <![endif]-->
+        <div app-run="project.html" module="project" class="well ng-scope"><h2>JavaScript Projects</h2>
+<!-- ngView:  --><div ng-view="" class="ng-scope">
+      <input type="text" ng-model="projectList.search" class="search-query ng-pristine ng-untouched ng-valid ng-scope" id="projects_search" placeholder="Search">
+      <table class="ng-scope">
+        <thead>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+          <th><a href="https://angularjs.org/new"><i class="icon-plus-sign"></i></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://angularjs.org" target="_blank" class="ng-binding" href="http://angularjs.org/">AngularJS</a></td>
+          <td class="ng-binding">HTML enhanced for web apps!</td>
+          <td>
+            <a ng-href="/edit/0" href="https://angularjs.org/edit/0"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://documentcloud.github.com/backbone/" target="_blank" class="ng-binding" href="http://documentcloud.github.com/backbone/">Backbone</a></td>
+          <td class="ng-binding">Models for your apps.</td>
+          <td>
+            <a ng-href="/edit/2" href="https://angularjs.org/edit/2"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://batmanjs.org/" target="_blank" class="ng-binding" href="http://batmanjs.org/">Batman</a></td>
+          <td class="ng-binding">Quick and beautiful.</td>
+          <td>
+            <a ng-href="/edit/10" href="https://angularjs.org/edit/10"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://cappuccino.org/" target="_blank" class="ng-binding" href="http://cappuccino.org/">Cappucino</a></td>
+          <td class="ng-binding">Objective-J.</td>
+          <td>
+            <a ng-href="/edit/6" href="https://angularjs.org/edit/6"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://emberjs.com/" target="_blank" class="ng-binding" href="http://emberjs.com/">Ember</a></td>
+          <td class="ng-binding">Ambitious web apps.</td>
+          <td>
+            <a ng-href="/edit/9" href="https://angularjs.org/edit/9"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="https://developers.google.com/web-toolkit/" target="_blank" class="ng-binding" href="https://developers.google.com/web-toolkit/">GWT</a></td>
+          <td class="ng-binding">JS in Java.</td>
+          <td>
+            <a ng-href="/edit/8" href="https://angularjs.org/edit/8"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://jquery.com/" target="_blank" class="ng-binding" href="http://jquery.com/">jQuery</a></td>
+          <td class="ng-binding">Write less, do more.</td>
+          <td>
+            <a ng-href="/edit/1" href="https://angularjs.org/edit/1"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://knockoutjs.com/" target="_blank" class="ng-binding" href="http://knockoutjs.com/">Knockout</a></td>
+          <td class="ng-binding">MVVM pattern.</td>
+          <td>
+            <a ng-href="/edit/7" href="https://angularjs.org/edit/7"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://sammyjs.org/" target="_blank" class="ng-binding" href="http://sammyjs.org/">Sammy</a></td>
+          <td class="ng-binding">Small with class.</td>
+          <td>
+            <a ng-href="/edit/4" href="https://angularjs.org/edit/4"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://spinejs.com/" target="_blank" class="ng-binding" href="http://spinejs.com/">Spine</a></td>
+          <td class="ng-binding">Awesome MVC Apps.</td>
+          <td>
+            <a ng-href="/edit/5" href="https://angularjs.org/edit/5"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' --><tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:&#39;name&#39;" class="ng-scope">
+          <td><a ng-href="http://sproutcore.com/" target="_blank" class="ng-binding" href="http://sproutcore.com/">SproutCore</a></td>
+          <td class="ng-binding">Innovative web-apps.</td>
+          <td>
+            <a ng-href="/edit/3" href="https://angularjs.org/edit/3"><i class="icon-pencil"></i></a>
+          </td>
+        </tr><!-- end ngRepeat: project in projectList.projects | filter:projectList.search | orderBy:'name' -->
+        </tbody>
+      </table>
+    </div>
+</div>
+      </div>
+    </div>
+
+
+
+    <h1 id="create-components">Create Components</h1>
+    <div class="row">
+      <div class="span4">
+        <h3>Directives</h3>
+        <p>
+          Directives is a unique and powerful feature available only in Angular. Directives let
+          you invent new HTML syntax, specific to your application.
+        </p>
+      </div>
+      <div class="span4">
+        <h3>Reusable Components</h3>
+        <p>
+          We use directives to create reusable components. A component allows you to hide complex
+          DOM structure, CSS, and behavior. This lets you focus either on what the application
+          does or how the application looks separately.
+        </p>
+      </div>
+      <div class="span4">
+        <h3>Localization</h3>
+        <p>
+          An important part of serious apps is localization. Angular's locale aware filters and
+          stemming directives give you building blocks to make your application available in all
+          locales.
+        </p>
+      </div>
+    </div>
+    <div class=" row example">
+      <div class="span8 app-source ng-scope" app-source="tabs.html components.js app.js bootstrap.css" annotate="tabs.annotation" module="app" style="clear: both;"><div class="tabbable ng-isolate-scope">
+  <ul class="nav nav-tabs" ng-class="{&#39;nav-stacked&#39;: vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="components.js" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">components.js</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="app.js" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">app.js</a>
+</li>
+<li ng-class="{active: active, disabled: disabled}" heading="bootstrap.css" class="ng-isolate-scope">
+  <a ng-click="select()" tab-heading-transclude="" class="ng-binding">bootstrap.css</a>
+</li>
+</ul>
+  <div class="tab-content">
+    <!-- ngRepeat: tab in tabs --><div class="tab-pane ng-scope active" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="dec">&lt;!doctype html&gt;</span></li><li class="L1"><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv"><span class="nocode ng-scope" popover-title="&quot;app&quot;" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;ng-app&lt;/code&gt; activates the &lt;code&gt;app&lt;/code&gt; module for this page region. The module contains the BeerCounter controller and has a dependency on the &lt;code&gt;components&lt;/code&gt; module, which contains the HTML extension (directives) for &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;pane&amp;gt;&lt;/code&gt; components."><code>"app"</code></span></span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;head&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"components.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"app.js"</span><span class="tag">&gt;&lt;/script&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"bootstrap.css"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;/head&gt;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;body&gt;</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;<span class="nocode ng-scope" popover-title="tabs" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="We&#39;ve extended HTML&#39;s vocabulary with a custom &lt;code&gt;tabs&lt;/code&gt; element. The &lt;code&gt;tabs&lt;/code&gt; abstracts the complex HTML structure and behavior necessary for rendering of tabs. The result is a more readable view and very easily reusable syntax."><code>tabs</code></span>&gt;</span></li><li class="L0"><span class="pln">      </span><span class="tag">&lt;<span class="nocode ng-scope" popover-title="pane" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Again, we&#39;ve extended the HTML vocabulary with a custom &lt;code&gt;pane&lt;/code&gt; element. The &lt;code&gt;pane&lt;/code&gt; element renders the panes of each tab. The result is a more readable view."><code>pane</code></span></span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="title" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Components can take input parameters in the form of HTML attributes. In this case the &lt;code&gt;title&lt;/code&gt; attribute specifies the tab&#39;s text."><code>title</code></span></span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="Localization" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="An example demonstrating localization features of AngularJS: date, number and currency formatting."><code>Localization</code></span>"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">        Date: {{ '2012-04-01' | date:'fullDate' }} </span><span class="tag">&lt;br&gt;</span></li><li class="L2"><span class="pln">        Currency: {{ 123456 | currency }} </span><span class="tag">&lt;br&gt;</span></li><li class="L3"><span class="pln">        Number: {{ 98765.4321 | number }} </span><span class="tag">&lt;br&gt;</span></li><li class="L4"><span class="pln">      </span><span class="tag">&lt;/pane&gt;</span></li><li class="L5"><span class="pln">      </span><span class="tag">&lt;pane</span><span class="pln"> </span><span class="atn">title</span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="Pluralization" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="An example demonstrating pluralization features of AngularJS. Notice that that the plural form of &#39;beer&#39; changes in &#39;SK&#39; locale at zero, one, two, and five beers."><code>Pluralization</code></span>"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">        </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"<span class="nocode ng-scope" popover-title="BeerCounter" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="We use the &lt;code&gt;BeerCounter&lt;/code&gt; controller to set up counting rules depending on the locale."><code>BeerCounter</code></span>"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">          </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"beerCount in beers"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">            </span><span class="tag">&lt;<span class="nocode ng-scope" popover-title="ng-pluralize" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;ng-pluralize&lt;/code&gt; directive selects the right plural format for each locale. Unlike English, other languages often have complex plural rules depending on the number of items involved."><code>ng-pluralize</code></span></span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="count" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Binds to the number property. The count becomes the selector for the plural form to choose."><code>count</code></span></span><span class="pun">=</span><span class="atv">"beerCount"</span><span class="pln"> </span><span class="atn"><span class="nocode ng-scope" popover-title="when" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Binds to pluralization rules. The rules are unique for each locale and language combination."><code>when</code></span></span><span class="pun">=</span><span class="atv">"beerForms"</span><span class="tag">&gt;&lt;/ng-pluralize&gt;</span></li><li class="L9"><span class="pln">          </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">        </span><span class="tag">&lt;/div&gt;</span></li><li class="L1"><span class="pln">      </span><span class="tag">&lt;/pane&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;/tabs&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;/body&gt;</span></li><li class="L4"><span class="tag">&lt;/html&gt;</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'components'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pln">  </span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="directive" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Use the module&#39;s &lt;code&gt;directive()&lt;/code&gt; method to define new HTML vocabulary for our components. "><code>directive</code></span></span><span class="pun">(</span><span class="str">'<span class="nocode ng-scope" popover-title="tabs" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Define the &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; component."><code>tabs</code></span>'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span></li><li class="L4"><span class="pln">      <span class="nocode ng-scope" popover-title="restrict" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;restrict&lt;/code&gt; specifies the HTML format of the component. In this case the &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; must be an HTML element."><code>restrict</code></span></span><span class="pun">:</span><span class="pln"> </span><span class="str">'E'</span><span class="pun">,</span></li><li class="L5"><span class="pln">      <span class="nocode ng-scope" popover-title="transclude" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Specifies that when AngularJS replaces the &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; element with the expanded HTML that it should place the original content somewhere specified by an &lt;code&gt;ng-transclude&lt;/code&gt; directive (see below)."><code>transclude</code></span></span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L6"><span class="pln">      <span class="nocode ng-scope" popover-title="scope" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Our component needs to have a private scope so that its view properties are not accidentally modified outside the &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt;. If you do need to expose attributes, you can declare input/output attributes. See the &lt;code&gt;&amp;lt;pane&amp;gt;&lt;/code&gt; component below for an example."><code>scope</code></span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{},</span></li><li class="L7"><span class="pln">      <span class="nocode ng-scope" popover-title="controller" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Just like with the application, the component can have a controller that provides the component&#39;s behavior."><code>controller</code></span></span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln"><span class="nocode ng-scope" popover-title="$scope" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Current scope of the component."><code>$scope</code></span></span><span class="pun">,</span><span class="pln"> <span class="nocode ng-scope" popover-title="$element" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Current DOM element of the component."><code>$element</code></span></span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> panes </span><span class="pun">=</span><span class="pln"> $scope</span><span class="pun">.</span><span class="pln">panes </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[];</span></li><li class="L9"><span class="pln">&nbsp;</span></li><li class="L0"><span class="pln">        $scope</span><span class="pun">.</span><span class="kwd"><span class="nocode ng-scope" popover-title="select" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Publish a &lt;code&gt;select()&lt;/code&gt; method which will be used by the view to switch between tabs."><code>select</code></span></span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">pane</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">          angular</span><span class="pun">.</span><span class="pln">forEach</span><span class="pun">(</span><span class="pln">panes</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">pane</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">            pane</span><span class="pun">.</span><span class="pln">selected </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span></li><li class="L3"><span class="pln">          </span><span class="pun">});</span></li><li class="L4"><span class="pln">          pane</span><span class="pun">.</span><span class="pln">selected </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span></li><li class="L5"><span class="pln">        </span><span class="pun">}</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="addPane" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Components often need to collaborate together as a unit. In our case the &lt;code&gt;&amp;lt;pane&amp;gt;&lt;/code&gt; will use the &lt;code&gt;addPane()&lt;/code&gt; method to be register itself with its &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; container."><code>addPane</code></span> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">pane</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L8"><span class="pln">          </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">panes</span><span class="pun">.</span><span class="pln">length </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> $scope</span><span class="pun">.</span><span class="kwd">select</span><span class="pun">(</span><span class="pln">pane</span><span class="pun">);</span></li><li class="L9"><span class="pln">          panes</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="pln">pane</span><span class="pun">);</span></li><li class="L0"><span class="pln">        </span><span class="pun">}</span></li><li class="L1"><span class="pln">      </span><span class="pun">},</span></li><li class="L2"><span class="pln">      </span><span class="kwd"><span class="nocode ng-scope" popover-title="template" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;template&lt;/code&gt; is the HTML which needs to be rendered by the browser instead of the &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; placeholder. Notice that the HTML in this template can have other directives within it."><code>template</code></span></span><span class="pun">:</span></li><li class="L3"><span class="pln">        </span><span class="str">'&lt;div class="tabbable"&gt;'</span><span class="pln"> </span><span class="pun">+</span></li><li class="L4"><span class="pln">          </span><span class="str">'&lt;ul class="nav nav-tabs"&gt;'</span><span class="pln"> </span><span class="pun">+</span></li><li class="L5"><span class="pln">            </span><span class="str">'&lt;li ng-repeat="pane in panes" ng-class="{<span class="nocode ng-scope" popover-title="active" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="We set the &lt;code&gt;active&lt;/code&gt; CSS class to show the currently active tab."><code>active</code></span>:pane.selected}"&gt;'</span><span class="pun">+</span></li><li class="L6"><span class="pln">              </span><span class="str">'&lt;a href="" <span class="nocode ng-scope" popover-title="ng-click" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Select the clicked tab."><code>ng-click</code></span>="select(pane)"&gt;{{pane.title}}&lt;/a&gt;'</span><span class="pln"> </span><span class="pun">+</span></li><li class="L7"><span class="pln">            </span><span class="str">'&lt;/li&gt;'</span><span class="pln"> </span><span class="pun">+</span></li><li class="L8"><span class="pln">          </span><span class="str">'&lt;/ul&gt;'</span><span class="pln"> </span><span class="pun">+</span></li><li class="L9"><span class="pln">          </span><span class="str">'&lt;div class="tab-content" <span class="nocode ng-scope" popover-title="ng-transclude" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Marks the location where the contents of the &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; element will be placed."><code>ng-transclude</code></span>&gt;&lt;/div&gt;'</span><span class="pln"> </span><span class="pun">+</span></li><li class="L0"><span class="pln">        </span><span class="str">'&lt;/div&gt;'</span><span class="pun">,</span></li><li class="L1"><span class="pln">      <span class="nocode ng-scope" popover-title="replace" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Tells AngularJS that the original &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; element should be replaced with the &lt;code&gt;template&lt;/code&gt; rather than appending to it."><code>replace</code></span></span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span></li><li class="L2"><span class="pln">    </span><span class="pun">};</span></li><li class="L3"><span class="pln">  </span><span class="pun">})</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="pln">  </span><span class="pun">.</span><span class="pln">directive</span><span class="pun">(</span><span class="str">'pane'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">      </span><span class="kwd"><span class="nocode ng-scope" popover-title="require" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Specify that the &lt;code&gt;&amp;lt;pane&amp;gt;&lt;/code&gt; component must be inside a &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; component. This gives the &lt;code&gt;&amp;lt;pane&amp;gt;&lt;/code&gt; component to access to the &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt;&#39; controller methods -- the &lt;code&gt;addPane()&lt;/code&gt; method in this case."><code>require</code></span></span><span class="pun">:</span><span class="pln"> </span><span class="str">'^tabs'</span><span class="pun">,</span></li><li class="L8"><span class="pln">      restrict</span><span class="pun">:</span><span class="pln"> </span><span class="str">'E'</span><span class="pun">,</span></li><li class="L9"><span class="pln">      transclude</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span></li><li class="L0"><span class="pln">      scope</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> title</span><span class="pun">:</span><span class="pln"> </span><span class="str">'@'</span><span class="pln"> </span><span class="pun">},</span></li><li class="L1"><span class="pln">      link</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">scope</span><span class="pun">,</span><span class="pln"> element</span><span class="pun">,</span><span class="pln"> attrs</span><span class="pun">,</span><span class="pln"> <span class="nocode ng-scope" popover-title="tabsController" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="As we&#39;ve specified we &lt;code&gt;require&lt;/code&gt; the &lt;code&gt;&amp;lt;tabs&amp;gt;&lt;/code&gt; as our container, we get passed its controller instance."><code>tabsController</code></span></span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">        tabsController</span><span class="pun">.</span><span class="pln">addPane</span><span class="pun">(</span><span class="pln">scope</span><span class="pun">);</span></li><li class="L3"><span class="pln">      </span><span class="pun">},</span></li><li class="L4"><span class="pln">      </span><span class="kwd">template</span><span class="pun">:</span></li><li class="L5"><span class="pln">        </span><span class="str">'&lt;div class="tab-pane" ng-class="{active: selected}" ng-transclude&gt;'</span><span class="pln"> </span><span class="pun">+</span></li><li class="L6"><span class="pln">        </span><span class="str">'&lt;/div&gt;'</span><span class="pun">,</span></li><li class="L7"><span class="pln">      replace</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span></li><li class="L8"><span class="pln">    </span><span class="pun">};</span></li><li class="L9"><span class="pln">  </span><span class="pun">})</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'app'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'<span class="nocode ng-scope" popover-title="components" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;app&lt;/code&gt; module declares a dependency on the &lt;code&gt;components&lt;/code&gt; module, which ensures that the directives in the &lt;code&gt;components&lt;/code&gt; module are also loaded into the application."><code>components</code></span>'</span><span class="pun">])</span></li><li class="L1"><span class="pln">&nbsp;</span></li><li class="L2"><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'BeerCounter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">,</span><span class="pln"> <span class="nocode ng-scope" popover-title="$locale" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="The &lt;code&gt;$locale&lt;/code&gt; service contains meta-data for the current locale. There are AngularJS locale modules available for each language locale combination."><code>$locale</code></span></span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L3"><span class="pln">  $scope</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="beers" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Set up beers counting array. We will iterate over this array and see how the &#39;beers&#39; count gets rendered for each count."><code>beers</code></span> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">6</span><span class="pun">];</span></li><li class="L4"><span class="pln">  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$locale</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="id" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Create different pluralization rules based on locale. In an actual app, one would load a different module which would contain translation as well as localization rules for each language."><code>id</code></span> </span><span class="pun">==</span><span class="pln"> </span><span class="str">'en-us'</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L5"><span class="pln">    $scope</span><span class="pun">.</span><span class="pln"><span class="nocode ng-scope" popover-title="beerForms" popover-trigger="click" popover-append-to-body="true" popover-html-unsafe="Pluralization rules for English."><code>beerForms</code></span> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">      </span><span class="lit">0</span><span class="pun">:</span><span class="pln"> </span><span class="str">'no beers'</span><span class="pun">,</span></li><li class="L7"><span class="pln">      one</span><span class="pun">:</span><span class="pln"> </span><span class="str">'{} beer'</span><span class="pun">,</span></li><li class="L8"><span class="pln">      other</span><span class="pun">:</span><span class="pln"> </span><span class="str">'{} beers'</span></li><li class="L9"><span class="pln">    </span><span class="pun">};</span></li><li class="L0"><span class="pln">  </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">    $scope</span><span class="pun">.</span><span class="pln">beerForms </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span></li><li class="L2"><span class="pln">      </span><span class="lit">0</span><span class="pun">:</span><span class="pln"> </span><span class="str">'žiadne pivo'</span><span class="pun">,</span></li><li class="L3"><span class="pln">      one</span><span class="pun">:</span><span class="pln"> </span><span class="str">'{} pivo'</span><span class="pun">,</span></li><li class="L4"><span class="pln">      few</span><span class="pun">:</span><span class="pln"> </span><span class="str">'{} pivá'</span><span class="pun">,</span></li><li class="L5"><span class="pln">      other</span><span class="pun">:</span><span class="pln"> </span><span class="str">'{} pív'</span></li><li class="L6"><span class="pln">    </span><span class="pun">};</span></li><li class="L7"><span class="pln">  </span><span class="pun">}</span></li><li class="L8"><span class="pun">});</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs --><div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+    
+  <pre class="prettyprint linenums nocode ng-scope"><code><ol class="linenums"><li class="L0"><span class="com">// Uncomment this in Plunker or JSFiddle: @import '//netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css';</span></li></ol></code></pre>
+</div><!-- end ngRepeat: tab in tabs -->
+  </div>
+</div></div>
+      <div class="span4">
+        <span hint=""><em>Hint:</em> Click <code class="nocode ng-scope" popover-title="Hover" popover-trigger="click" popover-append-to-body="true" popover="Click highlighted areas in the code for explanations.">me</code>.</span>
+        <span class="pull-right" js-fiddle="tabs.html components.js app.js" module="app"><form class="jsfiddle" method="post" action="https://jsfiddle.net/api/post/library/pure/" target="_blank"><input type="hidden" name="title" value="AngularJS Example: "><input type="hidden" name="css" value="&lt;/style&gt; &lt;!-- Ugly Hack due to jsFiddle issue: http://goo.gl/BUfGZ --&gt; 
+&lt;link rel=&quot;stylesheet&quot; href=&quot;http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css&quot;&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+"><input type="hidden" name="html" value="&lt;div ng-app=&quot;app&quot;&gt;
+  &lt;tabs&gt;
+    &lt;pane title=&quot;Localization&quot;&gt;
+      Date: {{ &#39;2012-04-01&#39; | date:&#39;fullDate&#39; }} &lt;br&gt;
+      Currency: {{ 123456 | currency }} &lt;br&gt;
+      Number: {{ 98765.4321 | number }} &lt;br&gt;
+    &lt;/pane&gt;
+    &lt;pane title=&quot;Pluralization&quot;&gt;
+      &lt;div ng-controller=&quot;BeerCounter&quot;&gt;
+        &lt;div ng-repeat=&quot;beerCount in beers&quot;&gt;
+          &lt;ng-pluralize count=&quot;beerCount&quot; when=&quot;beerForms&quot;&gt;&lt;/ng-pluralize&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/pane&gt;
+  &lt;/tabs&gt;
+&lt;/div&gt;
+"><input type="hidden" name="js" value="angular.module(&#39;components&#39;, [])
+
+  .directive(&#39;tabs&#39;, function() {
+    return {
+      restrict: &#39;E&#39;,
+      transclude: true,
+      scope: {},
+      controller: function($scope, $element) {
+        var panes = $scope.panes = [];
+
+        $scope.select = function(pane) {
+          angular.forEach(panes, function(pane) {
+            pane.selected = false;
+          });
+          pane.selected = true;
+        }
+
+        this.addPane = function(pane) {
+          if (panes.length == 0) $scope.select(pane);
+          panes.push(pane);
+        }
+      },
+      template:
+        &#39;&lt;div class=&quot;tabbable&quot;&gt;&#39; +
+          &#39;&lt;ul class=&quot;nav nav-tabs&quot;&gt;&#39; +
+            &#39;&lt;li ng-repeat=&quot;pane in panes&quot; ng-class=&quot;{active:pane.selected}&quot;&gt;&#39;+
+              &#39;&lt;a href=&quot;&quot; ng-click=&quot;select(pane)&quot;&gt;{{pane.title}}&lt;/a&gt;&#39; +
+            &#39;&lt;/li&gt;&#39; +
+          &#39;&lt;/ul&gt;&#39; +
+          &#39;&lt;div class=&quot;tab-content&quot; ng-transclude&gt;&lt;/div&gt;&#39; +
+        &#39;&lt;/div&gt;&#39;,
+      replace: true
+    };
+  })
+
+  .directive(&#39;pane&#39;, function() {
+    return {
+      require: &#39;^tabs&#39;,
+      restrict: &#39;E&#39;,
+      transclude: true,
+      scope: { title: &#39;@&#39; },
+      link: function(scope, element, attrs, tabsController) {
+        tabsController.addPane(scope);
+      },
+      template:
+        &#39;&lt;div class=&quot;tab-pane&quot; ng-class=&quot;{active: selected}&quot; ng-transclude&gt;&#39; +
+        &#39;&lt;/div&gt;&#39;,
+      replace: true
+    };
+  })
+
+angular.module(&#39;app&#39;, [&#39;components&#39;])
+
+.controller(&#39;BeerCounter&#39;, function($scope, $locale) {
+  $scope.beers = [0, 1, 2, 3, 4, 5, 6];
+  if ($locale.id == &#39;en-us&#39;) {
+    $scope.beerForms = {
+      0: &#39;no beers&#39;,
+      one: &#39;{} beer&#39;,
+      other: &#39;{} beers&#39;
+    };
+  } else {
+    $scope.beerForms = {
+      0: &#39;žiadne pivo&#39;,
+      one: &#39;{} pivo&#39;,
+      few: &#39;{} pivá&#39;,
+      other: &#39;{} pív&#39;
+    };
+  }
+});
+
+"><button class="btn btn-primary"><i class="icon-white icon-pencil"></i> Edit Me</button></form></span>
+        <div class="tabs-spacer"></div>
+        <h4>Locale: US</h4>
+        <div app-run="tabs.html" module="app-us" class="well ng-scope"><div class="tabbable ng-isolate-scope"><ul class="nav nav-tabs"><!-- ngRepeat: pane in panes --><li ng-repeat="pane in panes" ng-class="{active:pane.selected}" class="ng-scope active"><a href="" ng-click="select(pane)" class="ng-binding">Localization</a></li><!-- end ngRepeat: pane in panes --><li ng-repeat="pane in panes" ng-class="{active:pane.selected}" class="ng-scope"><a href="" ng-click="select(pane)" class="ng-binding">Pluralization</a></li><!-- end ngRepeat: pane in panes --></ul><div class="tab-content" ng-transclude="">
+  <div class="tab-pane ng-scope ng-isolate-scope active" ng-class="{active: selected}" ng-transclude="" title="Localization"><span class="ng-binding ng-scope">
+    Date: Sunday, April 1, 2012 </span><br class="ng-scope"><span class="ng-binding ng-scope">
+    Currency: $123,456.00 </span><br class="ng-scope"><span class="ng-binding ng-scope">
+    Number: 98,765.432 </span><br class="ng-scope">
+  </div>
+  <div class="tab-pane ng-scope ng-isolate-scope" ng-class="{active: selected}" ng-transclude="" title="Pluralization">
+    <div ng-controller="BeerCounter" class="ng-scope">
+      <!-- ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">no beers</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">1 beer</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">2 beers</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">3 beers</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">4 beers</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">5 beers</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">6 beers</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers -->
+    </div>
+  </div>
+</div></div>
+</div>
+        <div class="tabs-spacer"></div>
+        <h4>Locale: SK</h4>
+        <div app-run="tabs.html" module="app-sk" class="well ng-scope"><div class="tabbable ng-isolate-scope"><ul class="nav nav-tabs"><!-- ngRepeat: pane in panes --><li ng-repeat="pane in panes" ng-class="{active:pane.selected}" class="ng-scope active"><a href="" ng-click="select(pane)" class="ng-binding">Localization</a></li><!-- end ngRepeat: pane in panes --><li ng-repeat="pane in panes" ng-class="{active:pane.selected}" class="ng-scope"><a href="" ng-click="select(pane)" class="ng-binding">Pluralization</a></li><!-- end ngRepeat: pane in panes --></ul><div class="tab-content" ng-transclude="">
+  <div class="tab-pane ng-scope ng-isolate-scope active" ng-class="{active: selected}" ng-transclude="" title="Localization"><span class="ng-binding ng-scope">
+    Date: nedeľa, 1. apríla 2012 </span><br class="ng-scope"><span class="ng-binding ng-scope">
+    Currency: 123&nbsp;456,00&nbsp;€ </span><br class="ng-scope"><span class="ng-binding ng-scope">
+    Number: 98&nbsp;765,432 </span><br class="ng-scope">
+  </div>
+  <div class="tab-pane ng-scope ng-isolate-scope" ng-class="{active: selected}" ng-transclude="" title="Pluralization">
+    <div ng-controller="BeerCounter" class="ng-scope">
+      <!-- ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">žiadne pivo</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">1 pivo</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">2 pivá</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">3 pivá</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">4 pivá</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">5 pív</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers --><div ng-repeat="beerCount in beers" class="ng-scope">
+        <ng-pluralize count="beerCount" when="beerForms">6 pív</ng-pluralize>
+      </div><!-- end ngRepeat: beerCount in beers -->
+    </div>
+  </div>
+</div></div>
+</div>
+      </div>
+    </div>
+
+    <h1 id="testability">Testability Built-in</h1>
+    <div class="row">
+      <div class="span6">
+        <h3>Injectable</h3>
+        <p>
+          The dependency injection in AngularJS allows you to declaratively describe how your
+          application is wired. This means that your application needs no <code>main()</code>
+          method which is usually an unmaintainable mess. Dependency injection is also a core to
+          AngularJS. This means that any component which does not fit your needs can easily be
+          replaced.
+        </p>
+      </div>
+      <div class="span6">
+        <h3>Testable</h3>
+        <p>
+          AngularJS was designed from ground up to be testable. It encourages behavior-view
+          separation, comes pre-bundled with mocks, and takes full advantage of dependency
+          injection. It also comes with end-to-end scenario runner which eliminates test flakiness
+          by understanding the inner workings of AngularJS.
+        </p>
+      </div>
+    </div>
+    <div class="spacer"></div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="jumbotron-header">
+      <h1 id="previous-conferences">Previous Conferences</h1>
+      <nav class="jumbotron-sections">
+        <div class="ng-link-left">
+          <a href="https://angularu.com/ng/" target="_blank">
+            <div class="jumbotron-logo">
+              <img src="./AngularJS — Superheroic JavaScript MVW Framework_files/angular-u-logo.png">
+            </div>
+            <div class="data">
+              <h2>Angular U</h2>
+              <p class="date">June 22nd - 25th 2015</p>
+              <p>San Francisco, California</p>
+            </div>
+          </a>
+        </div>
+        <div class="ng-link-left">
+          <a href="http://www.ng-conf.org/" target="_blank">
+            <div class="jumbotron-logo">
+              <img src="./AngularJS — Superheroic JavaScript MVW Framework_files/ng-conf-logo.png">
+            </div>
+            <div class="data">
+              <h2>ng-conf</h2>
+              <p class="date">March 5th-6th 2015</p>
+              <p>Salt Lake City, Utah</p>
+            </div>
+          </a>
+        </div>
+        <div class="ng-link-right">
+          <a href="http://www.ng-vegas.org/" target="_blank">
+            <div class="jumbotron-logo">
+              <img src="./AngularJS — Superheroic JavaScript MVW Framework_files/ng-vegas-logo.png">
+            </div>
+            <div class="data">
+              <h2>ng-vegas</h2>
+              <p class="date">May 7-8, 2015</p>
+              <p>Salt Lake City, Utah</p>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="container">
+      <p class="pull-right"><a href="https://angularjs.org/#" target="_self">Back to top</a></p>
+      <p>Super-powered by Google  ©2010-2015</p>
+      <p>Code licensed under the
+        <a href="https://github.com/angular/angular.js/blob/master/LICENSE" target="_blank">The
+          MIT License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <!-- end scripts -->
+
+  <div class="hello-code">
+    <!-- ============== Hello ============== -->
+
+    <script type="text/ng-template" id="hello.html">
+      <div>
+        <label>Name:</label>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here">
+        <hr>
+        <h1>Hello {{yourName}}!</h1>
+      </div>
+    </script>
+    <script type="text/ng-template" id="hello.annotation">
+      { "hello.html":
+          { "ng-app": "Tells AngularJS to be active in this portion of the page. In this case the entire document."
+          , "angular.min.js": "Load AngularJS."
+          , "ng-model": "This links the form and the model. This means that any changes to the control update the data in your model, and when you change the model it updates the control. Try it! Type in the control and see it update below."
+          , "{{yourName}}": "The <code>{{ }}</code> are a declarative way of specifying data binding locations in the HTML. AngularJS will automatically update this text whenever the <code>yourName</code> property changes."
+          }
+      }
+    </script>
+  </div>
+  <div class="todo-code">
+    <!-- ============== TODO ============== -->
+    <style type="text/css" id="todo.css">
+      .done-true {
+        text-decoration: line-through;
+        color: grey;
+      }
+    </style>
+    <script id="todo.js">
+      angular.module('todoApp', [])
+        .controller('TodoListController', function() {
+          var todoList = this;
+          todoList.todos = [
+            {text:'learn angular', done:true},
+            {text:'build an angular app', done:false}];
+
+          todoList.addTodo = function() {
+            todoList.todos.push({text:todoList.todoText, done:false});
+            todoList.todoText = '';
+          };
+
+          todoList.remaining = function() {
+            var count = 0;
+            angular.forEach(todoList.todos, function(todo) {
+              count += todo.done ? 0 : 1;
+            });
+            return count;
+          };
+
+          todoList.archive = function() {
+            var oldTodos = todoList.todos;
+            todoList.todos = [];
+            angular.forEach(oldTodos, function(todo) {
+              if (!todo.done) todoList.todos.push(todo);
+            });
+          };
+        });
+    </script>
+    <script type="text/ng-template" id="todo.html">
+      <h2>Todo</h2>
+      <div ng-controller="TodoListController as todoList">
+        <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+        [ <a href="" ng-click="todoList.archive()">archive</a> ]
+        <ul class="unstyled">
+          <li ng-repeat="todo in todoList.todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+          </li>
+        </ul>
+        <form ng-submit="todoList.addTodo()">
+          <input type="text" ng-model="todoList.todoText"  size="30"
+                 placeholder="add new todo here">
+          <input class="btn-primary" type="submit" value="add">
+        </form>
+      </div>
+    </script>
+    <script type="text/ng-template" id="todo.annotation">
+      { "todo.html":
+        { "ng-app": "Tells AngularJS to be active in this portion of the page. In this case the entire document."
+        , "angular.min.js": "Load AngularJS."
+        , "todo.js": "Your behavior lives in JavaScript controllers."
+        , "ng-controller": "The behavior of content under this element will be managed using the <code>TodoController</code> class defined in <code>todo.js</code>."
+        , "{{remaining()}}": "The <code>{{ }}</code> are a declarative way of specifying data binding locations in the HTML. AngularJS will automatically update this text whenever the <code>remaining()</code> function return value changes."
+        , "ng-click": "Instead of registering event-handlers, you declare which method on the controller to call. Here clicking the link will call <code>archive()</code> method."
+        , "ng-repeat": "Use <code>ng-repeat</code> to unroll a collection. Here, for every object in <code>todos</code>, AngularJS will create new copy of the <code>&lt;li&gt;</code> element. When objects are added to the <code>todos</code> collection the <code>ng-repeat</code> automatically adds new <code>&lt;li&gt;</code> elements into the DOM. Similarly when the objects are removed from <code>todos</code> then the corresponding <code>&lt;li&gt;</code> element is removed as well. This is one of the most versatile directives in AngularJS."
+        , "ng-model": "This links the form and the model. This means that any changes to the control update the data in your model, and when you change the model it updates the control. AngularJS automatically copies the state of the checkbox into <code>todo.done</code>. Conversely, if you update <code>todo.done</code> you will see the checkbox respond accordingly."
+        , "{{todo.done}}": "To show strikethroughs for completed tasks we have created a CSS class <code>done-true</code>. When the <code>todo.done</code> is <code>true</code> the resulting CSS selector is <code>done-true</code> which then applies the strikethrough."
+        , "ng-submit": "Intercepts form submission and instead calls <code>addTodo()</code>. Inside this method we read the <code>todoText</code> property and insert it into the <code>todos</code> collection."
+        }
+
+      , "todo.css":
+        { ".done-true": "Add strikethrough decoration when the task is done."
+        }
+
+      , "todo.js":
+        { "TodoListController": "The controller is the code behind the view. You can clearly see your application behavior because there is no DOM manipulation or framework specific boilerplate. Just simple, readable JavaScript."
+        , "$scope": "<code>$scope</code> contains your model data. It is the glue between the controller and the view. The <code>$scope</code> is just one of the services that can be injected into the controller."
+        , "todos": "We are creating the model with two initial todo items. Notice that you simply assign your model to the <code>$scope</code> and AngularJS reflects the state in the UI automatically. The model data is a Plain-Old-JavaScript-Object no need to wrap it in proxy or accesses the property through special setter methods."
+        , "addTodo": "We are assigning the behavior into the <code>$scope</code> so that the <code>ng-submit</code> can invoke it."
+        , "push": "This is just the <code>Array.push</code> method. Calling it updates the model, which then updates the view through data-binding. The <code>ng&ndash;repeat</code> is bound to this array. It automatically unrolls the array and adds the new DOM element into the view. (see <code>ng&ndash;repeat</code> in the <code>index.html</code> tab.)"
+        , "todoText = ''": "Because of  bi-directional data-binding, the model is always up to date. This means that we can simply read the state of the user input. No need for registering callbacks, event listeners or using framework dependent API."
+        , "''": "Writing to the form controls is just as easy. The data-binding will clear the control for us."
+        , "remaining": "This is a computed property. No need to define its dependencies or worry about when it needs to be updated."
+        , "todos = []": "You can replace the model with new instance at any time, without doing any special model listener registration."
+        }
+      }
+    </script>
+  </div>
+  <div class="project-code">
+    <!-- ============== Projects ============== -->
+    <style type="text/css" id="project.css">
+      table { text-align: left; }
+      table td, table th {
+        vertical-align: top;
+        padding: 0 .25em;
+      }
+    </style>
+    <script>
+      window.projectsArray = [
+          {
+            name: 'AngularJS',
+            site: 'http://angularjs.org',
+            description: 'HTML enhanced for web apps!'
+          },
+          {
+            name: 'jQuery',
+            site: 'http://jquery.com/',
+            description: 'Write less, do more.'
+          },
+          {
+            name: 'Backbone',
+            site: 'http://documentcloud.github.com/backbone/',
+            description: 'Models for your apps.'
+          },
+          {
+            name: 'SproutCore',
+            site: 'http://sproutcore.com/',
+            description: 'Innovative web-apps.'
+          },
+          {
+            name: 'Sammy',
+            site: 'http://sammyjs.org/',
+            description: 'Small with class.'
+          },
+          {
+            name: 'Spine',
+            site: 'http://spinejs.com/',
+            description: 'Awesome MVC Apps.'
+          },
+          {
+            name: 'Cappucino',
+            site: 'http://cappuccino.org/',
+            description: 'Objective-J.'
+          },
+          {
+            name: 'Knockout',
+            site: 'http://knockoutjs.com/',
+            description: 'MVVM pattern.'
+          },
+          {
+            name: 'GWT',
+            site: 'https://developers.google.com/web-toolkit/',
+            description: 'JS in Java.'
+          },
+          {
+            name: 'Ember',
+            site: 'http://emberjs.com/',
+            description: 'Ambitious web apps.'
+          },
+          {
+            name: 'Batman',
+            site: 'http://batmanjs.org/',
+            description: 'Quick and beautiful.'
+          }
+        ];
+    </script>
+    <script id="project.js">
+      angular.module('project', ['ngRoute', 'firebase'])
+
+      .value('fbURL', 'https://ng-projects-list.firebaseio.com/')
+      .service('fbRef', function(fbURL) {
+        return new Firebase(fbURL)
+      })
+      .service('fbAuth', function($q, $firebase, $firebaseAuth, fbRef) {
+        var auth;
+        return function () {
+            if (auth) return $q.when(auth);
+            var authObj = $firebaseAuth(fbRef);
+            if (authObj.$getAuth()) {
+              return $q.when(auth = authObj.$getAuth());
+            }
+            var deferred = $q.defer();
+            authObj.$authAnonymously().then(function(authData) {
+                auth = authData;
+                deferred.resolve(authData);
+            });
+            return deferred.promise;
+        }
+      })
+
+      .service('Projects', function($q, $firebase, fbRef, fbAuth) {
+        var self = this;
+        this.fetch = function () {
+          if (this.projects) return $q.when(this.projects);
+          return fbAuth().then(function(auth) {
+            var deferred = $q.defer();
+            var ref = fbRef.child('projects-fresh/' + auth.auth.uid);
+            var $projects = $firebase(ref);
+            ref.on('value', function(snapshot) {
+              if (snapshot.val() === null) {
+                $projects.$set(window.projectsArray);
+              }
+              self.projects = $projects.$asArray();
+              deferred.resolve(self.projects);
+            });
+
+            //Remove projects list when no longer needed.
+            ref.onDisconnect().remove();
+            return deferred.promise;
+          });
+        };
+      })
+
+      .config(function($routeProvider) {
+        $routeProvider
+          .when('/', {
+            controller:'ProjectListController as projectList',
+            templateUrl:'list.html',
+            resolve: {
+              projects: function (Projects) {
+                return Projects.fetch();
+              }
+            }
+          })
+          .when('/edit/:projectId', {
+            controller:'EditProjectController as editProject',
+            templateUrl:'detail.html'
+          })
+          .when('/new', {
+            controller:'NewProjectController as editProject',
+            templateUrl:'detail.html'
+          })
+          .otherwise({
+            redirectTo:'/'
+          });
+      })
+
+      .controller('ProjectListController', function(projects) {
+        var projectList = this;
+        projectList.projects = projects;
+      })
+
+      .controller('NewProjectController', function($location, Projects) {
+        var editProject = this;
+        editProject.save = function() {
+            Projects.$add(editProject.project).then(function(data) {
+                $location.path('/');
+            });
+        };
+      })
+
+      .controller('EditProjectController',
+        function($location, $routeParams, Projects) {
+          var editProject = this;
+          var projectId = $routeParams.projectId,
+              projectIndex;
+
+          editProject.projects = Projects.projects;
+          projectIndex = editProject.projects.$indexFor(projectId);
+          editProject.project = editProject.projects[projectIndex];
+
+          editProject.destroy = function() {
+              editProject.projects.$remove(editProject.project).then(function(data) {
+                  $location.path('/');
+              });
+          };
+
+          editProject.save = function() {
+              editProject.projects.$save(editProject.project).then(function(data) {
+                 $location.path('/');
+              });
+          };
+      });
+    </script>
+    <script type="text/ng-template" id="project.html">
+      <h2>JavaScript Projects</h2>
+      <div ng-view></div>
+    </script>
+    <script type="text/ng-template" id="list.html">
+      <input type="text" ng-model="projectList.search" class="search-query" id="projects_search"
+             placeholder="Search">
+      <table>
+        <thead>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+          <th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:'name'">
+          <td><a ng-href="{{project.site}}" target="_blank">{{project.name}}</a></td>
+          <td>{{project.description}}</td>
+          <td>
+            <a ng-href="#/edit/{{project.$id}}"><i class="icon-pencil"></i></a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </script>
+    <script type="text/ng-template" id="detail.html">
+      <form name="myForm">
+        <div class="control-group" ng-class="{error: myForm.name.$invalid && !myForm.name.$pristine}">
+          <label>Name</label>
+          <input type="text" name="name" ng-model="editProject.project.name" required>
+          <span ng-show="myForm.name.$error.required && !myForm.name.$pristine" class="help-inline">
+              Required {{myForm.name.$pristine}}</span>
+        </div>
+
+        <div class="control-group" ng-class="{error: myForm.site.$invalid && !myForm.site.$pristine}">
+          <label>Website</label>
+          <input type="url" name="site" ng-model="editProject.project.site" required>
+          <span ng-show="myForm.site.$error.required && !myForm.site.$pristine" class="help-inline">
+              Required</span>
+          <span ng-show="myForm.site.$error.url" class="help-inline">
+              Not a URL</span>
+        </div>
+
+        <label>Description</label>
+        <textarea name="description" ng-model="editProject.project.description"></textarea>
+
+        <br>
+        <a href="#/" class="btn">Cancel</a>
+        <button ng-click="editProject.save()" ng-disabled="myForm.$invalid"
+                class="btn btn-primary">Save</button>
+        <button ng-click="editProject.destroy()"
+                ng-show="editProject.project.$id" class="btn btn-danger">Delete</button>
+      </form>
+    </script>
+    <script type="text/ng-template" id="project.annotation">
+    { "project.html":
+       { "ng-app": "Tells AngularJS to be active in this portion of the page. In this case the entire document."
+       , "project": "The <code>ng-app</code> activates the <code>project</code> module for this page region. This lets you have modules that run in different parts of the page."
+       , "angular.min.js": "Load AngularJS."
+       , "angular-resource.min.js": "Load AngularJS resource module."
+       , "angular-route.min.js": "Load AngularJS route module."
+       , "firebase.js": "Load the Firebase JavaScript SDK."
+       , "angularfire.min.js": "Load the Angular bindings for Firebase."
+       , "project.js": "The <code>project.js</code> file contains the controllers which specify your application’s behavior."
+       , "ng-view": "We’re marking this <code>&lt;div&gt;</code> as the place we’ll load partial pages or “views”. The surrounding page will stay static while we load changing UI into this section. In this case, we’ll be switching between a list of “projects” and the form to add new or edit existing “projects”."
+       }
+     , "project.js":
+       { "project": "This defines the <code>project</code> module. You use modules to configure existing services, and define new services, directives, filters, and so on. Here, we’ll set up ‘routes’ that map URLs to partials. AngularJS watches the browser location and automatically updates the partial when the URL changes."
+       , "firebase": "Modules can depend on other modules. Here, <code>project</code> needs <code>firebase</code> which handles the persistence for this application."
+       , "value": "Define a singleton object that can be injected into controllers and services."
+       , "fbURL": "The URL to the Firebase location from which we want to load data (and store changes)."
+       , "factory": "Define a factory that will return a singleton object that can be injected into controllers and services."
+       , "$firebase": "A service provided by AngularFire for binding data from Firebase to Angular models."
+       , "$asArray": "A method that returns data from Firebase in the form of a synchronized array."
+       , "config": "You use <code>config()</code> to configure existing services. Here, we’re configuring the <code>$routeProvider</code> responsible for mapping URL paths to partials."
+       , "controller": "Define a controller function that can be attached to the DOM using <code>ng-controller</code> or to a view template by specifying it in the route configuration."
+       , "'/'": "When the URL is <code>/</code> it will load <code>list.html</code> into the view and attach the <code>ProjectListController</code> controller. You can instantly get an overview of an app's structure by reading the route definitions."
+       , "/edit/:projectId": "This route definition has a colon ':' in it. You use colons to make a component of the URL available to your controller. So now, <code>EditCtrl</code> can refer to the <code>projectId</code> property which tells it which project to edit."
+       , "otherwise": "The <code>otherwise</code> route specifies which view to display when the URL doesn’t match any of the explicit routes. It’s the default."
+       , "Projects": "<code>Projects</code> is an instance of <code>$firebase</code>, and is defined in the <code>projects</code> module. It exposes method to add, remove and update projects in the collection. Its purpose is to abstract the server communication. This lets the controller focus on the behavior rather than the complexities of server access."
+       , "$scope": "We can immediately assign the set of projects to our scope, and they will be displayed in the view."
+       , "$location": "You use the <code>$location</code> service to access the browser's location."
+       , "path": "Use the <code>path</code> method to change the application's 'deep-linking' location. Changing the URL will automatically activate the new route, and transition the application to display that view -- in this case, the <code>/edit/</code> view."
+       , "$routeParams": "Here, we ask AngularJS to inject the <code>$routeParams</code> service.  We use it to access the parameters extracted from the route path definitions."
+       , "projectId": "This extracts the <code>projectId</code> from the URL. This allows the controller to use deep-linking information for processing."
+       , "isClean": "Determines whether the user has modified the form. We use this information to enable the save button in the view."
+       , "destroy": "Called when the user clicks the delete button in the view."
+       , "save": "Called when the user clicks the save button in the view."
+       , "null": "We can delete an object by simply setting its value to null."
+       }
+     , "list.html":
+       { "ng-model": "Bind the input field to the <code>search</code> property. The property is then used to filter for only the projects which contain the text entered by the user."
+       , "#/new": "A link to a <code>/new</code> route defined in <code>projects.js</code>. Note that we follow the spirit of the web. There is no need to register callbacks on links, we are simply navigating to a new URL. This automatically updates the browser history, and enables deep-linking. But unlike a server round trip application, this navigation event gets rendered instantly in the browser."
+       , "ng-repeat": "Use <code>ng-repeat</code> to unroll a collection. Here, for every project in <code>projects</code>, AngularJS will create new copy of the <code>&lt;tr&gt;</code> element."
+       , "ng-repeat": "Use <code>ng-repeat</code> to unroll a collection. Here, for every project in <code>projects</code>, AngularJS will create new copy of the <code>&lt;tr&gt;</code> element."
+       , "filter": "The <code>filter</code> uses the <code>search</code> to return only a subset of items in the <code>projects</code> array. As you enter text into the search box, the <code>filter</code> will narrow down the list according to your criteria. <code>ng-repeat</code> will then add or remove items from the table."
+       , "orderBy": "Returns the <code>project</code> list ordered by <code>name</code> property."
+       , "#/edit/{{project._id.$oid}}": "Creates individual edit links, by embedding the project id into the URL. The embedded project id serves the purpose of deep-linking, back button, as well as a way to communicate to <code>EditProjectController</code> which project should be edited."
+       }
+     , "detail.html":
+       { "myForm": "Create a form named <code>myForm</code>. We will declare form validation rules here which we'll use to show input errors and disable buttons."
+       , "ng-class": "Add an <code>error</code> CSS class when the <code>myForm</code>'s input <code>name</code> is invalid."
+       , "required": "Invalidate the input control when no text is entered."
+       , "ng-show": "Show this error message when the <code>myForm</code>'s input <code>name</code> has <code>required</code> validation error."
+       , "url": "The URL type automatically adds URL validation."
+       , "ng-disabled": "Disable the 'Save' button when the form has not been filled in or is invalid."
+       }
+     }
+    </script>
+  </div>
+  <div class="tabs-code">
+    <!-- ============== Tabs ============== -->
+    <script id="components.js">
+      angular.module('components', [])
+
+        .directive('tabs', function() {
+          return {
+            restrict: 'E',
+            transclude: true,
+            scope: {},
+            controller: function($scope, $element) {
+              var panes = $scope.panes = [];
+
+              $scope.select = function(pane) {
+                angular.forEach(panes, function(pane) {
+                  pane.selected = false;
+                });
+                pane.selected = true;
+              }
+
+              this.addPane = function(pane) {
+                if (panes.length == 0) $scope.select(pane);
+                panes.push(pane);
+              }
+            },
+            template:
+              '<div class="tabbable">' +
+                '<ul class="nav nav-tabs">' +
+                  '<li ng-repeat="pane in panes" ng-class="{active:pane.selected}">'+
+                    '<a href="" ng-click="select(pane)">{{pane.title}}</a>' +
+                  '</li>' +
+                '</ul>' +
+                '<div class="tab-content" ng-transclude></div>' +
+              '</div>',
+            replace: true
+          };
+        })
+
+        .directive('pane', function() {
+          return {
+            require: '^tabs',
+            restrict: 'E',
+            transclude: true,
+            scope: { title: '@' },
+            link: function(scope, element, attrs, tabsController) {
+              tabsController.addPane(scope);
+            },
+            template:
+              '<div class="tab-pane" ng-class="{active: selected}" ng-transclude>' +
+              '</div>',
+            replace: true
+          };
+        })
+    </script>
+    <script>
+      angular.module('app-us', ['app', 'ngLocal.us']);
+      angular.module('app-sk', ['app', 'ngLocal.sk']);
+    </script>
+    <script id="app.js">
+      angular.module('app', ['components'])
+
+      .controller('BeerCounter', function($scope, $locale) {
+        $scope.beers = [0, 1, 2, 3, 4, 5, 6];
+        if ($locale.id == 'en-us') {
+          $scope.beerForms = {
+            0: 'no beers',
+            one: '{} beer',
+            other: '{} beers'
+          };
+        } else {
+          $scope.beerForms = {
+            0: 'žiadne pivo',
+            one: '{} pivo',
+            few: '{} pivá',
+            other: '{} pív'
+          };
+        }
+      });
+    </script>
+    <style type="text/css" id="bootstrap.css">
+      // Uncomment this in Plunker or JSFiddle: @import '//netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css';
+    </style>
+    <script type="text/ng-template" id="tabs.html">
+      <tabs>
+        <pane title="Localization">
+          Date: {{ '2012-04-01' | date:'fullDate' }} <br>
+          Currency: {{ 123456 | currency }} <br>
+          Number: {{ 98765.4321 | number }} <br>
+        </pane>
+        <pane title="Pluralization">
+          <div ng-controller="BeerCounter">
+            <div ng-repeat="beerCount in beers">
+              <ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
+            </div>
+          </div>
+        </pane>
+      </tabs>
+    </script>
+    <script type="text/ng-template" id="tabs.annotation">
+      { "tabs.html":
+        { "\"app\"": "The <code>ng-app</code> activates the <code>app</code> module for this page region. The module contains the BeerCounter controller and has a dependency on the <code>components</code> module, which contains the HTML extension (directives) for <code>&lt;tabs&gt;</code> and <code>&lt;pane&gt;</code> components."
+        , "tabs": "We've extended HTML's vocabulary with a custom <code>tabs</code> element. The <code>tabs</code> abstracts the complex HTML structure and behavior necessary for rendering of tabs. The result is a more readable view and very easily reusable syntax."
+        , "pane": "Again, we've extended the HTML vocabulary with a custom <code>pane</code> element. The <code>pane</code> element renders the panes of each tab. The result is a more readable view."
+        , "title": "Components can take input parameters in the form of HTML attributes. In this case the <code>title</code> attribute specifies the tab's text."
+        , "Localization": "An example demonstrating localization features of AngularJS: date, number and currency formatting."
+        , "Pluralization": "An example demonstrating pluralization features of AngularJS. Notice that that the plural form of 'beer' changes in 'SK' locale at zero, one, two, and five beers."
+        , "BeerCounter": "We use the <code>BeerCounter</code> controller to set up counting rules depending on the locale."
+        , "ng-pluralize": "The <code>ng-pluralize</code> directive selects the right plural format for each locale. Unlike English, other languages often have complex plural rules depending on the number of items involved."
+        , "count": "Binds to the number property. The count becomes the selector for the plural form to choose."
+        , "when": "Binds to pluralization rules. The rules are unique for each locale and language combination."
+        }
+      , "components.js":
+        { "directive": "Use the module's <code>directive()</code> method to define new HTML vocabulary for our components. "
+        , "tabs": "Define the <code>&lt;tabs&gt;</code> component."
+        , "controller": "Just like with the application, the component can have a controller that provides the component's behavior."
+        , "$element": "Current DOM element of the component."
+        , "$scope": "Current scope of the component."
+        , "select": "Publish a <code>select()</code> method which will be used by the view to switch between tabs."
+        , "addPane": "Components often need to collaborate together as a unit. In our case the <code>&lt;pane&gt;</code> will use the <code>addPane()</code> method to be register itself with its <code>&lt;tabs&gt;</code> container."
+        , "template": "The <code>template</code> is the HTML which needs to be rendered by the browser instead of the <code>&lt;tabs&gt;</code> placeholder. Notice that the HTML in this template can have other directives within it."
+        , "restrict": "The <code>restrict</code> specifies the HTML format of the component. In this case the <code>&lt;tabs&gt;</code> must be an HTML element."
+        , "ng-transclude": "Marks the location where the contents of the <code>&lt;tabs&gt;</code> element will be placed."
+        , "transclude": "Specifies that when AngularJS replaces the <code>&lt;tabs&gt;</code> element with the expanded HTML that it should place the original content somewhere specified by an <code>ng-transclude</code> directive (see below)."
+        , "scope": "Our component needs to have a private scope so that its view properties are not accidentally modified outside the <code>&lt;tabs&gt;</code>. If you do need to expose attributes, you can declare input/output attributes. See the <code>&lt;pane&gt;</code> component below for an example."
+        , "replace": "Tells AngularJS that the original <code>&lt;tabs&gt;</code> element should be replaced with the <code>template</code> rather than appending to it."
+        , "active": "We set the <code>active</code> CSS class to show the currently active tab."
+        , "require": "Specify that the <code>&lt;pane&gt;</code> component must be inside a <code>&lt;tabs&gt;</code> component. This gives the <code>&lt;pane&gt;</code> component to access to the <code>&lt;tabs&gt;</code>' controller methods -- the <code>addPane()</code> method in this case."
+        , "tabsController": "As we've specified we <code>require</code> the <code>&lt;tabs&gt;</code> as our container, we get passed its controller instance."
+        , "ng-click": "Select the clicked tab."
+        , "bind": "Specifies how is the <code>title</code> attribute on the <code>&lt;pane&gt;</code> element interpreted. The <code>bind</code> strategy copies the interpolated value to <code>&lt;pane&gt;</code>'s scope. This makes <code>title</code> available for binding in <code>template</code>."
+        }
+      , "app.js":
+        { "$locale": "The <code>$locale</code> service contains meta-data for the current locale. There are AngularJS locale modules available for each language locale combination."
+        , "beers": "Set up beers counting array. We will iterate over this array and see how the 'beers' count gets rendered for each count."
+        , "id": "Create different pluralization rules based on locale. In an actual app, one would load a different module which would contain translation as well as localization rules for each language."
+        , "beerForms": "Pluralization rules for English."
+        , "components": "The <code>app</code> module declares a dependency on the <code>components</code> module, which ensures that the directives in the <code>components</code> module are also loaded into the application."
+        }
+      }
+    </script>
+  </div>
+
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/prettify.min.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/homepage.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/download-data.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/angular-ui-bootstrap.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/angular-resource.min.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/angular-route.min.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/firebase.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/angularfire.min.js"></script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/angular-locale_sk.js"></script>
+  <script>
+    angular.module('ngLocal.sk', [])._configBlocks.push(angular.module('ngLocale')._configBlocks[0]);
+  </script>
+  <script src="./AngularJS — Superheroic JavaScript MVW Framework_files/angular-locale_en-us.js"></script>
+  <script>
+    angular.module('ngLocal.us', [])._configBlocks.push(angular.module('ngLocale')._configBlocks[0]);
+    angular.bootstrap(document, ['ngRoute', 'homepage', 'ngLocal.us']);
+  </script>
+
+  <script async="" src="./AngularJS — Superheroic JavaScript MVW Framework_files/widgets.js"></script>
+  <script type="text/javascript">
+    var _gaq=[
+      ['_setAccount','UA-8594346-3'],
+      ['_setDomainName', '.angularjs.org'],
+      ['_trackPageview'],['_trackPageLoadTime']
+    ];
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</body></html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://docs.angularjs.org/examples/example-example59/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta charset="UTF-8">
+  <title>Example - example-example59</title>
+  
+
+  <script src="angular.min(1).js"></script>
+  <script src="angular-animate.js"></script>
+  
+
+  <script type="text/javascript">
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+  </script><!--<base href="/examples/example-example59/index.html">--><base href=".">
+</head>
+<body ng-app="formExample" class="ng-scope">
+  <script>
+  angular.module('formExample', [])
+    .controller('FormController', ['$scope', function($scope) {
+      $scope.userType = 'guest';
+    }]);
+</script>
+<style>
+ .my-form {
+   -webkit-transition:all linear 0.5s;
+   transition:all linear 0.5s;
+   background: transparent;
+ }
+ .my-form.ng-invalid {
+   background: red;
+ }
+</style>
+<form name="myForm" ng-controller="FormController" class="my-form ng-scope ng-dirty ng-valid-parse ng-valid ng-valid-required">
+  userType: <input name="input" ng-model="userType" required="" class="ng-dirty ng-valid-parse ng-touched ng-valid ng-valid-required">
+  <span class="error ng-hide" ng-show="myForm.input.$error.required">Required!</span><br>
+  <code class="ng-binding">userType = k</code><br>
+  <code class="ng-binding">myForm.input.$valid = true</code><br>
+  <code class="ng-binding">myForm.input.$error = {}</code><br>
+  <code class="ng-binding">myForm.$valid = true</code><br>
+  <code class="ng-binding">myForm.$error.required = false</code><br>
+ </form>
+
+</body></html>

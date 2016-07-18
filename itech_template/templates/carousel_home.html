@@ -1,0 +1,119 @@
+<div ng-controller="itechCtrl">
+  <div style="height: 350px;width:100%;">
+    <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="width:100%;height:350px;"/>
+        <div class="carousel-caption">
+          <h4>{{slide.heading}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </uib-slide>
+    </uib-carousel>
+  </div>
+<div class="container-fluid">
+ <!-- Start of row  --> 
+  <div class="row"style="margin-top:40px;">
+
+  <div class="col-xs-3" style="padding:0px;font-family:serif;">
+				<div  style="text-align: center;">
+		<a href="#/consulting">
+		<img src="images/bus_consult.jpeg" id="img_home"/>
+			Business Consulting Service</a>
+		</div>
+  </div>
+
+  <div class="col-xs-6">
+  <div style="font-family: verdana,arial,helvetica,sans-serif;">
+  <p>ITech, the global IT solution provider of end-to-end, innovative, cutting edge software solutions.
+  </p> 
+  <p>We deliver excellent services meeting the challenges of the clients and achieving complete satisfaction. The offerings are based on rigorous and proven methodologies and scientifically driven frameworks. In today's hi-tech arena we provide both - robust and cost-effective solutions and services. We analyze the existing environment and identify opportunities for optimization and productivity improvement.
+  </p>      
+  </div>
+  </div>
+
+  <div class="col-xs-3">
+		<div  style="text-align: center;">
+		<a href="#/business_strategies"><img src="images/img_aboutus.jpg" id="img_home"/>
+			Business Strategies</a>
+  </div>
+  </div>
+
+  </div>
+  <!-- End of row  -->
+</div>
+
+<div style="margin-top:10px;">
+<uib-accordion>
+    <uib-accordion-group is-open="status_open">
+      <uib-accordion-heading>
+        <span style="font-size:22px;"><i>Services and Products</i></span> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status_open, 'glyphicon-chevron-right': !status_open}"></i>
+      </uib-accordion-heading>
+      <div id="accordion">	  
+	  <span class="label label-danger">
+	  <big>About Our Services :</big></span>
+	  <p>
+	  ITech provides a full and complete service alongside our software products.<br>
+	  A customer needs look no further when it comes to implementing the products.</p>
+	  </div>
+	  <div id="accordion">	  
+	  <a href="#/quality"><span class="label label-info">
+	  <big>Quality Testing Services :</big></span></a> 
+	  <p>Providing the entire gamut of automated testing services, both on-site and offshore.</p>
+	  </div>
+	  <div id="accordion">	  
+	  <a href="#/analysis"><span class="label label-info">
+	  <big>Business Intelligence :</big></span></a>
+	  <p>ITech's Business Intelligence services are delivered through processes that are assessed at our high quality.</p> 
+	  </div>
+	  <div id="accordion">	  
+	 <a href="#/service_erp"><span class="label label-info">
+	 <big>Enterprise Application Services :</big></span></a>
+	 <p>ITech helps you in automating the enterprise and,<br>
+	 Speeds up transactions across the organization by providing ERP, CRM & SCM.</p> 
+	  </div>
+    </uib-accordion-group>
+</uib-accordion>
+</div>
+<div class="row">
+    			<div class="col-sm-4">
+    				<div class="panel panel-default">
+			<span class="glyphicon glyphicon-eye-open" style="float:right;color:blue;">-Tech</span>
+    					<div class="panel-body">    					
+    						<h4><span class="label label-primary">
+							Customers Qoute</span></h4>
+    						<p>"The quality and speed with which ITech executed our project - from understanding requirements to final, tested product - is nothing short of amazing. In terms of technical expertise and customer orientation, they rank with the best. "</p>
+    					</div>
+    				</div>
+    			</div>
+
+    			<div class="col-sm-4">
+    				<div class="panel panel-default">
+					<span class="glyphicon glyphicon-eye-open" style="float:right;color:blue;">-Tech</span>
+    					<div class="panel-body">    					
+    						<h4><span class="label label-info">
+							Our Expertise</span></h4>
+    						<p>
+							<a href="#/product" uib-tooltip="{{'banking-bervices'}}">Banking</a><br>
+							<a href="#/quality" uib-tooltip="{{'software-quality-assurance'}}">Quality Assurance</a><br>
+							<a href="#/resource" uib-tooltip="{{'enterprise-business-solutions'}}">Case Studies</a><br>
+							<a href="#/service_erp" uib-tooltip="{{'enterprise-business-solutions'}}">Enterprise Application</a><br>
+							<a href="#/consulting" uib-tooltip="{{'business-automation'}}">Business Process Automation</a><br>
+							<a href="#/news" uib-tooltip="{{'about-itech-events'}}">News & Events</a>
+							</p><br>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-sm-4">
+    				<div class="panel panel-default">
+					<span class="glyphicon glyphicon-eye-open" style="float:right;color:blue;">-Tech</span>
+    					<div class="panel-body">    					
+    						<h4><span class="label label-success">
+							Featured Services</span></h4><br>
+    						<p>Enterprize Application development using complete <a href="" uib-tooltip="{{sdlcToolTip}}">SDLC</a> phases....</p>
+							<p>We provides <a href="" uib-tooltip="{{b2bToolTip}}">B2B</a> processe to automate your business services...</p>
+							<p>Business consulting services..</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div><!-- end of row -->
+</div><br>

@@ -1,0 +1,24 @@
+<form novalidate class="simple-form">
+
+        <div style="padding-left:15%;font-size:20px;padding-top:10px;">
+            <u>Update Task</u><br><br>
+        </div>
+	Task :<br>
+	<textarea id="1" style="resize:none;" ng-model="updt.task"></textarea>
+	<!--<input type="" name="price" min="0" max="1000" maxlength="4" placeholder="Integer Type" required/>-->
+	<br><br>
+
+	Priority :&nbsp;&nbsp;&nbsp;&nbsp;
+	<select id="sel" ng-model="updt.priority">
+   	  <option value="high">High </option>
+   	  <option value="low">Low </option>
+    </select><br><br>
+	Status :&nbsp;&nbsp;&nbsp;&nbsp;
+	<select id="sel" ng-model="updt.status">
+   		<option value="completed">Completed</option>
+   		<option value="pending">Pending</option>
+   	</select><br><br>
+	Assigned By:<br>&nbsp;&nbsp;
+	<input id="4" type="text" ng-model="updt.assignedBy"/><br><br><br>
+	<input type="button" ng-click="update(updt)" value="Add-Task" class="btn btn-info" style=" margin-left: 35%;margin-bottom:15px;"/>
+</form>

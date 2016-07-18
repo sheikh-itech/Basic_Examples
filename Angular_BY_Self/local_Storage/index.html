@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+    <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+    <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+    
+    <script>
+      angular.module('app', [
+        'ngStorage'
+      ]).
+      
+      controller('Ctrl', function(
+        $scope,
+        $localStorage
+      ){
+        $scope.x = $localStorage.x || 42;
+        $scope.y = $localStorage.y;
+        
+        $scope.$watch('[x, y]', function() {
+            $localStorage.x = $scope.x;
+            $localStorage.y = $scope.y;
+        }, true);
+        
+        $scope.$watch(function() {
+            return angular.toJson($localStorage);
+        }, function() {
+            $scope.x = $localStorage.x;
+            $scope.y = $localStorage.y;
+        });
+      });
+    </script>
+  </head>
+  
+  <body ng-controller="Ctrl">
+    <button ng-click="x = x + 1">{{x}}</button> + <button ng-click="y = y + 1">{{y}}</button> = {{x + y}}
+  </body>
+
+</html>

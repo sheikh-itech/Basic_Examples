@@ -1,0 +1,52 @@
+<div ng-controller='examCtrl'>
+  
+  	<div class="row" style="margin-top:100px;"><!-- form row starts -->
+  	
+	<div class="row" ng-show='login_warning'>
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<div class="alert alert-danger fade in">
+				<a href="" class="close" data-dismiss="alert">&times;</a>
+				<strong>Warning!</strong> username or password is wrong.
+			</div>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+  	<div class="col-md-3"></div>
+  	<div class="col-md-6">
+     	<div class="panel panel-default">
+  				<div class="panel-heading">
+                  Login Panel Detail
+            	 </div>
+
+          <!-- form -->  	 
+      		<div class="panel-body">
+      		<form name="myForm" ng-submit="login('/exam')">      		   
+      			
+      				<div class="form-group">
+      					<label for="txtFullName">Username</label>
+ 						<input type="text" id="txtFullName" class="form-control" ng-model="user.name" placeholder="Enter name" autofocus required />
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="txtPassword">Password</label>
+            			<input type="password" id="txtPassword" class="form-control" ng-model="user.pass" placeholder="Enter password" required/>
+            	    </div>
+            	    <div class="form-group">
+      				    <label for="ddType">User type</label>
+      				    <select id="ddType" class="form-control" ng-model="user.type" required>
+   	  						<option selected="true">Admin</option>
+   	  						<option>Trainer</option> 
+							<option>Trainee</option> 
+   	  					</select>            			
+            	    </div>
+            	 <input type="submit" value="Sign In" 
+  ng-disabled="myForm.$dirty && myForm.$invalid" class="btn btn-lg btn-info" style="margin-left:33%;">
+           	</form>   
+      		</div> 
+       <!-- End of form  -->
+        
+   		</div>   </div>     
+   		<div class="col-md-3"></div>  	             	
+   	</div><!-- form row end -->
+
+</div>

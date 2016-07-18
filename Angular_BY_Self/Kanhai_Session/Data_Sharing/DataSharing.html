@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+ <head>
+  <title>Directive application</title>
+  <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> <!--  <script src='angular.min.js'></script>-->
+	<script src='DataSharingInController.js'></script>
+ </head>
+ <body>
+
+<div class='parent' ng-controller='myCtrl1'>
+<button ng-click='broadCastEvent()'>BroadCast</button>
+</div>
+<div class='parent' ng-controller='myCtrl2'>
+<span ng-if='isVisible'>Button clicked</span>
+</div>  
+
+ </body>
+</html>

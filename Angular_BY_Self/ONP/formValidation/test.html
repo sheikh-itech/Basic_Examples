@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Angular Application</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <script src='myApp.js'></script>
+</head>
+<body ng-app='myApp'>
+
+<div ng-controller='myCtrl'>
+<table>
+<tr><td colspan='3'>Registration Form</td></tr>
+  <form name='myForm'>
+ First Name :&nbsp;<input type="text" name='user1'place-holder='First Name' ng-model='user.fname' required>
+ <br>
+ Last Name :&nbsp;<input type="text" name='user2' place-holder='Last Name' ng-model='user.lname' required>
+ <br>
+ Password :&nbsp;<input type="password" name='pass' place-holder='Password' ng-model='user.pass' required>
+ <br>
+ Contact Number :<input type="text" name='cont' place-holder='Contact Num' ng-model='user.cont' required>
+ <br>
+ <button ng-click='submit();' ng-disabled='myForm.user1.$invalid && myForm.user2.$invalid'>Submit1</button>
+</table>
+ </form>
+
+</div>  
+</body>
+</html>

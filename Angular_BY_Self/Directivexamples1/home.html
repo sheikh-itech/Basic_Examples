@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Test by sheikh</title>
+  <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>
+   body {
+     background-color: #00ff00;
+   }
+        #t1 {
+               height: auto;
+               margin-left: auto;
+               margin-right: auto; 
+			   padding-left: 0px;
+               position: relative;
+               top: 0px;
+        }
+		#td1 {
+			width: 300px;
+			color: red;
+		}
+		#tr1 { 
+			height:90px;
+			text-align:center;
+			background-color:#F2FFF2;
+		}
+		        table {
+               height: auto;
+               margin-left: auto;
+               margin-right: auto; 
+			   padding-left: 0px;
+               position: relative;
+               top: 0px;
+        }
+		td {
+			width: 150px;
+			color: red;
+		}
+		tr { 
+			height:30px;
+			text-align:center;
+			background-color:#F2FFF2;
+		}
+		th {
+		    width: 150px;
+		    color: blue;
+            text-align:center;
+			background-color:#F0F0D5;
+		}
+		#frm {
+			float:right;			
+			margin-top:20px;	
+            border: solid red 1px;
+			
+		}
+
+  </style>
+</head>
+<body ng-app="myApp" ng-init="date()">
+
+<div ng-controller="myCtrl">
+
+<div ng-hide="addfrnd" id="frm">
+<form name="addForm" class="css-form" novalidate>
+Add Friend:<br><input type="text"  ng-model="frnd.name" required />
+<br>
+<button ng-click="add(frnd);" style="margin-left:25%;" class="btn btn-info">Add-Friend</button>
+<form>
+</div>
+
+<div ng-hide="addfrm">
+<form name="myForm" novalidate>
+<table id="t1">
+<tr id="tr1"><td colspan='2'><b style="font-size:25px;">Simple Expense Manager Project</b></td></tr>
+<tr id="tr1">
+<td colspan='2' id="td1">
+<span style="float:left;">Add a new item:</span>
+<span style="float:right;"><button ng-click="friend();"  class="btn btn-info">Add a friend</button></span>
+</td>
+</tr>
+<tr id="tr1">
+<td id="td1">
+Type:
+<select  name="type" ng-model="user.type" required>
+<option selected>Cash</option>
+<option>Check</option>
+</td>
+<td id="td1">
+<span style="float:top;">Add friend:</span>
+    <select size="3" ng-model="user.friend">
+   	  <option ng-repeat="frnd in friends">{{frnd.name}}</option>
+    </select>
+</td>
+</tr>
+
+<tr id="tr1">
+<td id="td1">
+Name:
+<input name="nam" type="text" ng-model="user.name" required>
+<span style="color:red" ng-show="myForm.nam.$dirty && myForm.nam.$invalid">
+      <span ng-show="myForm.nam.$error.required">First Name is required.</span>
+   </span>
+ </td>
+<td id="td1">
+Date:<input type="date"  name="dt" ng-model="user.date" required >
+<span style="color:red" ng-show="myForm.dt.$dirty && myForm.dt.$invalid">
+<span ng-show="myForm.dt.$error.required">Date is required.</span></span>
+</input>
+</td>
+
+</tr>
+
+<tr id="tr1">
+<td id="td1">
+Currency:
+<select  name="type" ng-model="user.currency" required>
+<option selected>INR</option>
+<option>USD</option>
+</select>
+</td>
+<td id="td1">
+Amount:<input type="number" name="t1" ng-model="user.amount" required >
+<span style="color:red" ng-show="myForm.t1.$dirty && myForm.n.$invalid">
+<span ng-show="myForm.t1.$error.required">Amount is required.</span>
+</input>
+</td>
+
+
+</tr>
+<tr id="tr1">
+<td colspan='2' id="td1">
+<input type="submit" ng-click="update(user);" value="Add new expense" class="btn btn-info"/>
+
+</td>
+</tr>
+
+</table>
+
+</form>
+</div>
+
+<div  ng-hide="addshow">
+<table class="table-bordered">
+    <thead>
+	  <tr>
+	    <th colspan='3'>Filter By Friend		
+		<select ng-model="frnd">
+			<option ng-repeat="frnd in friends">{{frnd.name}}</option>
+        </select>
+		</th>
+		<th colspan='3' ng-model="curr">Currency
+		<select ng-model="">
+			<option>INR</option>
+			<option>USD</option>
+		</select></th>
+	  </tr>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Friends</th>
+		<th>Date</th>
+		<th>Amount</th>
+		<th>Action</th>
+      </tr>
+    </thead>
+  <tbody>
+  <tr ng-repeat="arr in master | filter: frnd | orderBy: 'date':true">
+    <td>{{ arr.type }}</td>
+	<td>{{ arr.name }}</td>
+	<td>{{ arr.friend  }}</td>
+	<td>{{ arr.date | date:'dd-MM-yyyy'}}</td>
+	<td>{{ arr.currency+" "+arr.amount }}</td>
+	<td>
+	<button ng-click="remove($index)">Delete</button>
+	<button ng-click="Update($index)">Update</button>
+	</td>
+  </tr>
+  </tbody>
+</table> 
+</div><!-- End of show and delete data-->
+
+<script>
+ angular.module('myApp', [])
+   .controller('myCtrl', function($scope) {
+    
+	$scope.addfrnd = true;
+	$scope.addfrm = false;
+	$scope.addshow = false;
+	$scope.addupdt = true;
+	$scope.master= [];
+	$scope.user ={type:'Cash',friend:'Sheikh',name:'xyz',};
+	
+	$scope.date = function() {
+		$scope.user.date = new Date().toDateString();
+	}
+	$scope.friends =[
+	{name:'Sheikh'},
+	{name:'Hafeez'},
+	{name:'Mansoori'}
+	];
+
+     $scope.update = function(user) {
+       // Example with 1 argument
+       $scope.master.push(angular.copy(user));
+	   $scope.user = {};
+     };
+	 
+	 $scope.remove = function(index){
+
+			 $scope.master.splice(index, 1);
+     }
+	 $scope.add = function(frnd){
+		$scope.friends.push(angular.copy(frnd));
+		$scope.addfrnd = true;
+		$scope.addfrm = false;
+		$scope.addshow = false;
+		
+	 }
+     $scope.friend = function(){
+		$scope.addfrnd = false;
+		$scope.addfrm = true;
+		$scope.addshow = true;
+	}
+	$scope.Update = function(index) {
+	
+			//$scope.addfrnd = ture;
+			$scope.addfrm = true;
+			$scope.addshow = true;
+			$scope.addupdt = false;
+			
+    	$scope.updt = {
+		 type:'',
+		 friend:'',
+		 name:'',
+		 date:'',
+		 currency:'',
+		 amount:''
+		};
+        $scope.updt=$scope.master[index];			
+	   }
+	   $scope.finalUpdate = function(index, updt) {
+	         $scope.master[index] = $scope.updt;
+			 $scope.addfrnd = true;
+			$scope.addfrm = false;
+			$scope.addshow = false;
+			$scope.addupdt = true;	
+	   }
+ });
+</script>
+
+<div ng-hide="addupdt">
+<form name="myForm" novalidate>
+<table id="t1">
+<tr id="tr1"><td colspan='2'><b style="font-size:25px;">Simple Expense Manager Project</b></td></tr>
+<tr id="tr1">
+<td colspan='2' id="td1">
+<span style="float:left;">Update a item:</span>
+
+</td>
+</tr>
+<tr id="tr1">
+<td id="td1">
+Type:
+<select  name="type" ng-model="updt.type" required>
+<option selected>Cash</option>
+<option>Check</option>
+</td>
+<td id="td1">
+<span style="float:top;">Add friend:</span><select size="3" ng-model="updt.friend">
+   	  <option ng-repeat="frnd in friends">{{frnd.name}}</option>
+    </select>
+</td>
+
+
+</tr>
+
+<tr id="tr1">
+<td id="td1">
+Name:
+<input type="text" name="n" ng-model="updt.name" required>
+<span style="color:red" ng-show="myForm.n.$dirty && myForm.n.$invalid">
+<span ng-show="myForm.n.$error.required">Name is required.</span>
+</input>
+</td>
+<td id="td1">
+Date:<input type="date"  name="dt" ng-model="updt.date" required >
+<span style="color:red" ng-show="myForm.dt.$dirty && myForm.n.$invalid">
+<span ng-show="myForm.dt.$error.required">Date is required.</span>
+</input>
+</td>
+
+
+</tr>
+
+<tr id="tr1">
+<td id="td1">
+Currency:
+<select  name="type" ng-model="updt.currency" required>
+<option selected>USD</option>
+<option>INR</option>
+</td>
+<td id="td1">
+Amount:<input type="number" name="t1" ng-model="updt.amount" required >
+<span style="color:red" ng-show="myForm.t1.$dirty && myForm.n.$invalid">
+<span ng-show="myForm.t1.$error.required">Amount is required.</span>
+</input>
+</td>
+
+
+</tr>
+<tr id="tr1">
+<td colspan='2' id="td1">
+<input type="button" ng-click="finalUpdate($index, updt);" value="Done" class="btn btn-info"/>
+
+</td>
+</tr>
+
+</table>
+
+</form>
+</div>
+
+</div>  
+ </body>
+</html>

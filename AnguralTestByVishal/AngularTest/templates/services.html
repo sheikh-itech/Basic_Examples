@@ -1,0 +1,30 @@
+<div ng-controller="myCtrl">
+<div style='padding-left:25%;padding-right:25%;background-color:lightgreen;'>
+<!--
+<div><img src="images/service.jpg" height="50px;"alt=""float="right"/></div>
+-->  <br><div style="background-color:lightblue;">
+	<div style="float:left;" id="area">Web Development
+	</div>
+	<div style="float:right;" id="area">{{price.development|currency}}
+	</div><br><br>
+    </div><br><div style="background-color:lightblue;">
+	<div style="float:left;" id="area">Web Designing
+	</div>
+	<div style="float:right;" id="area">{{price.design|currency}}
+	</div><br><br>
+	</div><br><div style="background-color:red;">
+	<div style="float:left;" id="area">App Integration
+	</div>
+	<div style="float:right;" id="area">{{price.integration|currency}}
+	</div><br><br>
+	</div><br><div style="background-color:red;">
+	<div style="float:left;" id="area">Project Training
+	</div>
+	<div style="float:right;" id="area">{{price.training|currency}}
+	</div><br><br></div><hr>
+	<div style="float:left;" id="area">Total
+	</div>
+	<div style="float:right;" id="area">{{price.training+price.integration+price.development+price.design|currency}}
+	</div><br><br><br>
+</div>
+</div>

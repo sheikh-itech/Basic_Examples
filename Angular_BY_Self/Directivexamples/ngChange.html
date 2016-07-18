@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Repeat Derective by sheikh</title>
+  <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  
+ </head>
+ <body ng-app="repeatApp">
+<pre>
+Ng-Change Directive
+-------------------
+</pre>
+<div ng-controller="RepeatCtrl">
+
+ <input type="checkbox" ng-model="value" ng-change="change()" />
+ {{value}}<br>
+ {{count}}
+<script>
+ angular.module('repeatApp', [])
+   .controller('RepeatCtrl', function($scope) {
+        
+		$scope.count = 0;
+		$scope.value = false;
+		$scope.change = function() {
+			$scope.count++;
+		}
+ });
+</script>
+
+</div>  
+ </body>
+</html>

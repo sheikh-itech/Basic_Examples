@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://docs.angularjs.org/examples/example-example60/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta charset="UTF-8">
+  <title>Example - example-example60</title>
+  
+
+  <script src="angular.min(1).js"></script>
+  
+
+  
+</head>
+<body ng-app="bindExample" class="ng-scope">
+  <script>
+  angular.module('bindExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.name = 'Whirled';
+    }]);
+</script>
+<div ng-controller="ExampleController" class="ng-scope">
+  <label>Enter name: <input type="text" ng-model="name" class="ng-pristine ng-untouched ng-valid"></label><br>
+  Hello <span ng-bind="name" class="ng-binding">Whirled</span>!
+</div>
+
+</body></html>

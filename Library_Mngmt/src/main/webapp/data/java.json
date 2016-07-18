@@ -1,0 +1,109 @@
+[{
+    "test": {
+        "Id": 3,
+        "name": "Design Patterns",
+        "description": "Design Patterns Quiz including solid principles."
+    },
+    "Questions": [
+    {
+        "Id": 1,
+        "Que": "Java is a:", 
+        "Options": [
+            {"Opt": "Objects and Variables", "Ans": false },
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt":"Object Oriented Programming", "Ans": false },
+            {"Opt": "OutOfMemory Exception", "Ans": false }]  
+	          
+    },
+    {
+        "Id": 2,
+        "Que": "Java is a", 
+        
+        "Options": [
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt": "Abstract Factory", "Ans": false },
+            {"Opt": "Builder", "Ans": false },
+            {"Opt": "Prototype", "Ans": false }]
+    },
+    {
+        "Id": 3,
+        "Que": "Java is a:", 
+        "Options": [
+            {"Opt": "Objects and Variables", "Ans": false },
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt":"Object Oriented Programming", "Ans": false },
+            {"Opt": "OutOfMemory Exception", "Ans": false }]  
+	          
+    },
+    {
+        "Id": 4,
+        "Que": "Java is a.", 
+        
+        "Options": [
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt": "Abstract Factory", "Ans": false },
+            {"Opt": "Builder", "Ans": false },
+            {"Opt": "Prototype", "Ans": false }]
+    },
+    {
+        "Id": 5,
+        "Que": "Java is a:", 
+        "Options": [
+            {"Opt": "Objects and Variables", "Ans": false },
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt":"Object Oriented Programming", "Ans": false },
+            {"Opt": "OutOfMemory Exception", "Ans": false }]  
+	          
+    },
+    {
+        "Id": 6,
+        "Que": "Java is a.", 
+        
+        "Options": [
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt": "Abstract Factory", "Ans": false },
+            {"Opt": "Builder", "Ans": false },
+            {"Opt": "Prototype", "Ans": false }]
+    },
+    {
+        "Id": 7,
+        "Que": "Java is a", 
+        "Options": [
+            {"Opt": "Objects and Variables", "Ans": false },
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt":"Object Oriented Programming", "Ans": false },
+            {"Opt": "OutOfMemory Exception", "Ans": false }]  
+	          
+    },
+    {
+        "Id": 8,
+        "Que": "Java is a.", 
+        
+        "Options": [
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt": "Abstract Factory", "Ans": false },
+            {"Opt": "Builder", "Ans": false },
+            {"Opt": "Prototype", "Ans": false }]
+    },
+    {
+        "Id": 9,
+        "Que": "Java is a", 
+        "Options": [
+            {"Opt": "Objects and Variables", "Ans": false },
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt":"Object Oriented Programming", "Ans": false },
+            {"Opt": "OutOfMemory Exception", "Ans": false }]  
+	          
+    },
+    {
+        "Id": 10,
+        "Que": "Java is a.", 
+        
+        "Options": [
+            {"Opt": "Programing Lang.", "Ans": true },
+            {"Opt": "Abstract Factory", "Ans": false },
+            {"Opt": "Builder", "Ans": false },
+            {"Opt": "Prototype", "Ans": false }]
+    }
+    ]
+}]

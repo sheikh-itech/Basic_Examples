@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body class="list-group" ng-controller="StoreController as store">
+    <header>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
+      <h2 class="text-center">– an Angular store –</h2>
+    </header>
+    <div class="list-group-item" ng-repeat="product in store.products">
+      <h3>
+        {{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+      </h3>
+      <section ng-show="product.images.length">
+        <img ng-src="{{product.images[0]}}" />
+        <ul class="list-inline thumbs">
+          <li class="thumbnail" ng-repeat="image in product.images">
+            <img ng-src="{{image}}" />
+          </li>
+        </ul>
+      </section>
+
+      <section class="tab">
+        <ul class="nav nav-pills">
+          <li>
+            <a href>Description</a></li>
+          <li>
+            <a href>Specs</a></li>
+          <li>
+            <a href>Reviews</a></li>
+        </ul>
+        <div>
+          <h4>Description</h4>
+          <blockquote></blockquote>
+        </div>
+        <div>
+          <h4>Specs</h4>
+          <blockquote>Shine: </blockquote>
+        </div>
+        <div>
+          <h4>Reviews</h4>
+          <blockquote></blockquote>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

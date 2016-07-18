@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Angular JS Controller</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+<style>
+table, th , td {
+   border: 1px solid grey;
+   border-collapse: collapse;
+   padding: 5px;
+}
+td {
+ width: 80px;
+}
+table tr:nth-child(odd) {
+   background-color: #f2f2f2;
+}
+table tr:nth-child(even) {
+   background-color: #ffffff;
+}
+</style>
+
+</head>
+<body>
+<h2>AngularJS Sample Application</h2>
+<div ng-app="mainApp" ng-controller="studentController">
+
+<!-- Controllers concepts -->
+Enter first name: <input type="text" ng-model="student.firstName"><br><br>
+Enter last name: <input type="text" ng-model="student.lastName"><br>
+<br>
+You are entering: {{student.fullName()}}
+<br><br>
+
+<!-- Filter concepts -->
+Players names and hobbis:<br><br>
+<table><tr><th>Name</th><th>Hobby</th><th>Sal</th></tr>
+<tr ng-repeat="x in players | orderBy: x.name"><td align='left'>{{(x.name | lowercase)}}</td><td align='center'>{{(x.hobby | uppercase)}}</td><td align='right'>{{(x.sal | currency)}}</td></td>
+</table>
+
+</div>
+<script>
+var mainApp = angular.module("mainApp", []);
+// a controller for input controls and array
+mainApp.controller('studentController', function($scope) {
+   $scope.student = {
+      firstName: "sheikh",
+      lastName: "hafeez",
+      fullName: function() {
+         return $scope.student.firstName + " " + $scope.student.lastName;
+      }
+   };
+//---------- array called players  -----------
+   $scope.players = [
+		{name:'sheikh',hobby:'chess', sal:25},
+		{name:'ram',hobby:'cricket', sal:28},
+		{name:'harry',hobby:'golf', sal:20},
+		{name:'rana',hobby:'footbal', sal:30}
+	  ];
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+package main
+import "fmt"
+import "math"
+
+type Shape interface {
+	
+	area() float64
+	peri() float64
+}
+
+type Rect struct {
+	width, height float64 
+}
+type Circle struct {
+	radius float64 
+}
+func (r Rect)area()float64 {
+	return r.width*r.height;
+}
+
+func (r Rect)peri()float64 {
+	return 2*r.width + 2*r.height;
+}
+
+func (c Circle)area()float64 {
+	return math.Pi*c.radius*c.radius;
+}
+
+func (c Circle)peri()float64 {
+	return 2*math.Pi*c.radius;
+}
+func measure(s Shape){
+
+	fmt.Println(s)
+	fmt.Println(s.area())
+	fmt.Println(s.peri())
+
+}
+
+func main() {
+	r := Rect{10,5}
+	c := Circle{5}
+
+	fmt.Println("Rectanlgle Details")
+	measure(r)
+	fmt.Println("Circle Details")
+	measure(c)
+
+}

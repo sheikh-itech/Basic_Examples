@@ -1,0 +1,17 @@
+<div ng-controller="myCtrl">
+
+		   <button ng-click="getDataFromServer()">Fetch data from server</button>
+           <p>First Name : {{person.name}}</p>
+           <p>Last Name : {{person.contact}}</p>
+           
+           <hr>
+      <form name='login' ng-submit="getData()">
+        <div>
+            <label>Email </label>
+            <input type="text" name="name" ng-model="person.name"/> <br>           
+            <label>Password </label>
+            <input type="text" name="contact" ng-model="person.contact"/><br/>
+            <button>Log in</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,57 @@
+<div ng-controller='adminCtrl'>
+
+<!-- Admin herder start -->
+<div class="jumbotron" style="height:30px;">
+    <div class="container text-center">              
+        <div class="btn-group">
+        
+            
+            <a href="#/register" class="btn btn-sm btn-info" style="margin-top:5px;">Register</a>
+            <a href="#/update" class="btn btn-sm btn-info" style="margin-top:5px;">Update</a>
+            <a href="#/delete" class="btn btn-sm btn-info" style="margin-top:5px;">Delete</a>
+            <a href="#/login" class="btn btn-sm btn-info" style="margin-top:5px;">Goto Home</a> 
+             
+            <!-- 
+            <a href="#/book" class="btn btn-lg btn btn-primary">Add Book</a>
+            <a href="./BookIssue" class="btn btn-lg btn-warning">Issue Book</a>
+            <a href="#/adminControl" class="btn btn-lg btn-info">Control Panel</a>
+             
+            <a href="" ng-click="getPersons('/personList')">Person List</a>
+            <a href="" ng-click="getBooks('/bookList')" style="margin-left:10px;">Book List</a>
+            <a href="" ng-click="issuedBooks('/issued')" style="margin-left:10px;">Issued Book List</a>
+            <a href="" ng-click="issueResource('/issueResource')" style="margin-left:10px;">Issue Resource</a>
+             -->
+        </div>        
+    </div>
+ </div>
+<!-- End of Admin herder -->
+
+<div class="row" ng-show='delete_warning'>
+			<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="alert alert-warning fade in">
+						<a href="" class="close" data-dismiss="alert">&times;</a>
+						Please ensure proper entries or try later.
+					</div>
+				</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row" ng-show='delete_success'>
+			<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="alert alert-success fade in">
+						<a href="" class="close" data-dismiss="alert">&times;</a>
+						User deleted successfully.
+					</div>
+				</div>
+			<div class="col-md-3"></div>
+		</div>
+<div>
+<form name="myForm" ng-submit="deleteUser()">
+Enter Username to delete :&nbsp;&nbsp;<input type="text" ng-model="deleteuser">&nbsp;&nbsp;
+<input type="submit" value="Delete-Details"
+  ng-disabled="myForm.$dirty && myForm.$invalid" class="btn btn-sm btn-info">
+</form>{{find_fail}}
+</div>
+
+</div>

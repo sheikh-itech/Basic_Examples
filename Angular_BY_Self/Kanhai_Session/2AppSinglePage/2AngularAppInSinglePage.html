@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>   
+        <script src="angular.ng-modules.js"></script>
+        <script>
+          var moduleA = angular.module("MyModuleA", []);
+          moduleA.controller("MyControllerA", function($scope) {
+              $scope.name = "Bob A";
+          });
+
+          var moduleB = angular.module("MyModuleB", []);
+          moduleB.controller("MyControllerB", function($scope) {
+              $scope.name = "Steve B";
+          });
+        </script>
+    </head>
+    <body>
+        <div ng-modules="MyModuleA, MyModuleB">
+            <h1>Module A, B</h1>
+            <div ng-controller="MyControllerA">
+                {{name}}
+            </div>
+            <div ng-controller="MyControllerB">
+                {{name}}
+            </div>
+        </div>
+
+        <div ng-module="MyModuleB">
+            <h1>Just Module B</h1>
+            <div ng-controller="MyControllerB">
+                {{name}}
+            </div>
+        </div>
+    </body>
+</html>

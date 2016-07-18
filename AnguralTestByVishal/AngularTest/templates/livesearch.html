@@ -1,0 +1,16 @@
+<div ng-controller="myCtrl">
+<div style="margin-left:30%;">Search by country name : <input ng-model="query" type="text" style="color:pink;"/>
+</div><hr>
+<div id="search">
+    <table style="width:400px;">
+      <tr style="color:blue;font-size:25px;">
+        <th>Country</th>
+        <th>Population</th>
+      </tr><br>
+      <tr ng-repeat="list in dataList | filter:query">
+        <td>{{list.name}}</td>
+        <td>{{list.population}}</td>
+      </tr>
+    </table>
+</div>
+</div>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Simple expense manager project - CodePen</title>
+
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    
+</head>
+
+<body ng-controller="myCtrl">
+<h1>Simple expense manager project</h1>
+
+<div id="form-box">
+<h2>Add a new item:</h2>
+<div class="add-btn">
+    <span class="add-text">Add a friend</span>
+    <div class="friend-input">
+        <div><input type="text" placeholder="Eg: Vandy" ng-model="frnd.name" ng-blur="add(frnd);"/></div>		
+    </div>
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-plus fa-stack-1x" title="Add a friend"></i>
+    </span>
+</div>
+<form name="form" novalidate>
+  <div>
+    <span>Type:</span> 
+      <select name="type" ng-model="user.type">
+          <option>Card</option>
+          <option>Cash</option>
+          <option>Other</option>
+      </select>
+  </div>
+  <div>
+    <span>Add friend:</span> 
+        <select name="friend" ng-model="user.friend" size='2'>
+			<option ng-repeat="frnds in friends">{{frnds.name}}</option>
+        </select>
+  </div>
+
+  <div>
+    <span>Name:</span> <input type="text" ng-model="user.name" placeholder="What did you spend on?">
+    <div class="error-msg"><!--Please select an option--></div>
+  </div>
+
+  <div>
+    <span>Date:</span> <input type="date" ng-model="user.date">
+    <div class="error-msg"><!--Please select an option--></div>
+  </div>
+
+  <div>
+    <span>Currency:</span> 
+      <select ng-model="user.currency">
+          <option>USD</option>
+          <option>INR</option>
+          <option>EUR</option>
+      </select>
+  </div>
+  <div>
+    <span>Amount:</span> <input type="number" ng-model="user.amount" placeholder="How much?">
+    <div class="error-msg"></div>
+  </div>
+
+  <!--<div id="button">Add a new expense</div>-->
+<input type="button" ng-click="update(user);" value="Add a new expense" id="button"/>
+</form>
+</div>
+<div class="filter-block">
+    <div class="filter-option">
+      <span>Filter by friend:</span>
+      <select ng-model="frnd2">
+			<option ng-repeat="frnd in friends">{{frnd.name}}</option>
+      </select>
+    </div>
+    <div class="filter-option">
+      <span>Currency:</span>
+      <select name="filter-currency">
+          <option>USD</option>
+          <option>INR</option>
+          <option>EUR</option>
+      </select>
+    </div>
+</div>
+<table>
+  <tr>
+    <th>type</th>
+    <th>name</th>
+    <th>Friends</th>
+    <th>date</th>
+    <th>amount</th>
+    <th>edit</th>
+    <th>delete</th>
+  </tr>
+  <tr ng-repeat="arr in master | filter: frnd2 | orderBy: 'date':true">
+    <td>{{ arr.type }}</td>
+	<td>{{ arr.name }}</td>
+	<td>{{ arr.friend  }}</td>
+	<td>{{ arr.date | date:'dd-MM-yyyy'}}</td>
+	<td>{{ arr.currency+" "+arr.amount }}</td>
+	<td>
+	<button ng-click="Update($index)">Update</button>
+	</td>
+	<td>
+	<button ng-click="remove($index)">Delete</button>
+	</td>
+  </tr>
+
+</table>
+
+  <script src='js/jquery.js'></script>
+  <script src='js/index.js'></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

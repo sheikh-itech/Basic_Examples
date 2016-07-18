@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+ <head>
+  <title>Directive application</title>
+  <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> <!--  <script src='angular.min.js'></script>-->
+	<script src='2WayBinding.js'></script>
+ </head>
+ <body ng-controller='myCtrl'>
+
+  <calculator items='values'></calculator>
+
+  <button ng-click='changeValues()'>Click From View</button>
+
+ </body>
+</html>

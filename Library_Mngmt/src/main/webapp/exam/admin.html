@@ -1,0 +1,127 @@
+<div ng-controller="adminCtrl">
+
+<!-- Admin herder start -->
+<div class="jumbotron" style="height:30px;">
+    <div class="container text-center">              
+        <div class="btn-group">
+        
+            
+            <a href="#/register" class="btn btn-sm btn-info" style="margin-top:5px;">Register</a>
+            <a href="#/admin" ng-click="getAllUsersList();" class="btn btn-sm btn-info" style="margin-top:5px;">Users List</a>
+            <a href="#/login" ng-click="logOut();" class="btn btn-sm btn-info" style="margin-top:5px;">Goto Home</a> 
+             
+            <!-- 
+            <a href="#/book" class="btn btn-lg btn btn-primary">Add Book</a>
+            <a href="./BookIssue" class="btn btn-lg btn-warning">Issue Book</a>
+            <a href="#/adminControl" class="btn btn-lg btn-info">Control Panel</a>
+             
+            <a href="" ng-click="getPersons('/personList')">Person List</a>
+            <a href="" ng-click="getBooks('/bookList')" style="margin-left:10px;">Book List</a>
+            <a href="" ng-click="issuedBooks('/issued')" style="margin-left:10px;">Issued Book List</a>
+            <a href="" ng-click="issueResource('/issueResource')" style="margin-left:10px;">Issue Resource</a>
+             -->
+        </div>        
+    </div>
+ </div>
+<!-- End of Admin herder -->
+
+<div ng-show="all_user_list">
+	<table class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th class="text-center">Name</th>
+                <th class="text-center">Username</th>
+                <th class="text-center">User Type</th>
+                <th class="text-center">Password</th>
+                <th class="text-center">Contact</th>
+                <th class="text-center">Action</th>                
+            </tr>
+        </thead>
+        <tbody>
+        	<tr ng-repeat="user in allUserDetail">
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.type}}</td>
+                <td>{{user.pass}}</td>
+                <td>{{user.contact}}</td>  
+                <td>
+                <a href="" class="btn btn-sm btn-warning" ng-click="findDetails($index)">Update</a>
+                <a href="" class="btn btn-sm btn-danger" ng-click="deleteUser($index);">Delete</a>
+                </td>              
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{allUserDetailSuccess}}<br>{{allUserDetailError}}
+
+<div ng-show="user_update">
+<div class="row" style="margin-top:20px;"><!-- form row starts -->
+		<div class="row" ng-show='updt_warning'>
+			<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="alert alert-warning fade in">
+						<a href="" class="close" data-dismiss="alert">&times;</a>
+						Please ensure proper entries or try later.
+					</div>
+				</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row" ng-show='updt_success'>
+			<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="alert alert-success fade in">
+						<a href="" class="close" data-dismiss="alert">&times;</a>
+						Updated successfully.
+					</div>
+				</div>
+			<div class="col-md-3"></div>
+		</div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+                  User Update Panel
+               </div>
+
+          <!-- form -->    
+          <div class="panel-body">
+          <form name="myForm" ng-submit="update()">             
+            
+              <div class="form-group">
+                <label for="txtName">Name</label>
+            <input type="text" id="txtName" class="form-control" ng-model="userDetail[0].name" placeholder="Enter name"  required/>
+                  </div>
+                  <div class="form-group">
+                <label for="txtUsername">Username</label>
+            <input type="text" id="txtUsername" class="form-control" ng-model="userDetail[0].username" placeholder="username" readonly="readonly" />
+                  </div>
+				  <div class="form-group">
+      				    <label for="ddType">User type</label>
+      				    <select id="ddType" class="form-control" ng-model="userDetail[0].type" required>
+   	  						<option selected="true">Admin</option>
+   	  						<option>Trainer</option> 
+							<option>Trainee</option> 
+   	  					</select>            			
+            	    </div>
+                  
+                  <div class="form-group">
+                  <label for="txtPassword">Password</label>
+                  <input type="text" id="txtPassword" class="form-control" ng-model="userDetail[0].pass" placeholder="Enter password" required/>
+                  </div>
+                  <div class="form-group">
+                <label for="txtNumber">Contact</label>
+            <input type="number" id="txtNumber" class="form-control" ng-model="userDetail[0].contact" placeholder="Enter contact number" required />
+                  </div>
+               <input type="submit" value="Update-Details"
+  ng-disabled="myForm.$dirty && myForm.$invalid" class="btn btn-info" style="margin-left:30%;">  
+            </form>
+          </div> 
+       <!-- End of form  -->
+        
+      </div>   </div>     
+      <div class="col-md-3"></div>                  
+    </div><!-- form row end -->
+</div>    
+<!-- End of update section -->
+
+</div>

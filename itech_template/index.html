@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Itech Software solution</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>    
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery lib from google server ===================== -->
+	<script src="js/jquery-1.7.2.min.js"></script>
+<!--  javaScript -->
+<script>  
+<!--  // building select nav for mobile width only -->
+$(function(){
+	// building select menu
+	$('<select />').appendTo('nav');
+
+	// building an option for select menu
+	$('<option />', {
+		'selected': 'selected',
+		'value' : '',
+		'text': 'Choise Page...'
+	}).appendTo('nav select');
+
+	$('nav ul li a').each(function(){
+		var target = $(this);
+
+		$('<option />', {
+			'value' : target.attr('href'),
+			'text': target.text()
+		}).appendTo('nav select');
+
+	});
+
+	// on clicking on link
+	$('nav select').on('change',function(){
+		window.location = $(this).find('option:selected').val();
+	});
+});
+
+// show and hide sub menu
+$(function(){
+	$('nav ul li').hover(
+		function () {
+			//show its submenu
+			$('ul', this).slideDown(150);
+		}, 
+		function () {
+			//hide its submenu
+			$('ul', this).slideUp(150);			
+		}
+	);
+});
+//end
+</script>
+<!-- end -->
+</head>
+<body ng-app="itechApp">
+
+<!-- Start of row -->
+
+<div class="row" ng-controller="itechCtrl">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+
+
+<div style="background-color:#D1E0E0;">
+<img src="images/logo.png" style="height:51px;width:290px;">
+</div>
+<div style="background-color:#91B5B5;height:30px;">						       
+     <!-- start header here-->	
+		<div id="fdw">
+				<!--nav-->
+					<nav>
+						<ul>
+							<li><a href="#/">home</a></li>
+							
+							<li><a href="#/about_us">about us<span class="arrow"></span></a>
+								<ul style="display: none;" class="sub_menu">
+									<li class="arrow_top"></li>
+									<li><a href="#/about_us">Itech Software Solution</a></li>
+									<li><a href="#/business_strategies">Business Strategies</a></li>
+									<li><a href="#/vision">Itech Vision</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#/service">Services<span class="arrow"></span></a>
+								<ul style="display: none;" class="sub_menu">
+									<li class="arrow_top"></li>
+									<li><a href="#/service">Techology Offering</a></li>
+									<li><a href="#/service_erp">ERP Solutions</a></li>
+									<li><a href="#/consulting">Consulting Services</a></li>
+									<li><a href="#/quality">Quality Assurance</a></li>
+									<li><a href="#/analysis">Business Analysis</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#/product">products<span class="arrow"></span></a>
+								<ul class="sub_menu">
+									<li class="arrow_top"></li>
+									<li><a href="#/product">Banking</a></li>
+									<li><a href="#/telecom">Telecommunication</a></li>
+									<li><a href="#/other">Other Products</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#/resource">resources<span class="arrow"></span></a>
+								<ul class="sub_menu">
+									<li class="arrow_top"></li>
+									<li><a href="#/resource">Case Studies</a></li>
+									<li><a href="#/news">Newsletters</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">clients<span class="arrow"></span></a>
+								<ul style="display: none;" class="sub_menu">
+									<li class="arrow_top"></li>
+									<li><a href="#/why">Why ITech</a></li>
+									<li><a href="#/clients">Our Clients</a></li>
+								</ul>
+							</li>
+							<li><a href="#/carrier">career</a></li>
+							<li><a href="#/contact_us">contact</a></li>
+						</ul>
+					</nav>
+		</div><!-- end fdw -->
+		<!-- end header -->
+	</div>
+	<ng-view></ng-view>
+</div>
+<div class="col-md-2"></div>
+</div><br>
+<!-- End of row -->
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="js/angular-route.js"></script>
+<script src="js/app.js"></script>
+
+<footer>
+            <div class="container text-right navbar-fixed-bottom" id="footer">
+				<hr style="margin-top:0px;">
+                <p style="margin-top:-10px;">&copy;&nbsp;ITech Software Solution pvt ltd 2015...All Rights Reserved.</p>
+				<div style="float:left;margin-top:-33px;">
+					<ul class="list-inline" style="margin-bottom:-20px;">
+                    <li>
+					<a href="http://www.twitter.com" style="border: none;" rel="nofollow">
+					<img src="images/twitter.png" alt="Twitter" border="0">
+					</a>
+					</li>
+                    <li>
+					<a href="http://www.facebook.com" style="border: none;" rel="nofollow">
+					<img src="images/facebook.png" alt="Facebook" border="0">
+					</a>					
+                    <li><a href="http://www.youtube.com" style="border: none;" rel="nofollow">
+					<img src="images/youtube.png" alt="Youtube" border="0">
+					</a>
+					</li>
+					<li><a href="http://www.wikipedia.org" style="border: none;" rel="nofollow">
+					<img src="images/wikipedia.png" alt="Wikipedia" border="0">
+					</a>
+					</li>					
+                </ul>
+				</div>
+            </div>
+</footer>
+</body>
+</html>

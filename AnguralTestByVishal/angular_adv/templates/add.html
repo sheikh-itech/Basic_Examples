@@ -1,0 +1,95 @@
+<div class="container" style="margin-top:70px;background-color:#dbdfe5;">
+        <!--Row with two equal columns-->
+        <div class="row">
+            <div class="col-sm-12" style="background-color:#abb1b8;height:40px;">
+                
+					<div style="padding-top:10px;">
+					Customer List<a href="" class="btn btn-xs btn-info" ng-click="" style="margin-left:4%;" data-toggle="modal" data-target="#myModal">Add New</a>
+
+					<a href="" class="btn btn-xs btn-info" ng-click="AscDesc();" style="margin-left:2%;">{{caption}}</a>
+					<span ng-show='add' style="color:red;margin-left:10%;">User allready exist.</span>
+					<input type='text' placeholder='Search by Name' ng-model="query" style="float:right;"/>
+
+					
+				    
+				</div>
+            </div>            
+        </div>
+        
+        <!--Row with two columns divided in 1:2 ratio-->
+        <div class="row">
+            <div class="col-sm-6">                
+				<ul>
+					<li ng-repeat="detail in userDetail | filter: query | orderBy: sign">
+					<div ng-class="{div: clas,move: mov}" ng-mouseenter="clas = true" ng-mouseleave="clas = false" ng-click="currentDetails($index,detail);" style="background: #dbdfe5;">
+					<span ng-show='clas' style="color:red;float:left;margin-top:0px;" class="glyphicon glyphicon-remove" ng-click="delete($index, detail);"></span>
+					<h3>Customer {{$index+1}}</h3>
+					<p>{{detail.name}}</p>
+					<p>{{detail.loc}}</p>
+					<p>{{detail.email}}</p>
+					</div>
+					</li>
+				</ul>
+			</div>            
+            <div class="col-sm-6">
+                <div class="bg-alt" style="padding:15px;margin-top:18px;">
+					<div ng-hide="var_detail">
+					<p>Please select customer from left side to view detail</p>
+					</div>
+					<div ng-show='var_detail'>						
+					<h3>{{cus+index}}</h3>
+					<p>Name : {{current.name}}</p>
+					<p><span class='glyphicon glyphicon-map-marker'></span>&nbsp;&nbsp;Location : {{current.loc}}</p>
+					<p><span class='glyphicon glyphicon-envelope'></span>&nbsp;&nbsp;Email : {{current.email}}</p>
+					</div>
+				</div>
+            </div>
+        </div>
+
+
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Customer Details</h4>
+        </div>
+        <div class="modal-body">
+        
+  <form class="form-horizontal" role="form" ng-submit="addInfo();">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" ng-model="name" placeholder="Enter name" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="loc">Location:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="loc"  ng-model="loc" placeholder="Enter Location" required>
+      </div>
+    </div>
+    
+<div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email"  ng-model="email" placeholder="Enter email" required>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-5 col-sm-7">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  <!-- end of modal -->
+</div>

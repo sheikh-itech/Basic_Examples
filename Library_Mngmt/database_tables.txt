@@ -1,0 +1,40 @@
+CREATE TABLE  REGISTER 
+   (	
+    NAME VARCHAR2(50) NOT NULL ENABLE, 
+	USERNAME VARCHAR2(50) NOT NULL ENABLE, 
+	TYPE VARCHAR2(50) NOT NULL ENABLE, 
+	PASS VARCHAR2(50) NOT NULL ENABLE, 
+	CONTACT NUMBER(10,0) NOT NULL ENABLE, 
+	 CONSTRAINT "REGISTER_PK" PRIMARY KEY ("USERNAME") ENABLE
+   )
+/
+
+---------------------------------------------------------------
+CREATE TABLE  RESULT 
+   (	
+     NAME VARCHAR2(50) NOT NULL ENABLE, 
+	 WRITE NUMBER(10,0) NOT NULL ENABLE, 
+	 WRONG NUMBER(10,0) NOT NULL ENABLE
+   )
+/
+----------------------------------------------------------------
+CREATE TABLE  TEST 
+   (	
+    USERNAME VARCHAR2(50), 
+	TESTNAME VARCHAR2(50), 
+	TESTFILE VARCHAR2(50)
+   )
+/
+
+
+
+
+Database Configuration
+----------------------------------------
+driver = oracle.jdbc.driver.OracleDriver
+url = jdbc:oracle:thin:@localhost:1521:xe
+user = sheikh
+pass = sheikh
+--------------------------------------
+change above driver,url,user and password according to your system
+configuration into db.property file avalable at ---- \src\main\java\db.property

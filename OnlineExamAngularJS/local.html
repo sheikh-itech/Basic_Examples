@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+ <head>
+  <title> New Document </title>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.min.js'></script>
+  
+  
+ </head>
+ <body  ng-controller='MainCtrl'>
+  {{value}}<br>
+  <input type='text' ng-model='name'/><br>
+  <input type='submit' ng-click='submit(name)'/><br><br>
+  <input type='submit' ng-click='get()'/><br><br>
+  <ol>
+	<li ng-repeat=''></li>
+  </ol>
+
+  <script>
+	var myApp = angular.module('app', ['LocalStorageModule']);
+    
+	myApp.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('myApp')
+    .setStorageType('sessionStorage')
+    .setNotify(true, true);
+});
+myApp.controller('MainCtrl', function($scope, localStorageService) {
+$scope.value = 'sd';
+var storage = localStorageService.getStorageType(); //e.g localStorage
+
+    $scope.submit = function(val) {
+		//$scope.unbind = localStorageService.bind($scope, 'property');	
+		localStorageService.push('key', val);alert(val);
+		//$scope.property = val;
+   //return localStorageService.set(key, val);
+  }
+  $scope.get = function() {
+			
+		$scope.value = localStorageService.length();
+   //return localStorageService.set(key, val);
+  }
+ 
+  
+
+});
+  </script>
+ </body>
+</html>

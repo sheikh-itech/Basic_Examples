@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Angulr application to attend exam</title>
+  <!--<script type="text/javascript" src="js/angular.min.js"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+<div ng-controller="validateCtrl">
+
+<nav class="navbar navbar-inverse navbar-fixed-top text-center">
+  <p style="color:white;margin-top:15px;font-size:20px;">Online Test Application</p>
+</nav>
+    <div class="row" style="margin-top:100px;"><!-- form row starts -->
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+                  Registration Panel
+               </div>
+
+          <!-- form -->    
+          <div class="panel-body">
+          <form name="myForm" ng-submit="register()">             
+            
+              <div class="form-group">
+                <label for="txtName">Name</label>
+            <input type="text" id="txtName" class="form-control" ng-model="name" placeholder="Enter name" autofocus required />
+                  </div>
+                  <div class="form-group">
+                <label for="txtUsername">Username</label>
+            <input type="text" id="txtUsername" class="form-control" ng-model="username" placeholder="Enter username" required />
+                  </div>
+                  <div class="form-group">
+                <label for="txtUserType">User Type</label>
+            <input type="text" id="txtUserType" class="form-control" ng-model="usertype" placeholder="Enter user type" required />
+                  </div>
+                  <div class="form-group">
+                  <label for="txtPassword">Password</label>
+                  <input type="password" id="txtPassword" class="form-control" ng-model="pass" placeholder="Enter password" required/>
+                  </div>
+                  <div class="form-group">
+                <label for="txtNumber">Number</label>
+            <input type="number" id="txtNumber" class="form-control" ng-model="contact" placeholder="Enter contact number" required />
+                  </div>
+               <input type="submit" value="Save-Details"
+  ng-disabled="myForm.$dirty && myForm.$invalid" class="btn btn-info" style="margin-left:40%;">  
+            </form>   
+          </div> 
+       <!-- End of form  -->
+        
+      </div>   </div>     
+      <div class="col-md-3"></div>                  
+    </div><!-- form row end -->
+
+<ul class="unstyled">
+			<li ng-repeat="todo in todos track by $index">				
+				{{ todo.name }} {{ todo.username }} {{ todo.pass }} {{ todo.contact }} {{ todo.usertype }} 
+			</li>
+		</ul>
+
+
+</div>
+<script src="js/register.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

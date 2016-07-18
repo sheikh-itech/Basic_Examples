@@ -1,0 +1,101 @@
+#mjstpops-exit-bg, #mjstpops-exit-popup, #mjstpops-exit-close-button, #mjstpops-error-popup-bg, #mjstpops-error-popup {
+	display:none;
+}
+
+#mjstpops-exit-bg.mjstpops-exit-bg-active {
+	background: rgba(0,0,0,0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 999999998;
+}
+
+#mjstpops-exit-popup.mjstpops-exit-popup-active {
+	display: inline-block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.8);
+	z-index: 999999999;
+}
+
+#mjstpops-exit-close-button.mjstpops-exit-close-button-active {
+	background: url('mjstpops_exit_close.png') no-repeat;
+	width: 46px;
+	height: 44px;
+	position: absolute;
+	top: -18px;
+	right: -18px;
+	z-index: 9999999999;
+	cursor: pointer;
+	display: block;
+}
+
+#mjstpops-error-popup-bg.mjstpops-error-popup-bg-active {
+	background: rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 9999999998;
+}
+
+#mjstpops-error-popup.mjstpops-error-popup-active {
+	width: 560px;
+	height: 360px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -180px;
+	margin-left: -280px;
+	background-color:#fff;
+	font-family: 'Open Sans', sans-serif;
+	z-index: 99999999999;
+	display: block;
+	border-radius: 6px;
+	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.8);
+}
+
+#mjstpops-error-wrapper {
+	width: 500px;
+	height: 300px;
+	position: absolute;
+	margin: 30px;
+	background: url('mjstpops-error-wrapper.jpg');
+}
+
+#mjstpops-error-popup-title {
+	box-sizing: border-box;
+	font-size: 30px;
+	padding: 12px 24px;
+	color: #666666;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
+}
+
+#mjstpops-error-popup-content {
+	padding: 12px 18px;
+	color: #666666;
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+#mjstpops-error-popup-close {
+	position: absolute;
+	width: 40px;
+	height: 20px;
+	bottom: 12px;
+	right: 12px;
+	color: #ff9900;
+	font-size: 14px;;
+}
+
+.mjp-error-normal {
+	font-weight: normal;
+}
